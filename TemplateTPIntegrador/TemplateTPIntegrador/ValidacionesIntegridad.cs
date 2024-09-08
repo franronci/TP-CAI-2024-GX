@@ -17,6 +17,13 @@ namespace TemplateTPIntegrador
             return false;
         }
 
-
+        public bool validarStringVaco(string dato)
+        {
+            if (dato == "")
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
