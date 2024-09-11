@@ -11,7 +11,8 @@ namespace Negocio
         public Boolean validarLargoUserPass(string texto_ingresado)
         {
 
-            int  = texto_ingresado.Length;
+            int largo_texto = texto_ingresado.Length;
+
             if (largo_texto < 8 | largo_texto > 15)
             {
                 return true;
@@ -31,12 +32,6 @@ namespace Negocio
 
             return true;
         }
-
-
+    }
     }
 
-
-
-
-    }
-}
