@@ -16,5 +16,30 @@ namespace TemplateTPIntegrador
         {
             InitializeComponent();
         }
+
+        private void ApellidoUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NombreUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UsernameUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ContraseñaUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCrearUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
