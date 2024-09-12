@@ -27,10 +27,10 @@ namespace Negocio
 
             if (usuario_ingresado.Contains(nombre) || usuario_ingresado.Contains(apellido))
             {
-                return false; 
+                return true; 
             }
 
-            return true;
+            return false;
         }
     }
     }

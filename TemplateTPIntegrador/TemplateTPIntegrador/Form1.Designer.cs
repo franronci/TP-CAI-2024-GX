@@ -33,15 +33,16 @@
             this.ApellidoUsuario = new System.Windows.Forms.TextBox();
             this.UsernameUsuario = new System.Windows.Forms.TextBox();
             this.ContraseñaUsuario = new System.Windows.Forms.TextBox();
+            this.Errores = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnCrearUsuario
             // 
-            this.BtnCrearUsuario.Location = new System.Drawing.Point(202, 236);
+            this.BtnCrearUsuario.Location = new System.Drawing.Point(202, 271);
             this.BtnCrearUsuario.Name = "BtnCrearUsuario";
             this.BtnCrearUsuario.Size = new System.Drawing.Size(100, 23);
             this.BtnCrearUsuario.TabIndex = 0;
-            this.BtnCrearUsuario.Text = "button1";
+            this.BtnCrearUsuario.Text = "Crear Usuario";
             this.BtnCrearUsuario.UseVisualStyleBackColor = true;
             this.BtnCrearUsuario.Click += new System.EventHandler(this.BtnCrearUsuario_Click);
             // 
@@ -77,11 +78,22 @@
             this.ContraseñaUsuario.TabIndex = 4;
             this.ContraseñaUsuario.TextChanged += new System.EventHandler(this.ContraseñaUsuario_TextChanged);
             // 
+            // Errores
+            // 
+            this.Errores.ForeColor = System.Drawing.Color.Red;
+            this.Errores.Location = new System.Drawing.Point(202, 217);
+            this.Errores.Name = "Errores";
+            this.Errores.Size = new System.Drawing.Size(100, 23);
+            this.Errores.TabIndex = 5;
+            this.Errores.Text = "errores";
+            this.Errores.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 450);
+            this.Controls.Add(this.Errores);
             this.Controls.Add(this.ContraseñaUsuario);
             this.Controls.Add(this.UsernameUsuario);
             this.Controls.Add(this.ApellidoUsuario);
@@ -101,6 +113,7 @@
         private System.Windows.Forms.TextBox ApellidoUsuario;
         private System.Windows.Forms.TextBox UsernameUsuario;
         private System.Windows.Forms.TextBox ContraseñaUsuario;
+        private System.Windows.Forms.Label Errores;
     }
 }
 
