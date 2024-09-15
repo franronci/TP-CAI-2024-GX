@@ -49,15 +49,6 @@
             LbNombreUsuario = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // LbNombreUsuario
-            // 
-            LbNombreUsuario.AutoSize = true;
-            LbNombreUsuario.Location = new System.Drawing.Point(21, 13);
-            LbNombreUsuario.Name = "LbNombreUsuario";
-            LbNombreUsuario.Size = new System.Drawing.Size(44, 13);
-            LbNombreUsuario.TabIndex = 6;
-            LbNombreUsuario.Text = "Nombre";
-            // 
             // BtnCrearUsuario
             // 
             this.BtnCrearUsuario.Location = new System.Drawing.Point(24, 345);
@@ -110,6 +101,15 @@
             this.Errores.Text = "errores";
             this.Errores.Visible = false;
             // 
+            // LbNombreUsuario
+            // 
+            LbNombreUsuario.AutoSize = true;
+            LbNombreUsuario.Location = new System.Drawing.Point(21, 13);
+            LbNombreUsuario.Name = "LbNombreUsuario";
+            LbNombreUsuario.Size = new System.Drawing.Size(44, 13);
+            LbNombreUsuario.TabIndex = 6;
+            LbNombreUsuario.Text = "Nombre";
+            // 
             // LbApellidoUsuario
             // 
             this.LbApellidoUsuario.AutoSize = true;
@@ -147,7 +147,7 @@
             // FechaNacimientoUsuario
             // 
             this.FechaNacimientoUsuario.Location = new System.Drawing.Point(240, 92);
-            this.FechaNacimientoUsuario.MaxDate = new System.DateTime(2024, 9, 22, 16, 10, 23, 0);
+            this.FechaNacimientoUsuario.MaxDate = new System.DateTime(2024, 9, 15, 0, 0, 0, 0);
             this.FechaNacimientoUsuario.MinDate = new System.DateTime(1949, 1, 1, 0, 0, 0, 0);
             this.FechaNacimientoUsuario.Name = "FechaNacimientoUsuario";
             this.FechaNacimientoUsuario.Size = new System.Drawing.Size(200, 20);

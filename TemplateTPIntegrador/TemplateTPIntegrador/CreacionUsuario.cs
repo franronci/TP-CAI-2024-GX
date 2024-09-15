@@ -7,11 +7,11 @@ using System.Windows.Forms;
 
 namespace TemplateTPIntegrador
 {
-    public partial class Form1 : Form
+    public partial class CreacionUsuario : Form
     {
         private bool erroresMostrados = false; // Flag para verificar si ya se mostraron errores
 
-        public Form1()
+        public CreacionUsuario()
         {
             InitializeComponent();
 
@@ -19,7 +19,7 @@ namespace TemplateTPIntegrador
             NombreUsuario.TextChanged += new EventHandler(ValidarCampos);
             ApellidoUsuario.TextChanged += new EventHandler(ValidarCampos);
             UsernameUsuario.TextChanged += new EventHandler(ValidarCampos);
-            ContraseñaUsuario.TextChanged += new EventHandler(ValidarCampos);
+            DocumentoUsuario.TextChanged += new EventHandler(ValidarCampos);
 
             // Configurar el Label de errores
             Errores.AutoSize = true;
@@ -61,7 +61,11 @@ namespace TemplateTPIntegrador
             string nombre = NombreUsuario.Text.ToLower();
             string apellido = ApellidoUsuario.Text.ToLower();
             string username = UsernameUsuario.Text.ToLower();
-            string password = ContraseñaUsuario.Text.ToLower();
+            string mail = MailUsuario.Text.ToLower();
+            string documento = DocumentoUsuario.Text.ToLower();
+            string rol = RolUsuario.Text.ToLower();
+            string nacimiento = FechaNacimientoUsuario.Text.ToLower();
+
 
             List<string> errores = new List<string>();
 
@@ -69,7 +73,11 @@ namespace TemplateTPIntegrador
             if (validarIntegridad.validarStringVacio(nombre) ||
                 validarIntegridad.validarStringVacio(apellido) ||
                 validarIntegridad.validarStringVacio(username) ||
-                validarIntegridad.validarStringVacio(password))
+                validarIntegridad.validarStringVacio(documento) ||
+                validarIntegridad.validarStringVacio(mail) ||
+                validarIntegridad.validarStringVacio(rol) ||
+                validarIntegridad.validarStringVacio(nacimiento))        
+
             {
                 errores.Add("No puede dejar ningún campo vacío.");
             }
@@ -78,12 +86,6 @@ namespace TemplateTPIntegrador
             if (validarNegocio.validarNombreApellido(nombre, apellido, username))
             {
                 errores.Add("El nombre de usuario no puede contener ni su nombre ni su apellido.");
-            }
-
-            // Validar el largo del username y de la contraseña
-            if (validarNegocio.validarLargoUserPass(password))
-            {
-                errores.Add("La contraseña debe tener entre 8 y 15 caracteres.");
             }
 
             if (validarNegocio.validarLargoUserPass(username))
@@ -104,6 +106,26 @@ namespace TemplateTPIntegrador
                     Errores.Visible = false; // Ocultar el Label si no hay errores
                 }
             }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreacionUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
