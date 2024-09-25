@@ -41,13 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrador.cs" />
+    <Compile Include="Perfiles\Administrador.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="Supervisor.cs" />
-    <Compile Include="Usuario.cs" />
+    <Compile Include="Perfiles\Supervisor.cs" />
+    <Compile Include="Perfiles\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidacionesDeNegocio.cs" />
-    <Compile Include="Vendedor.cs" />
+    <Compile Include="Perfiles\Vendedor.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
