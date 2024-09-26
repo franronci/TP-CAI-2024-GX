@@ -18,8 +18,7 @@ namespace TemplateTPIntegrador
             // Asignar eventos TextChanged a los TextBox
             NombreUsuario.TextChanged += new EventHandler(ValidarCampos);
             ApellidoUsuario.TextChanged += new EventHandler(ValidarCampos);
-            UsernameUsuario.TextChanged += new EventHandler(ValidarCampos);
-            DocumentoUsuario.TextChanged += new EventHandler(ValidarCampos);
+            UsernameUsuario.TextChanged += new EventHandler(ValidarCampos);;
 
             // Configurar el Label de errores
             Errores.AutoSize = true;
@@ -61,23 +60,13 @@ namespace TemplateTPIntegrador
             string nombre = NombreUsuario.Text.ToLower();
             string apellido = ApellidoUsuario.Text.ToLower();
             string username = UsernameUsuario.Text.ToLower();
-            string mail = MailUsuario.Text.ToLower();
-            string documento = DocumentoUsuario.Text.ToLower();
-            string rol = RolUsuario.Text.ToLower();
-            string nacimiento = FechaNacimientoUsuario.Text.ToLower();
-
 
             List<string> errores = new List<string>();
 
             // Validar que no haya campos vacíos
             if (validarIntegridad.validarStringVacio(nombre) ||
                 validarIntegridad.validarStringVacio(apellido) ||
-                validarIntegridad.validarStringVacio(username) ||
-                validarIntegridad.validarStringVacio(documento) ||
-                validarIntegridad.validarStringVacio(mail) ||
-                validarIntegridad.validarStringVacio(rol) ||
-                validarIntegridad.validarStringVacio(nacimiento))        
-
+                validarIntegridad.validarStringVacio(username))
             {
                 errores.Add("No puede dejar ningún campo vacío.");
             }
@@ -106,26 +95,6 @@ namespace TemplateTPIntegrador
                     Errores.Visible = false; // Ocultar el Label si no hay errores
                 }
             }
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CreacionUsuario_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

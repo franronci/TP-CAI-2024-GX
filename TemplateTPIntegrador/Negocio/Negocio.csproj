@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Perfiles\Administrador.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="InicioSesion.cs" />
     <Compile Include="Perfiles\Supervisor.cs" />
     <Compile Include="Perfiles\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

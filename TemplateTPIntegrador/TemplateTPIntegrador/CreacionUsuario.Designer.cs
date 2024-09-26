@@ -49,15 +49,6 @@
             LbNombreUsuario = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // LbNombreUsuario
-            // 
-            LbNombreUsuario.AutoSize = true;
-            LbNombreUsuario.Location = new System.Drawing.Point(21, 13);
-            LbNombreUsuario.Name = "LbNombreUsuario";
-            LbNombreUsuario.Size = new System.Drawing.Size(44, 13);
-            LbNombreUsuario.TabIndex = 6;
-            LbNombreUsuario.Text = "Nombre";
-            // 
             // BtnCrearUsuario
             // 
             this.BtnCrearUsuario.Location = new System.Drawing.Point(24, 345);
@@ -110,6 +101,15 @@
             this.Errores.Text = "errores";
             this.Errores.Visible = false;
             // 
+            // LbNombreUsuario
+            // 
+            LbNombreUsuario.AutoSize = true;
+            LbNombreUsuario.Location = new System.Drawing.Point(21, 13);
+            LbNombreUsuario.Name = "LbNombreUsuario";
+            LbNombreUsuario.Size = new System.Drawing.Size(44, 13);
+            LbNombreUsuario.TabIndex = 6;
+            LbNombreUsuario.Text = "Nombre";
+            // 
             // LbApellidoUsuario
             // 
             this.LbApellidoUsuario.AutoSize = true;
@@ -147,13 +147,13 @@
             // FechaNacimientoUsuario
             // 
             this.FechaNacimientoUsuario.Location = new System.Drawing.Point(240, 92);
-            this.FechaNacimientoUsuario.MaxDate = new System.DateTime(2024, 9, 22, 16, 10, 23, 0);
+            this.FechaNacimientoUsuario.MaxDate = new System.DateTime(2024, 9, 15, 0, 0, 0, 0);
             this.FechaNacimientoUsuario.MinDate = new System.DateTime(1949, 1, 1, 0, 0, 0, 0);
             this.FechaNacimientoUsuario.Name = "FechaNacimientoUsuario";
             this.FechaNacimientoUsuario.Size = new System.Drawing.Size(200, 20);
             this.FechaNacimientoUsuario.TabIndex = 11;
             this.FechaNacimientoUsuario.Value = new System.DateTime(2024, 9, 15, 0, 0, 0, 0);
-            this.FechaNacimientoUsuario.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+
             // 
             // MailUsuario
             // 
@@ -161,7 +161,7 @@
             this.MailUsuario.Name = "MailUsuario";
             this.MailUsuario.Size = new System.Drawing.Size(100, 20);
             this.MailUsuario.TabIndex = 12;
-            this.MailUsuario.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+
             // 
             // RolUsuario
             // 
@@ -174,7 +174,7 @@
             this.RolUsuario.Name = "RolUsuario";
             this.RolUsuario.Size = new System.Drawing.Size(121, 21);
             this.RolUsuario.TabIndex = 13;
-            this.RolUsuario.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+
             // 
             // LbTelUsuario
             // 
@@ -237,7 +237,6 @@
             this.Controls.Add(this.BtnCrearUsuario);
             this.Name = "CreacionUsuario";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.CreacionUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,4 +263,3 @@
         private System.Windows.Forms.Label LbRolUsuario;
     }
 }
-
