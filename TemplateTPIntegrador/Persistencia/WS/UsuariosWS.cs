@@ -62,5 +62,102 @@ namespace Persistencia
 
         }
 
+        public void altaUsuario(String idAdmin, int host, String nombre, String apellido, int dni, string direccion, string telefono, string email,
+                        string fechaNacimiento, string nombreUsuario, string contraseña)
+        {
+            var datos = new
+            {
+                idAdmin = idAdmin,               
+                host = host,                     
+                nombre = nombre,
+                apellido = apellido,
+                dni = dni,                        
+                direccion = direccion,
+                telefono = telefono,
+                email = email,
+                fechaNacimiento = fechaNacimiento,  
+                nombreUsuario = nombreUsuario,
+                contraseña = contraseña
+            };
+
+            var jsonData = JsonConvert.SerializeObject(datos);
+
+    
+            HttpResponseMessage response = WebHelper.Post("Usuario/AltaUsuario", jsonData);
+
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Usuario creado exitosamente.");
+            }
+            else
+            {
+                Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                throw new Exception("Error al dar de alta al usuario.");
+            }
+        }
+
+        public void bajaUsuario(String idAdmin, String idUsuario)
+        {
+            string url = $"Usuario/BajaUsuario?idAdmin={idAdmin}&idUsuario={idUsuario}";
+
+            HttpResponseMessage response = WebHelper.Delete(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Usuario dado de baja exitosamente.");
+            }
+            else
+            {
+                Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                throw new Exception("Error al dar de baja al usuario.");
+            }
+        }
+
+
+        public void reactivarUsuario(String idUsuario)
+        {
+            Dictionary<String, String> datos = new Dictionary<String, String>
+            {
+                { "idUsuario", idUsuario }
+            };
+
+            var jsonData = JsonConvert.SerializeObject(datos);
+            HttpResponseMessage response = WebHelper.Patch("Usuario/ReactivarUsuario", jsonData);
+
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Usuario reactivado exitosamente.");
+            }
+            else
+            {
+                Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                throw new Exception("Error al reactivar al usuario.");
+            }
+        }
+
+        public void cambiarContraseña(String nombreUsuario,String  viejaContraseña ,String nuevaContraseña)
+        {
+            Dictionary<String, String> datos = new Dictionary<String, String>
+            {
+                { "nombreUsuario", nombreUsuario },
+                { "viejaContraseña", viejaContraseña },
+                { "nuevaContraseña", nuevaContraseña }
+            };
+
+            var jsonData = JsonConvert.SerializeObject(datos);
+            HttpResponseMessage response = WebHelper.Patch("Usuario/CambiarContraseña", jsonData);
+
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Contraseña cambiada exitosamente.");
+            }
+            else
+            {
+                Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                throw new Exception("Error al cambiar la contraseña del usuario.");
+            }
+        }
+
+
     }
 }
