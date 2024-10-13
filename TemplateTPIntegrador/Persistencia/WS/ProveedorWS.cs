@@ -8,5 +8,6 @@ namespace Persistencia
 {
     internal class ProveedorWS
     {
+        private String adminId;
     }
 }
