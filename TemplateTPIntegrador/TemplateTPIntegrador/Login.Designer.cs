@@ -68,6 +68,7 @@
             this.txtboxPasswordLogin.Name = "txtboxPasswordLogin";
             this.txtboxPasswordLogin.Size = new System.Drawing.Size(100, 20);
             this.txtboxPasswordLogin.TabIndex = 3;
+            this.txtboxPasswordLogin.TextChanged += new System.EventHandler(this.txtboxPasswordLogin_TextChanged);
             // 
             // label2
             // 

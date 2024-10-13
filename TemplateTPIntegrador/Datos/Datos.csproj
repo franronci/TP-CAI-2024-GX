@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AltaCliente.cs" />
+    <Compile Include="AltaProveedor.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="ClienteWS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

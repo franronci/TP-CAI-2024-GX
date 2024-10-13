@@ -35,5 +35,10 @@ namespace TemplateTPIntegrador
         {
 
         }
+
+        private void txtboxPasswordLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
