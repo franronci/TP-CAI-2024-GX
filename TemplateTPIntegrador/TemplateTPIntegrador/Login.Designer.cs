@@ -41,7 +41,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Ingresar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -50,9 +50,10 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(217, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.label1.Text = "Usuario";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtboxUsernameLogin
             // 
@@ -73,9 +74,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(220, 149);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
+            this.label2.Text = "Contraseña";
             // 
             // Login
             // 
