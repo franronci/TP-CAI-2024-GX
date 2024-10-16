@@ -18,12 +18,8 @@ namespace TemplateTPIntegrador
             // Asignar eventos TextChanged a los TextBox
             NombreUsuario.TextChanged += new EventHandler(ValidarCampos);
             ApellidoUsuario.TextChanged += new EventHandler(ValidarCampos);
-
-            UsernameUsuario.TextChanged += new EventHandler(ValidarCampos);;
-
             UsernameUsuario.TextChanged += new EventHandler(ValidarCampos);
             DocumentoUsuario.TextChanged += new EventHandler(ValidarCampos);
-
 
             // Configurar el Label de errores
             Errores.AutoSize = true;
@@ -65,7 +61,6 @@ namespace TemplateTPIntegrador
             string nombre = NombreUsuario.Text.ToLower();
             string apellido = ApellidoUsuario.Text.ToLower();
             string username = UsernameUsuario.Text.ToLower();
-
             string mail = MailUsuario.Text.ToLower();
             string documento = DocumentoUsuario.Text.ToLower();
             string rol = RolUsuario.Text.ToLower();
@@ -77,9 +72,6 @@ namespace TemplateTPIntegrador
             // Validar que no haya campos vacíos
             if (validarIntegridad.validarStringVacio(nombre) ||
                 validarIntegridad.validarStringVacio(apellido) ||
-
-                validarIntegridad.validarStringVacio(username))
-
                 validarIntegridad.validarStringVacio(username) ||
                 validarIntegridad.validarStringVacio(documento) ||
                 validarIntegridad.validarStringVacio(mail) ||
@@ -135,6 +127,5 @@ namespace TemplateTPIntegrador
         {
 
         }
-
     }
 }

@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Utils\DBHelper.cs" />
     <Compile Include="WS\ClienteWS.cs" />
     <Compile Include="WS\ProductoWS.cs" />
     <Compile Include="WS\ProveedorWS.cs" />
