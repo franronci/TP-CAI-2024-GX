@@ -154,5 +154,11 @@ namespace Persistencia
             }
         }
 
+=======
+
+namespace Persistencia
+{
+    internal class ProveedorWS
+    {
     }
 }
