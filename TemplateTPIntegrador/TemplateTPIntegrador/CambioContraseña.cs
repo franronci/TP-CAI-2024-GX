@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TemplateTPIntegrador
 {
-    public partial class CambioContraseña : Form
+    public partial class frmCambiarContraseña : Form
     {
-        public CambioContraseña()
+        public frmCambiarContraseña()
         {
             InitializeComponent();
         }

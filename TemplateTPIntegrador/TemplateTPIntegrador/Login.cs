@@ -23,8 +23,8 @@ namespace TemplateTPIntegrador
 
             InicioSesion login = new InicioSesion();
 
-            string usuario = txtboxUsernameLogin.Text;
-            string password = txtboxPasswordLogin.Text;
+            string usuario = txtUsernameLogin.Text;
+            string password = txtPasswordLogin.Text;
 
             string id = login.HacerLogin(usuario, password);
 
@@ -37,6 +37,16 @@ namespace TemplateTPIntegrador
         }
 
         private void txtboxPasswordLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblContraseñaLogin_Click(object sender, EventArgs e)
         {
 
         }

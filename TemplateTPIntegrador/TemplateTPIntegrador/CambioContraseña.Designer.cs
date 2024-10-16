@@ -1,6 +1,6 @@
 ﻿namespace TemplateTPIntegrador
 {
-    partial class CambioContraseña
+    partial class frmCambiarContraseña
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@
             this.lblContraseñaNueva = new System.Windows.Forms.Label();
             this.lblRepetirContraseñaNueva = new System.Windows.Forms.Label();
             this.btnCancelarContraseña = new System.Windows.Forms.Button();
-            this.lblRestablecerContraseña = new System.Windows.Forms.Label();
+            this.lblCambiodeContraseña = new System.Windows.Forms.Label();
             this.lblErroresContraseña = new System.Windows.Forms.Label();
             this.lblInformacionContraseña = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -47,9 +47,9 @@
             this.btnConfirmarContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnConfirmarContraseña.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnConfirmarContraseña.Location = new System.Drawing.Point(225, 353);
+            this.btnConfirmarContraseña.Location = new System.Drawing.Point(215, 367);
             this.btnConfirmarContraseña.Name = "btnConfirmarContraseña";
-            this.btnConfirmarContraseña.Size = new System.Drawing.Size(177, 61);
+            this.btnConfirmarContraseña.Size = new System.Drawing.Size(162, 47);
             this.btnConfirmarContraseña.TabIndex = 0;
             this.btnConfirmarContraseña.Text = "CONFIRMAR";
             this.btnConfirmarContraseña.UseVisualStyleBackColor = false;
@@ -124,24 +124,24 @@
             this.btnCancelarContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCancelarContraseña.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancelarContraseña.Location = new System.Drawing.Point(509, 353);
+            this.btnCancelarContraseña.Location = new System.Drawing.Point(499, 367);
             this.btnCancelarContraseña.Name = "btnCancelarContraseña";
-            this.btnCancelarContraseña.Size = new System.Drawing.Size(177, 61);
+            this.btnCancelarContraseña.Size = new System.Drawing.Size(163, 47);
             this.btnCancelarContraseña.TabIndex = 7;
             this.btnCancelarContraseña.Text = "CANCELAR";
             this.btnCancelarContraseña.UseVisualStyleBackColor = false;
             this.btnCancelarContraseña.Click += new System.EventHandler(this.btnCancelarContraseña_Click);
             // 
-            // lblRestablecerContraseña
+            // lblCambiodeContraseña
             // 
-            this.lblRestablecerContraseña.AutoSize = true;
-            this.lblRestablecerContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblRestablecerContraseña.Location = new System.Drawing.Point(85, 38);
-            this.lblRestablecerContraseña.Name = "lblRestablecerContraseña";
-            this.lblRestablecerContraseña.Size = new System.Drawing.Size(280, 29);
-            this.lblRestablecerContraseña.TabIndex = 8;
-            this.lblRestablecerContraseña.Text = "Restablecer contraseña";
-            this.lblRestablecerContraseña.Click += new System.EventHandler(this.label4_Click);
+            this.lblCambiodeContraseña.AutoSize = true;
+            this.lblCambiodeContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblCambiodeContraseña.Location = new System.Drawing.Point(85, 38);
+            this.lblCambiodeContraseña.Name = "lblCambiodeContraseña";
+            this.lblCambiodeContraseña.Size = new System.Drawing.Size(390, 29);
+            this.lblCambiodeContraseña.TabIndex = 8;
+            this.lblCambiodeContraseña.Text = "Establecer una nueva contraseña";
+            this.lblCambiodeContraseña.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblErroresContraseña
             // 
@@ -166,14 +166,14 @@
             this.lblInformacionContraseña.Text = "* Debe tener entre 8 y 15 caracteres, al menos un número y una letra mayúscula";
             this.lblInformacionContraseña.Click += new System.EventHandler(this.label6_Click);
             // 
-            // CambioContraseña
+            // frmCambiarContraseña
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 450);
             this.Controls.Add(this.lblInformacionContraseña);
             this.Controls.Add(this.lblErroresContraseña);
-            this.Controls.Add(this.lblRestablecerContraseña);
+            this.Controls.Add(this.lblCambiodeContraseña);
             this.Controls.Add(this.btnCancelarContraseña);
             this.Controls.Add(this.lblRepetirContraseñaNueva);
             this.Controls.Add(this.lblContraseñaNueva);
@@ -182,8 +182,8 @@
             this.Controls.Add(this.txtContraseñaNueva);
             this.Controls.Add(this.txtContraseñaActual);
             this.Controls.Add(this.btnConfirmarContraseña);
-            this.Name = "CambioContraseña";
-            this.Text = "CambioContraseña";
+            this.Name = "frmCambiarContraseña";
+            this.Text = "Cambiar Contraseña";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,7 +199,7 @@
         private System.Windows.Forms.Label lblContraseñaNueva;
         private System.Windows.Forms.Label lblRepetirContraseñaNueva;
         private System.Windows.Forms.Button btnCancelarContraseña;
-        private System.Windows.Forms.Label lblRestablecerContraseña;
+        private System.Windows.Forms.Label lblCambiodeContraseña;
         private System.Windows.Forms.Label lblErroresContraseña;
         private System.Windows.Forms.Label lblInformacionContraseña;
     }

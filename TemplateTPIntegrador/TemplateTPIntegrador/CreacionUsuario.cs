@@ -7,22 +7,22 @@ using System.Windows.Forms;
 
 namespace TemplateTPIntegrador
 {
-    public partial class CreacionUsuario : Form
+    public partial class frmCreacionUsuario : Form
     {
         private bool erroresMostrados = false; // Flag para verificar si ya se mostraron errores
 
-        public CreacionUsuario()
+        public frmCreacionUsuario()
         {
             InitializeComponent();
 
             // Asignar eventos TextChanged a los TextBox
-            NombreUsuario.TextChanged += new EventHandler(ValidarCampos);
-            ApellidoUsuario.TextChanged += new EventHandler(ValidarCampos);
-            UsernameUsuario.TextChanged += new EventHandler(ValidarCampos);;
+            txtNombreUsuario.TextChanged += new EventHandler(ValidarCampos);
+            txtApellidoUsuario.TextChanged += new EventHandler(ValidarCampos);
+            txtUsernameUsuario.TextChanged += new EventHandler(ValidarCampos);;
 
             // Configurar el Label de errores
-            Errores.AutoSize = true;
-            Errores.MaximumSize = new Size(400, 0); // Ajusta el ancho máximo según tu diseño
+            lblErrores.AutoSize = true;
+            lblErrores.MaximumSize = new Size(400, 0); // Ajusta el ancho máximo según tu diseño
 
         }
 
@@ -57,9 +57,9 @@ namespace TemplateTPIntegrador
             ValidacionesDeNegocio validarNegocio = new ValidacionesDeNegocio();
             ValidacionesIntegridad validarIntegridad = new ValidacionesIntegridad();
 
-            string nombre = NombreUsuario.Text.ToLower();
-            string apellido = ApellidoUsuario.Text.ToLower();
-            string username = UsernameUsuario.Text.ToLower();
+            string nombre = txtNombreUsuario.Text.ToLower();
+            string apellido = txtApellidoUsuario.Text.ToLower();
+            string username = txtUsernameUsuario.Text.ToLower();
 
             List<string> errores = new List<string>();
 
@@ -87,14 +87,24 @@ namespace TemplateTPIntegrador
             {
                 if (errores.Count > 0)
                 {
-                    Errores.Visible = true; // Mostrar el Label si hay errores
-                    Errores.Text = string.Join("\n", errores); // Actualizar el texto del Label con los errores
+                    lblErrores.Visible = true; // Mostrar el Label si hay errores
+                    lblErrores.Text = string.Join("\n", errores); // Actualizar el texto del Label con los errores
                 }
                 else
                 {
-                    Errores.Visible = false; // Ocultar el Label si no hay errores
+                    lblErrores.Visible = false; // Ocultar el Label si no hay errores
                 }
             }
+        }
+
+        private void RolUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FechaNacimientoUsuario_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
