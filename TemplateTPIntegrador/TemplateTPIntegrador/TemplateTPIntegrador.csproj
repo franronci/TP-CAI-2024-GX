@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CambioContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CambioContraseña.Designer.cs">
+      <DependentUpon>CambioContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -80,6 +86,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CambioContraseña.resx">
+      <DependentUpon>CambioContraseña.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreacionUsuario.resx">
       <DependentUpon>CreacionUsuario.cs</DependentUpon>
     </EmbeddedResource>
