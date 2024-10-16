@@ -41,8 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaCliente.cs" />
+    <Compile Include="AltaProveedor.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="ClienteWS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProveedorWS.cs" />
     <Compile Include="UsuarioWS.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

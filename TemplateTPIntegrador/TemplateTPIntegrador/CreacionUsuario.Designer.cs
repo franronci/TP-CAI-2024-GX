@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+
+            this.LbNombreUsuario = new System.Windows.Forms.Label();
+
             System.Windows.Forms.Label LbNombreUsuario;
             this.BtnCrearUsuario = new System.Windows.Forms.Button();
             this.NombreUsuario = new System.Windows.Forms.TextBox();
@@ -46,9 +49,25 @@
             this.LbFechaNacimiento = new System.Windows.Forms.Label();
             this.LbUsername = new System.Windows.Forms.Label();
             this.LbRolUsuario = new System.Windows.Forms.Label();
+
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // LbNombreUsuario
+            // 
+            this.LbNombreUsuario.AutoSize = true;
+            this.LbNombreUsuario.Location = new System.Drawing.Point(21, 13);
+            this.LbNombreUsuario.Name = "LbNombreUsuario";
+            this.LbNombreUsuario.Size = new System.Drawing.Size(44, 13);
+            this.LbNombreUsuario.TabIndex = 6;
+            this.LbNombreUsuario.Text = "Nombre";
+            // 
+
             LbNombreUsuario = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
+
             // BtnCrearUsuario
             // 
             this.BtnCrearUsuario.Location = new System.Drawing.Point(24, 345);
@@ -101,6 +120,8 @@
             this.Errores.Text = "errores";
             this.Errores.Visible = false;
             // 
+
+=======
             // LbNombreUsuario
             // 
             LbNombreUsuario.AutoSize = true;
@@ -110,6 +131,7 @@
             LbNombreUsuario.TabIndex = 6;
             LbNombreUsuario.Text = "Nombre";
             // 
+
             // LbApellidoUsuario
             // 
             this.LbApellidoUsuario.AutoSize = true;
@@ -153,7 +175,10 @@
             this.FechaNacimientoUsuario.Size = new System.Drawing.Size(200, 20);
             this.FechaNacimientoUsuario.TabIndex = 11;
             this.FechaNacimientoUsuario.Value = new System.DateTime(2024, 9, 15, 0, 0, 0, 0);
+
+=======
             this.FechaNacimientoUsuario.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+
             // 
             // MailUsuario
             // 
@@ -161,7 +186,10 @@
             this.MailUsuario.Name = "MailUsuario";
             this.MailUsuario.Size = new System.Drawing.Size(100, 20);
             this.MailUsuario.TabIndex = 12;
+
+
             this.MailUsuario.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+
             // 
             // RolUsuario
             // 
@@ -174,7 +202,10 @@
             this.RolUsuario.Name = "RolUsuario";
             this.RolUsuario.Size = new System.Drawing.Size(121, 21);
             this.RolUsuario.TabIndex = 13;
+
+
             this.RolUsuario.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+
             // 
             // LbTelUsuario
             // 
@@ -212,11 +243,35 @@
             this.LbRolUsuario.TabIndex = 17;
             this.LbRolUsuario.Text = "Rol";
             // 
+
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(163, 345);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Limpiar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(471, 13);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 23);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "Volver";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+
             // CreacionUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 450);
+
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+
             this.Controls.Add(this.LbRolUsuario);
             this.Controls.Add(this.LbUsername);
             this.Controls.Add(this.LbFechaNacimiento);
@@ -228,7 +283,11 @@
             this.Controls.Add(this.LbDocUsuario);
             this.Controls.Add(this.LbMailUsuario);
             this.Controls.Add(this.LbApellidoUsuario);
+
+            this.Controls.Add(this.LbNombreUsuario);
+
             this.Controls.Add(LbNombreUsuario);
+
             this.Controls.Add(this.Errores);
             this.Controls.Add(this.DocumentoUsuario);
             this.Controls.Add(this.UsernameUsuario);
@@ -237,7 +296,10 @@
             this.Controls.Add(this.BtnCrearUsuario);
             this.Name = "CreacionUsuario";
             this.Text = "Form1";
+
+
             this.Load += new System.EventHandler(this.CreacionUsuario_Load);
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,6 +324,14 @@
         private System.Windows.Forms.Label LbFechaNacimiento;
         private System.Windows.Forms.Label LbUsername;
         private System.Windows.Forms.Label LbRolUsuario;
+
+        private System.Windows.Forms.Label LbNombreUsuario;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
+
+    }
+}
+
 
