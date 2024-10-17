@@ -139,10 +139,5 @@ namespace Persistencia
                 Console.WriteLine($"Exception: {ex.Message}");
             }
         }
-
-namespace Persistencia
-{
-    internal class ClienteWS
-    {
     }
 }

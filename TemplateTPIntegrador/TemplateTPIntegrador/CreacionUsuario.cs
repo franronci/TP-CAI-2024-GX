@@ -76,19 +76,17 @@ namespace TemplateTPIntegrador
 
             // Validar que no haya campos vacíos
             if (validarIntegridad.validarStringVacio(nombre) ||
-                validarIntegridad.validarStringVacio(apellido) ||
-
-                validarIntegridad.validarStringVacio(username))
-
-                validarIntegridad.validarStringVacio(username) ||
-                validarIntegridad.validarStringVacio(documento) ||
-                validarIntegridad.validarStringVacio(mail) ||
-                validarIntegridad.validarStringVacio(rol) ||
-                validarIntegridad.validarStringVacio(nacimiento))        
-
+       validarIntegridad.validarStringVacio(apellido) ||
+       validarIntegridad.validarStringVacio(username) ||
+       validarIntegridad.validarStringVacio(documento) ||
+       validarIntegridad.validarStringVacio(mail) ||
+       validarIntegridad.validarStringVacio(rol) ||
+       validarIntegridad.validarStringVacio(nacimiento))
             {
                 errores.Add("No puede dejar ningún campo vacío.");
             }
+
+
 
             // Validar que el username no contenga el nombre ni el apellido del usuario
             if (validarNegocio.validarNombreApellido(nombre, apellido, username))

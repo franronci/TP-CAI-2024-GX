@@ -61,7 +61,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            //this.button1.Click += new System.EventHandler(this.);
 
             // 
             // label1
@@ -77,7 +77,7 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            //this.label1.Click += new System.EventHandler(this.label1_Click);
 
             // 
             // txtboxUsernameLogin
@@ -87,7 +87,8 @@
             this.txtboxUsernameLogin.Size = new System.Drawing.Size(100, 20);
             this.txtboxUsernameLogin.TabIndex = 2;
 
-            this.txtboxUsernameLogin.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            
+            //this.txtboxUsernameLogin.TextChanged += new System.EventHandler(this.t);
 
             // 
             // txtboxPasswordLogin

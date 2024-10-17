@@ -30,8 +30,6 @@
         {
 
             this.LbNombreUsuario = new System.Windows.Forms.Label();
-
-            System.Windows.Forms.Label LbNombreUsuario;
             this.BtnCrearUsuario = new System.Windows.Forms.Button();
             this.NombreUsuario = new System.Windows.Forms.TextBox();
             this.ApellidoUsuario = new System.Windows.Forms.TextBox();
@@ -121,16 +119,6 @@
             this.Errores.Visible = false;
             // 
 
-=======
-            // LbNombreUsuario
-            // 
-            LbNombreUsuario.AutoSize = true;
-            LbNombreUsuario.Location = new System.Drawing.Point(21, 13);
-            LbNombreUsuario.Name = "LbNombreUsuario";
-            LbNombreUsuario.Size = new System.Drawing.Size(44, 13);
-            LbNombreUsuario.TabIndex = 6;
-            LbNombreUsuario.Text = "Nombre";
-            // 
 
             // LbApellidoUsuario
             // 
@@ -176,7 +164,6 @@
             this.FechaNacimientoUsuario.TabIndex = 11;
             this.FechaNacimientoUsuario.Value = new System.DateTime(2024, 9, 15, 0, 0, 0, 0);
 
-=======
             this.FechaNacimientoUsuario.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
 
             // 
@@ -324,14 +311,12 @@
         private System.Windows.Forms.Label LbFechaNacimiento;
         private System.Windows.Forms.Label LbUsername;
         private System.Windows.Forms.Label LbRolUsuario;
-
         private System.Windows.Forms.Label LbNombreUsuario;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }
 }
 
-    }
-}
+   
 
 

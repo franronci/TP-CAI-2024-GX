@@ -40,7 +40,7 @@ namespace TemplateTPIntegrador
                 // Rellena aquí la validación de datos (por ejemplo, intentar hacer el login)
                 // Este bloque se ejecutará solo si no hay errores
                 // Ejemplo:
-                
+                MessageBox.Show("hola");
             }
         }
 
@@ -88,39 +88,7 @@ namespace TemplateTPIntegrador
             }
         }
     }
-
-
-
-
-
-
-        public Login()
-        {
-            InitializeComponent();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public void button1_Click(object sender, EventArgs e)
-        {
-
-            InicioSesion login = new InicioSesion();
-
-            string usuario = txtboxUsernameLogin.Text;
-            string password = txtboxPasswordLogin.Text;
-
-            string id = login.HacerLogin(usuario, password);
-
-            MessageBox.Show(id);
-        }
-    }
-
 }
+
+
+
