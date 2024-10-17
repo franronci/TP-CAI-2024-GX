@@ -62,8 +62,6 @@
             this.LbNombreUsuario.Text = "Nombre";
             // 
 
-            LbNombreUsuario = new System.Windows.Forms.Label();
-            this.SuspendLayout();
             // 
 
             // BtnCrearUsuario
