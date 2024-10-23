@@ -36,7 +36,6 @@ namespace TemplateTPIntegrador
             this.button2 = new System.Windows.Forms.Button();
             this.Errores_login = new System.Windows.Forms.Label();
             this.SuspendLayout();
-
             // 
             // btnLogin
             // 
@@ -47,7 +46,6 @@ namespace TemplateTPIntegrador
             this.btnLogin.Text = "Ingresar";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
-
             // 
             // button1
             // 
@@ -57,7 +55,6 @@ namespace TemplateTPIntegrador
             this.button1.TabIndex = 1;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-
             // 
             // label1
             // 
@@ -67,7 +64,6 @@ namespace TemplateTPIntegrador
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Usuario";
-
             // 
             // txtboxUsernameLogin
             // 
@@ -75,7 +71,6 @@ namespace TemplateTPIntegrador
             this.txtboxUsernameLogin.Name = "txtboxUsernameLogin";
             this.txtboxUsernameLogin.Size = new System.Drawing.Size(100, 20);
             this.txtboxUsernameLogin.TabIndex = 3;
-
             // 
             // txtboxPasswordLogin
             // 
@@ -83,7 +78,6 @@ namespace TemplateTPIntegrador
             this.txtboxPasswordLogin.Name = "txtboxPasswordLogin";
             this.txtboxPasswordLogin.Size = new System.Drawing.Size(100, 20);
             this.txtboxPasswordLogin.TabIndex = 4;
-
             // 
             // label2
             // 
@@ -93,7 +87,6 @@ namespace TemplateTPIntegrador
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Contraseña";
-
             // 
             // button2
             // 
@@ -104,7 +97,6 @@ namespace TemplateTPIntegrador
             this.button2.Text = "Olvide mi contraseña";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-
             // 
             // Errores_login
             // 
@@ -115,13 +107,12 @@ namespace TemplateTPIntegrador
             this.Errores_login.TabIndex = 7;
             this.Errores_login.Text = "errores";
             this.Errores_login.Visible = false;
-
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(242, 297);
+            this.ClientSize = new System.Drawing.Size(434, 298);
             this.Controls.Add(this.Errores_login);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
@@ -134,6 +125,7 @@ namespace TemplateTPIntegrador
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
