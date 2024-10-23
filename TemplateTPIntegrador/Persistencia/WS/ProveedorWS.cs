@@ -13,7 +13,7 @@ namespace Persistencia
 {
     public class ProveedorWS
     {
-        public void AgregarProveedor (AltaProveedor altaProveedor)
+        public void AgregarProveedor(AltaProveedor altaProveedor)
         {
             //Define la ruta para la API que agrega un proveedor (POST).
             String path = "/api/Proveedor/AgregarProveedor";
@@ -133,7 +133,7 @@ namespace Persistencia
             return proveedores;
 
         }
-        public void ReactivarProveedor (String idProveedor)
+        public void ReactivarProveedor(String idProveedor)
         {
             Dictionary<String, String> datos = new Dictionary<String, String>
             {
@@ -153,6 +153,5 @@ namespace Persistencia
                 throw new Exception("Error al reactivar al Proveedor.");
             }
         }
-
     }
 }
