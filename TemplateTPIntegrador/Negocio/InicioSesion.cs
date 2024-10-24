@@ -42,11 +42,11 @@ namespace Negocio
 
         }
 
-        public void TraerHost(string id_usuario) 
+        public string TraerHost(string id_usuario) 
         
         
         {
-        
+            return id_usuario;
         
         }
 
