@@ -37,10 +37,16 @@ namespace TemplateTPIntegrador
             // Si no hay errores, proceder con la validación final de los datos ingresados
             if (!Errores_login.Visible)
             {
-                // Rellena aquí la validación de datos (por ejemplo, intentar hacer el login)
-                // Este bloque se ejecutará solo si no hay errores
-                // Ejemplo:
-                MessageBox.Show("hola");
+          
+                InicioSesion inicioSesion = new InicioSesion();
+                string id_usuario = inicioSesion.HacerLogin(txtboxUsernameLogin.Text, txtboxPasswordLogin.Text);
+                
+                if(id_usuario != null)
+
+                {
+                    inicioSesion.GuardarDatos(id_usuario);
+                }
+                   
             }
         }
 
