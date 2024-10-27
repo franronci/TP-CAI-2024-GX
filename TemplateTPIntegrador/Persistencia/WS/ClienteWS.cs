@@ -47,8 +47,43 @@ namespace Persistencia
 
         }
 
-        //Modifica los datos de un cliente existente.
-        public void ModificarCliente(Guid idCliente, String direccion, String telefono, String email)
+        // Obtiene un cliente específico desde el servicio web por su ID.
+        public ClienteWS getClienteById(string idCliente)
+        {
+            // Define la ruta para la API con el ID del cliente.
+            String path = $"/api/Cliente/GetCliente/{idCliente}";
+
+            ClienteWS cliente = null;
+            try
+            {
+                // Realiza una solicitud HTTP GET utilizando un helper (WebHelper.Get).
+                HttpResponseMessage response = WebHelper.Get(path);
+
+                // Si la respuesta es exitosa (IsSuccessStatusCode), lee el contenido de la respuesta y deserializa el JSON en un objeto Cliente.
+                if (response.IsSuccessStatusCode)
+                {
+                    var contentStream = response.Content.ReadAsStringAsync().Result;
+                    cliente = JsonConvert.DeserializeObject<ClienteWS>(contentStream);
+                }
+                else
+                {
+                    // Imprime un mensaje en la consola si la respuesta contiene un error.
+                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Muestra cualquier excepción que ocurra durante la solicitud.
+                Console.WriteLine($"Exception: {ex.Message}");
+            }
+
+            return cliente;
+        }
+
+
+
+            //Modifica los datos de un cliente existente.
+            public void ModificarCliente(Guid idCliente, String direccion, String telefono, String email)
         {
             //Define una ruta para la API que maneja la actualización (PATCH).
             String path = "/api/Cliente/PatchCliente";

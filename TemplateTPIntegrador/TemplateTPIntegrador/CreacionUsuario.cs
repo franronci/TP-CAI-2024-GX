@@ -75,13 +75,13 @@ namespace TemplateTPIntegrador
             List<string> errores = new List<string>();
 
             // Validar que no haya campos vacíos
-            if (validarIntegridad.validarStringVacio(nombre) ||
-       validarIntegridad.validarStringVacio(apellido) ||
-       validarIntegridad.validarStringVacio(username) ||
-       validarIntegridad.validarStringVacio(documento) ||
-       validarIntegridad.validarStringVacio(mail) ||
-       validarIntegridad.validarStringVacio(rol) ||
-       validarIntegridad.validarStringVacio(nacimiento))
+            if (validarIntegridad.ValidarStringVacio(nombre) ||
+                validarIntegridad.ValidarStringVacio(apellido) ||
+                 validarIntegridad.ValidarStringVacio(username) ||
+                validarIntegridad.ValidarStringVacio(documento) ||
+                validarIntegridad.ValidarStringVacio(mail) ||
+                validarIntegridad.ValidarStringVacio(rol) ||
+                validarIntegridad.ValidarStringVacio(nacimiento))
             {
                 errores.Add("No puede dejar ningún campo vacío.");
             }
@@ -89,12 +89,12 @@ namespace TemplateTPIntegrador
 
 
             // Validar que el username no contenga el nombre ni el apellido del usuario
-            if (validarNegocio.validarNombreApellido(nombre, apellido, username))
+            if (validarNegocio.ValidarNombreApellido(nombre, apellido, username))
             {
                 errores.Add("El nombre de usuario no puede contener ni su nombre ni su apellido.");
             }
 
-            if (validarNegocio.validarLargoUserPass(username))
+            if (validarNegocio.ValidarLongitudContraseña(username))
             {
                 errores.Add("El usuario debe tener entre 8 y 15 caracteres.");
             }
