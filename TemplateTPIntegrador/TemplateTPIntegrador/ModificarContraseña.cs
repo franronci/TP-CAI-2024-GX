@@ -42,8 +42,12 @@ namespace TemplateTPIntegrador
                 MessageBox.Show("Contraseña cambiada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-            
+
+        private void ValidarCamposContraseña(object value1, object value2)
+        {
+            throw new NotImplementedException();
         }
+
         private void ValidarCamposContraseña(object sender, EventArgs e)
         {
             ValidacionesDeNegocio validarNegocio = new ValidacionesDeNegocio();
@@ -55,7 +59,7 @@ namespace TemplateTPIntegrador
             List<string> errores = new List<string>();
 
             if (validarIntegridad.ValidarStringVacio(contraseñaActual) ||
-               validarIntegridad.ValidarStringVacio(nuevaContraseña)
+               validarIntegridad.ValidarStringVacio(nuevaContraseña))
             {
                 errores.Add("No puede dejar ningún campo vacío.");
             }
@@ -77,7 +81,7 @@ namespace TemplateTPIntegrador
             else
             {
                 lbErroresContraseña.Visible = false; // Oculta el Label si no hay errores
-                
+
             }
 
 
@@ -86,6 +90,7 @@ namespace TemplateTPIntegrador
 
 
 
-
     }
+       
+
 }

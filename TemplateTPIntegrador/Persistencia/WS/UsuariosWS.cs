@@ -42,16 +42,16 @@ namespace Persistencia
             return idUsuario;
         }
 
-        private List<Datos.UsuarioWS> buscarDatosUsuario(String idUsuario)
+        public List<UsuarioWSDatos> buscarDatosUsuario(String idUsuario)
         {
-            List<Datos.UsuarioWS> clientes = new List<Datos.UsuarioWS>();
+            List<UsuarioWSDatos> clientes = new List<UsuarioWSDatos>();
 
             HttpResponseMessage response = WebHelper.Get("Usuario/TraerUsuariosActivos?id=" + adminId);
 
             if (response.IsSuccessStatusCode)
             {
                 var contentStream = response.Content.ReadAsStringAsync().Result;
-                List<Datos.UsuarioWS> listadoClientes = JsonConvert.DeserializeObject<List<Datos.UsuarioWS>>(contentStream);
+                List<UsuarioWSDatos> listadoClientes = JsonConvert.DeserializeObject<List<UsuarioWSDatos>>(contentStream);
                 return listadoClientes;
             }
             else

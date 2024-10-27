@@ -45,8 +45,37 @@ namespace TemplateTPIntegrador
 
                 {
                     inicioSesion.GuardarDatos(id_usuario);
+
+
+                    if (inicioSesion.TraerHost(id_usuario) == 1)
+                    {
+                        // Crear una instancia del formulario del vendedor
+                        var vendedorForm = new pantallaPrinicpalVendedor();
+                        vendedorForm.Show(); // Muestra el formulario
+                        this.Hide(); // Oculta el formulario de inicio de sesión
+                    }
+                    else if (inicioSesion.TraerHost(id_usuario) == 2)
+                    {
+                        // Crear una instancia del formulario del supervisor
+                        var supervisorForm = new pantallaPrinicpalSupervisor();
+                        supervisorForm.Show(); // Muestra el formulario
+                        this.Hide(); // Oculta el formulario de inicio de sesión
+                    }
+                    else if (inicioSesion.TraerHost(id_usuario) == 3)
+                    {
+                        // Crear una instancia del formulario del admin
+                        var adminForm = new pantallaPrinicpalAdmin();
+                        adminForm.Show(); // Muestra el formulario
+                        this.Hide(); // Oculta el formulario de inicio de sesión
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error: el usuario no tiene un rol válido.");
+                        MessageBox.Show($"ID de usuario: {id_usuario}");
+                    }
+
                 }
-                   
+
             }
         }
 
