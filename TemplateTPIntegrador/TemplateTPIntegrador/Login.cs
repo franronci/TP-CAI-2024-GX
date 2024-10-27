@@ -55,20 +55,20 @@ namespace TemplateTPIntegrador
             List<string> errores = new List<string>();
 
             // Validar que no haya campos vacíos
-            if (validarIntegridad.validarStringVacio(username) ||
-                validarIntegridad.validarStringVacio(password))
+            if (validarIntegridad.ValidarStringVacio(username) ||
+                validarIntegridad.ValidarStringVacio(password))
             {
                 errores.Add("No puede dejar ningún campo vacío.");
             }
 
             // Validar el largo del username
-            if (validarNegocio.validarLargoUserPass(username))
+            if (validarNegocio.ValidarLargoUserPass(username))
             {
                 errores.Add("El nombre de usuario debe tener entre 8 y 15 caracteres.");
             }
 
             // Validar el largo de la contraseña
-            if (validarNegocio.validarLargoUserPass(password))
+            if (validarNegocio.ValidarLargoUserPass(password))
             {
                 errores.Add("La contraseña debe tener entre 8 y 15 caracteres.");
             }
