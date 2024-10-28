@@ -37,15 +37,12 @@ namespace TemplateTPIntegrador
             // Si no hay errores, proceder con la validación final de los datos ingresados
             if (!Errores_login.Visible)
             {
-          
                 InicioSesion inicioSesion = new InicioSesion();
                 string id_usuario = inicioSesion.HacerLogin(txtboxUsernameLogin.Text, txtboxPasswordLogin.Text);
                 
                 if(id_usuario != null)
-
                 {
                     inicioSesion.GuardarDatos(id_usuario);
-
 
                     if (inicioSesion.TraerHost(id_usuario) == 1)
                     {
@@ -68,12 +65,7 @@ namespace TemplateTPIntegrador
                         adminForm.Show(); // Muestra el formulario
                         this.Hide(); // Oculta el formulario de inicio de sesión
                     }
-                    else
-                    {
-                        MessageBox.Show("Error: el usuario no tiene un rol válido.");
-                        MessageBox.Show($"ID de usuario: {id_usuario}");
-                    }
-
+                  
                 }
 
             }
