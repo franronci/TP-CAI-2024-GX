@@ -32,7 +32,7 @@ namespace Negocio
 
                 int contador_dato = traer_intentos(username);
 
-                if (contador_dato <= 3)
+                if (contador_dato < 3)
                 {
                     try
                     {
@@ -54,7 +54,6 @@ namespace Negocio
                     {
                         MessageBox.Show("Contraseña erronea");
                         contador_dato = contador_dato + 1;
-                        Console.WriteLine(contador_dato);
                         string contador_BD = contador_dato.ToString();
                         usuarioActivo.Modificar(key_llave_username_intentos, contador_BD);
                         MessageBox.Show(usuarioActivo.Buscar(key_llave_username_intentos));
