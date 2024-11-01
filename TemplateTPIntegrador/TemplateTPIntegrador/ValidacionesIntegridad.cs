@@ -8,7 +8,7 @@ namespace TemplateTPIntegrador
 {
     public class ValidacionesIntegridad
     {
-        public bool validarStringVacio(string dato)
+        public bool ValidarStringVacio(string dato)
         {
             if (dato == "")
             {
@@ -17,13 +17,5 @@ namespace TemplateTPIntegrador
             return false;
         }
 
-        public bool validarStringVaco(string dato)
-        {
-            if (dato == "")
-            {
-                return true;
-            }
-            return false;
-        }
     }
 }
