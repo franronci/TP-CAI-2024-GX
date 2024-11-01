@@ -37,10 +37,37 @@ namespace TemplateTPIntegrador
             // Si no hay errores, proceder con la validación final de los datos ingresados
             if (!Errores_login.Visible)
             {
-                // Rellena aquí la validación de datos (por ejemplo, intentar hacer el login)
-                // Este bloque se ejecutará solo si no hay errores
-                // Ejemplo:
-                MessageBox.Show("hola");
+                InicioSesion inicioSesion = new InicioSesion();
+                string id_usuario = inicioSesion.HacerLogin(txtboxUsernameLogin.Text, txtboxPasswordLogin.Text);
+                
+                if(id_usuario != null)
+                {
+                    inicioSesion.GuardarDatos(id_usuario);
+
+                    if (inicioSesion.TraerHost(id_usuario) == 1)
+                    {
+                        // Crear una instancia del formulario del vendedor
+                        var vendedorForm = new pantallaPrinicpalVendedor();
+                        vendedorForm.Show(); // Muestra el formulario
+                        this.Hide(); // Oculta el formulario de inicio de sesión
+                    }
+                    else if (inicioSesion.TraerHost(id_usuario) == 2)
+                    {
+                        // Crear una instancia del formulario del supervisor
+                        var supervisorForm = new pantallaPrinicpalSupervisor();
+                        supervisorForm.Show(); // Muestra el formulario
+                        this.Hide(); // Oculta el formulario de inicio de sesión
+                    }
+                    else if (inicioSesion.TraerHost(id_usuario) == 3)
+                    {
+                        // Crear una instancia del formulario del admin
+                        var adminForm = new pantallaPrinicpalAdmin();
+                        adminForm.Show(); // Muestra el formulario
+                        this.Hide(); // Oculta el formulario de inicio de sesión
+                    }
+                  
+                }
+
             }
         }
 
@@ -55,20 +82,20 @@ namespace TemplateTPIntegrador
             List<string> errores = new List<string>();
 
             // Validar que no haya campos vacíos
-            if (validarIntegridad.validarStringVacio(username) ||
-                validarIntegridad.validarStringVacio(password))
+            if (validarIntegridad.ValidarStringVacio(username) ||
+                validarIntegridad.ValidarStringVacio(password))
             {
                 errores.Add("No puede dejar ningún campo vacío.");
             }
 
             // Validar el largo del username
-            if (validarNegocio.validarLargoUserPass(username))
+            if (validarNegocio.ValidarLargoUserPass(username))
             {
                 errores.Add("El nombre de usuario debe tener entre 8 y 15 caracteres.");
             }
 
             // Validar el largo de la contraseña
-            if (validarNegocio.validarLargoUserPass(password))
+            if (validarNegocio.ValidarLargoUserPass(password))
             {
                 errores.Add("La contraseña debe tener entre 8 y 15 caracteres.");
             }
