@@ -19,7 +19,6 @@ namespace Datos
         public ProductoWS()
         {
         }
-
         public ProductoWS(string nombre, Int64 precio)
         {
             _nombre = nombre;

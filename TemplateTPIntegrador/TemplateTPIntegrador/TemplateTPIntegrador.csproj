@@ -47,11 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="EliminarUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EliminarUsuario.Designer.cs">
-      <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="ModificarContraseña.cs">
       <SubType>Form</SubType>
@@ -92,6 +87,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AgregarProducto.resx">
+      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreacionUsuario.resx">
       <DependentUpon>CreacionUsuario.cs</DependentUpon>
     </EmbeddedResource>
