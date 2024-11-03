@@ -31,10 +31,10 @@ namespace TemplateTPIntegrador
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            erroresMostrados = true; // Activar el flag para mostrar errores después del primer clic en Login
-            ValidarCampos(null, null); // Llamar a la validación manualmente al hacer login
+            erroresMostrados = true; 
+            ValidarCampos(null, null); 
 
-            // Si no hay errores, proceder con la validación final de los datos ingresados
+            
             if (!Errores_login.Visible)
             {
                 InicioSesion inicioSesion = new InicioSesion();
@@ -42,7 +42,7 @@ namespace TemplateTPIntegrador
                 
                 if(id_usuario != null)
                 {
-                    inicioSesion.GuardarDatos(id_usuario);
+                    inicioSesion.GuardarDatos(id_usuario, txtboxUsernameLogin.Text);
 
                     if (inicioSesion.TraerHost(id_usuario) == 1)
                     {
