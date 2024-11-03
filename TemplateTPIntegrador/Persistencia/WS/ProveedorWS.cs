@@ -42,17 +42,19 @@ namespace Persistencia
                 Console.WriteLine($"Exception: {ex.Message}");
             }
         }
-        public void ModificarProveedor(Guid idProveedor, String direccion, String telefono, String email)
+        public void ModificarProveedor(Guid id, Guid idUsuario, String direccion, String telefono, String email, String cuit)
         {
             //Define una ruta para la API que maneja la actualización (PATCH).
-            String path = "/api/Cliente/PatchCliente";
+            String path = "/api/Proveedor/ModificarProveedor";
 
             //Crea un diccionario con los datos del proveedor que se quieren modificar.
             Dictionary<string, string> map = new Dictionary<string, string>();
-            map.Add("id", idProveedor.ToString());
+            map.Add("id", id.ToString());
+            map.Add("idUsuario", idUsuario.ToString());
             map.Add("direccion", direccion);
             map.Add("telefono", telefono);
             map.Add("email", email);
+            map.Add("cuit", cuit);
 
             //Serializa este diccionario a JSON
             var jsonRequest = JsonConvert.SerializeObject(map);
@@ -77,28 +79,21 @@ namespace Persistencia
             }
 
         }
-        public void BajaProveedor(Guid idProveedor)
+        
+        public void bajaProveedor(String idAdmin, String idUsuario)
         {
-            //Define la ruta de la API para la eliminación (DELETE), incluyendo el idProveedoor como un parámetro de consulta.
-            String path = "/api/Proveedor/BajaProveedor?id=" + idProveedor;
+            string url = $"Proveedor/BajaProveedor?idAdmin={idAdmin}&idUsuario={idUsuario}";
 
-            //Envía la solicitud DELETE y maneja la respuesta de manera similar a los métodos anteriores.
-            try
+            HttpResponseMessage response = WebHelper.Delete(url);
+
+            if (response.IsSuccessStatusCode)
             {
-                HttpResponseMessage response = WebHelper.Delete(path);
-                if (response.IsSuccessStatusCode)
-                {
-                    var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
-                    string respuesta = reader.ReadToEnd();
-                }
-                else
-                {
-                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
-                }
+                Console.WriteLine("Proveedor dado de baja exitosamente.");
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine($"Exception: {ex.Message}");
+                Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                throw new Exception("Error al dar de baja al proveedor.");
             }
         }
         public List<ProveedorWS> TraerProveedores()
