@@ -62,12 +62,12 @@ namespace Persistencia
 
         }
 
-        public void altaUsuario(String idAdmin, int host, String nombre, String apellido, int dni, string direccion, string telefono, string email,
+        public string altaUsuario(String idAdmin, int host, String nombre, String apellido, int dni, string direccion, string telefono, string email,
                         string fechaNacimiento, string nombreUsuario, string contraseña)
         {
             var datos = new
             {
-                idAdmin = idAdmin,               
+                idUsuario = idAdmin,               
                 host = host,                     
                 nombre = nombre,
                 apellido = apellido,
@@ -83,33 +83,58 @@ namespace Persistencia
             var jsonData = JsonConvert.SerializeObject(datos);
 
     
-            HttpResponseMessage response = WebHelper.Post("Usuario/AltaUsuario", jsonData);
+            HttpResponseMessage response = WebHelper.Post("Usuario/AgregarUsuario", jsonData);
 
             if (response.IsSuccessStatusCode)
             {
-                Console.WriteLine("Usuario creado exitosamente.");
+                return "Usuario creado exitosamente.";
             }
             else
             {
-                Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
-                throw new Exception("Error al dar de alta al usuario.");
+                return $"Error al crear usuario: Código {(int)response.StatusCode} - {response.ReasonPhrase}";
+
             }
         }
 
-        public void bajaUsuario(String idAdmin, String idUsuario)
+        public string bajaUsuario(String idAdmin, String idUsuario)
         {
-            string url = $"Usuario/BajaUsuario?idAdmin={idAdmin}&idUsuario={idUsuario}";
-
-            HttpResponseMessage response = WebHelper.Delete(url);
-
-            if (response.IsSuccessStatusCode)
+            try
             {
-                Console.WriteLine("Usuario dado de baja exitosamente.");
+                // Construir la URL completa
+                string url = "https://cai-tp.azurewebsites.net/api/Usuario/BajaUsuario";
+
+                // Crear el cuerpo JSON requerido por la API
+                Dictionary<string, string> datos = new Dictionary<string, string>
+                {
+                    { "id", idUsuario },
+                        { "idUsuario", idAdmin }
+                };
+                var jsonData = JsonConvert.SerializeObject(datos);
+
+                // Crear el mensaje de solicitud DELETE con el cuerpo JSON
+                var request = new HttpRequestMessage
+                {
+                    Method = HttpMethod.Delete,
+                    RequestUri = new Uri(url),
+                    Content = new StringContent(jsonData, Encoding.UTF8, "application/json")
+                };
+
+                // Enviar la solicitud y obtener la respuesta
+                HttpResponseMessage response = WebHelper.httpClient.SendAsync(request).Result;
+
+                // Manejar la respuesta
+                if (response.IsSuccessStatusCode)
+                {
+                    return "Usuario dado de baja exitosamente.";
+                }
+                else
+                {
+                    return $"Error: {response.StatusCode} - {response.ReasonPhrase}";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
-                throw new Exception("Error al dar de baja al usuario.");
+                return $"Excepción al realizar la solicitud DELETE: {ex.Message}";
             }
         }
 
