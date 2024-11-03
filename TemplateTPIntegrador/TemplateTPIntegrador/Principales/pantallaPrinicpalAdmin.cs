@@ -16,5 +16,18 @@ namespace TemplateTPIntegrador
         {
             InitializeComponent();
         }
+
+        private void btnAltaUsuario_Click(object sender, EventArgs e)
+        {
+            CreacionUsuario formCreacionUsuario = new CreacionUsuario();
+            formCreacionUsuario.ShowDialog();
+        }
+
+        private void btnbajausuario_Click(object sender, EventArgs e)
+        {
+            EliminarUsuario formeliminarUsuario = new EliminarUsuario();
+            formeliminarUsuario.ShowDialog();
+
+        }
     }
 }
