@@ -44,6 +44,7 @@ namespace Negocio
                             contador_dato = 0;
                             string contador_BD = contador_dato.ToString();
                             usuarioActivo.Modificar(key_llave_username_intentos, contador_BD);
+                            SesionUsuario.IdUsuario = id_usuario;
 
                         }
 
@@ -56,7 +57,6 @@ namespace Negocio
                         contador_dato = contador_dato + 1;
                         string contador_BD = contador_dato.ToString();
                         usuarioActivo.Modificar(key_llave_username_intentos, contador_BD);
-                        MessageBox.Show(usuarioActivo.Buscar(key_llave_username_intentos));
                         return null;
                     }
                 }
@@ -80,12 +80,14 @@ namespace Negocio
         }
 
 
-        public void GuardarDatos(string id_usuario)
+        public void GuardarDatos(string id_usuario,string username)
         {
             DBHelper baseDatos = new DBHelper("DatosUsuario");
 
-            string key_llave_id = $"id_usuario_{id_usuario}";
-            string key_llave_host = $"host_{id_usuario}";
+            string key_llave_id = username;
+            
+            string key_llave_host = $"{username}_host";
+            
             baseDatos.Insertar(key_llave_id, id_usuario);
 
             string host_BD = TraerHost(id_usuario).ToString();
@@ -120,9 +122,7 @@ namespace Negocio
             DBHelper baseDatos = new DBHelper("ContadorIntentos");
             string key_llave_username_intentos = username;
             string cant_string = contador_dato.ToString();
-            baseDatos.Insertar(key_llave_username_intentos, cant_string);
-         
-                 
+            baseDatos.Insertar(key_llave_username_intentos, cant_string);                 
 
         }
 
@@ -163,8 +163,10 @@ namespace Negocio
 
         }
 
-
-
+    }
+    public static class SesionUsuario
+    {
+        public static string IdUsuario { get; set; }
     }
 }
 

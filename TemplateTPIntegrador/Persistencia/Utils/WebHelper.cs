@@ -9,7 +9,7 @@ namespace Persistencia.Utils
 {
     public class WebHelper
     {
-        static HttpClient httpClient = new HttpClient();
+        public static HttpClient httpClient = new HttpClient();
         static String rutaBase = "https://cai-tp.azurewebsites.net/api/";
         public static HttpResponseMessage Get(string url)
         {

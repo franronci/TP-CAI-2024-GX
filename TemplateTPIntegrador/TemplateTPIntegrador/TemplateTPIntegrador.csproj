@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="EliminarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarUsuario.Designer.cs">
+      <DependentUpon>EliminarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModificarContraseña.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CreacionUsuario.resx">
       <DependentUpon>CreacionUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarUsuario.resx">
+      <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarContraseña.resx">
       <DependentUpon>ModificarContraseña.cs</DependentUpon>
