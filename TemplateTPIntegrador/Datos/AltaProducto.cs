@@ -8,14 +8,14 @@ namespace Datos
 {
     public class AltaProducto
     {
-        String _idCategoria;
-        String _idUsuario;
-        String _idProveedor;
-        String _nombre;
-        String _precio;
-        String _stock;
+        int _idCategoria;
+        string _idUsuario;
+        string _idProveedor;
+        string _nombre;
+        int _precio;
+        int _stock;
 
-        public AltaProducto(string idCategoria, string idUsuario, string idProveedor, string nombre, string precio, string stock)
+        public AltaProducto(int idCategoria, string idUsuario, string idProveedor, string nombre, int precio, int stock)
         {
             _idCategoria = idCategoria;
             _idUsuario = idUsuario;
@@ -25,11 +25,11 @@ namespace Datos
             _stock = stock;
         }
 
-        public string IdProducto { get => _idCategoria; set => _idCategoria = value; }
+        public int IdProducto { get => _idCategoria; set => _idCategoria = value; }
         public string IdUsuario { get => _idUsuario; set => _idUsuario = value; }
         public string IdProveedor { get => _idProveedor; set => _idProveedor = value; }
         public string Nombre { get => _nombre; set => _nombre = value; }
-        public string Precio { get => _precio; set => _precio = value; }
-        public string Stock { get => _stock; set => _stock = value; }
+        public int Precio { get => _precio; set => _precio = value; }
+        public int Stock { get => _stock; set => _stock = value; }
     }
 }

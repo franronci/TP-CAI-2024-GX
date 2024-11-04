@@ -11,7 +11,7 @@ using Datos;
 
 namespace Persistencia
 {
-    internal class ProductoWS
+    public class ProductoWS
     {
         public void AgregarProducto(AltaProducto altaProducto)
         {
