@@ -42,12 +42,12 @@ namespace Persistencia
                 Console.WriteLine($"Exception: {ex.Message}");
             }
         }
-        public List<DatosProductoWS> getProductos()
+        public List<ProductoWS> getProductos()
         {
             //Define una ruta (path) para la API
             String path = "/api/Producto/TraerProductos";
 
-            List<DatosProductoWS> productos = new List<DatosProductoWS>();
+            List<ProductoWS> productos = new List<ProductoWS>();
             try
             {
                 //Realiza una solicitud HTTP GET utilizando un helper (WebHelper.Get).
@@ -57,7 +57,7 @@ namespace Persistencia
                 if (response.IsSuccessStatusCode)
                 {
                     var contentStream = response.Content.ReadAsStringAsync().Result;
-                    List<DatosProductoWS> listadoProductos = JsonConvert.DeserializeObject<List<DatosProductoWS>>(contentStream);
+                    List<ProductoWS> listadoProductos = JsonConvert.DeserializeObject<List<ProductoWS>>(contentStream);
                     return listadoProductos;
                 }
 
@@ -96,17 +96,17 @@ namespace Persistencia
 
         }
 
-        public void ModificarProducto(string idProducto, string idUsuario, int Precio, int Stock)
+        public void ModificarProducto(Guid id, Guid idUsuario, String nombre, String precio)
         {
             //Define una ruta para la API que maneja la actualización (PATCH).
             String path = "/api/Producto/ModificarProducto";
 
             //Crea un diccionario con los datos del producto que se quieren modificar.
             Dictionary<string, string> map = new Dictionary<string, string>();
-            map.Add("id", idProducto.ToString());
+            map.Add("id", id.ToString());
             map.Add("idUsuario", idUsuario.ToString());
-            map.Add("Precio", Precio.ToString());
-            map.Add("Stock", Stock.ToString());
+            map.Add("nombre", nombre);
+            map.Add("precio", precio);
 
             //Serializa este diccionario a JSON
             var jsonRequest = JsonConvert.SerializeObject(map);
@@ -132,32 +132,20 @@ namespace Persistencia
 
         }
 
-        public void bajaProducto(string idProducto)
+        public void bajaProducto(String idAdmin, String idUsuario)
         {
-            Dictionary<string, string> map = new Dictionary<string, string>();
-            map.Add("id", idProducto.ToString());
-            map.Add("idUsuario", "70b37dc1-8fde-4840-be47-9ababd0ee7e5");
+            string url = $"Producto/BajaProducto?idAdmin={idAdmin}&idUsuario={idUsuario}";
 
-            var jsonRequest = JsonConvert.SerializeObject(map);
+            HttpResponseMessage response = WebHelper.Delete(url);
 
-            String path = "/api/Producto/BajaProducto";
-
-            try
+            if (response.IsSuccessStatusCode)
             {
-                HttpResponseMessage response = WebHelper.DeleteWithBody(path, jsonRequest);
-                if (response.IsSuccessStatusCode)
-                {
-                    var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
-                    string respuesta = reader.ReadToEnd();
-                }
-                else
-                {
-                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
-                }
+                Console.WriteLine("Producto dado de baja exitosamente.");
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine($"Exception: {ex.Message}");
+                Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                throw new Exception("Error al dar de baja al Producto.");
             }
         }
 
