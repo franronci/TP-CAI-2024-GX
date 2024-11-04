@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAltaUsuario = new System.Windows.Forms.Button();
             this.btnbajausuario = new System.Windows.Forms.Button();
+            this.btnActivarusuario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -63,11 +64,22 @@
             this.btnbajausuario.UseVisualStyleBackColor = true;
             this.btnbajausuario.Click += new System.EventHandler(this.btnbajausuario_Click);
             // 
+            // btnActivarusuario
+            // 
+            this.btnActivarusuario.Location = new System.Drawing.Point(356, 136);
+            this.btnActivarusuario.Name = "btnActivarusuario";
+            this.btnActivarusuario.Size = new System.Drawing.Size(258, 99);
+            this.btnActivarusuario.TabIndex = 3;
+            this.btnActivarusuario.Text = "Activar usuario";
+            this.btnActivarusuario.UseVisualStyleBackColor = true;
+            this.btnActivarusuario.Click += new System.EventHandler(this.btnActivarusuario_Click);
+            // 
             // pantallaPrinicpalAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnActivarusuario);
             this.Controls.Add(this.btnbajausuario);
             this.Controls.Add(this.btnAltaUsuario);
             this.Controls.Add(this.label1);
@@ -83,5 +95,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAltaUsuario;
         private System.Windows.Forms.Button btnbajausuario;
+        private System.Windows.Forms.Button btnActivarusuario;
     }
 }

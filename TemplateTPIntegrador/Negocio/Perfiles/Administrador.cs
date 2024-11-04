@@ -1,4 +1,5 @@
 ﻿using Persistencia;
+using Persistencia.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,6 +71,26 @@ namespace Negocio
         }
 
 
+
+        public string activarUsuario(string username)
+        {
+
+            DBHelper usuarioActivo = new DBHelper("ContadorIntentos");
+
+            string resultado =  usuarioActivo.Buscar(username);
+
+            if (resultado != null)
+            {
+                usuarioActivo.Modificar(username, "0");
+                return "El usuario fue activado con exito!";
+
+            }
+            else
+            {
+                return "El usuario no existe";
+            }
+
+        }
 
     }
 }
