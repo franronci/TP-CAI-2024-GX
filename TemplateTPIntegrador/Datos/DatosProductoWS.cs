@@ -18,10 +18,15 @@ namespace Datos
         public DatosProductoWS()
         {
         }
-        public DatosProductoWS(string nombre, int precio)
+        public DatosProductoWS(Guid Id, int idCategoria, string nombre, DateTime fechaAlta, DateTime fechaBaja, int precio, int stock)
         {
+            _id = Id;
+            _idCategoria = idCategoria;
             _nombre = nombre;
+            _fechaAlta = fechaAlta;
+            _fechaBaja = fechaBaja;
             _precio = precio;
+            _stock = stock;
         }
 
         public int IdCategoria { get => _idCategoria; set => _idCategoria = value; }
