@@ -48,8 +48,6 @@ namespace Negocio
             string mensaje = usuariosWS.bajaUsuario(SesionUsuario.IdUsuario, id_eliminar);
             
             MessageBox.Show(mensaje);   
-
-
         }
 
 
