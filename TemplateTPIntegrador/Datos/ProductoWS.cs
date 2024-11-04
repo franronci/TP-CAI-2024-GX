@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    class ProductoWS
+    public class ProductoWS
     {
         Int64 _idCategoria;
         Guid _idUsuario;
