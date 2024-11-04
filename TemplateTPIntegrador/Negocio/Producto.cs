@@ -5,26 +5,35 @@ using System.Text;
 using System.Threading.Tasks;
 using Datos;
 using Persistencia;
+using Persistencia.Utils;
 
 namespace Negocio
 {
-    public abstract class Producto
+    public abstract class ProductoNegocio
     {
-        public void NegocioAgregarProducto(Datos.ProductoWS producto)
+        private ProductoWS producto = new ProductoWS();
+        public string idUsuario = "70b37dc1-8fde-4840-be47-9ababd0ee7e5";
+
+        public List<DatosProductoWS> listarProductos()
         {
-            if (producto == null) throw new ArgumentNullException(nameof(producto));
-            if (string.IsNullOrEmpty(producto.Nombre)) throw new ArgumentException("El nombre del producto es requerido.");
-            if (producto.Precio <= 0) throw new ArgumentException("El precio debe ser mayor a cero.");
-            producto.FechaAlta = DateTime.Now;
-            
+            return producto.getProductos();
+        }
+
+        public void AgregarProductos(int idCategoria, string idUsuario, string idProveedor, string Nombre, int Precio, int Stock)
+        {
+            AltaProducto altaProducto = new AltaProducto(idCategoria, idUsuario, idProveedor, Nombre, Precio, Stock);
+            producto.AgregarProducto(altaProducto);
+        }
+
+        public void ModificarProducto(string idProducto, string idUsuario, int Precio, int Stock)
+        {
+            producto.ModificarProducto(idProducto, idUsuario, Precio, Stock);
 
         }
 
-        public void ModificarProducto(Datos.ProductoWS producto)
+        public void BorrarProducto(string idProducto)
         {
-            if (producto == null) throw new ArgumentNullException(nameof(producto));
-            if (string.IsNullOrEmpty(producto.Nombre)) throw new ArgumentException("El nombre del producto es requerido.");
-             
+            producto.bajaProducto(idProducto);
+        }
     }
-}
 }
