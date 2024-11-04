@@ -6,31 +6,29 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class ProductoWS
+    public class DatosProductoWS
     {
-        Int64 _idCategoria;
-        Guid _idUsuario;
-        Guid _idProveedor;
+        int _idCategoria;
+        Guid _id;
         String _nombre;
-        Int64 _precio;
-        Int64 _stock;
+        int _precio;
+        int _stock;
         DateTime _fechaAlta;
         DateTime? _fechaBaja;
-        public ProductoWS()
+        public DatosProductoWS()
         {
         }
-        public ProductoWS(string nombre, Int64 precio)
+        public DatosProductoWS(string nombre, int precio)
         {
             _nombre = nombre;
             _precio = precio;
         }
 
-        public Int64 IdCategoria { get => _idCategoria; set => _idCategoria = value; }
-        public Guid IdUsuario { get => _idUsuario; set => _idUsuario = value; }
-        public Guid IdProveedor { get => _idProveedor; set => _idProveedor = value; }
+        public int IdCategoria { get => _idCategoria; set => _idCategoria = value; }
+        public Guid Id { get => _id; set => _id = value; }
         public string Nombre { get => _nombre; set => _nombre = value; }
-        public Int64 Precio { get => _precio; set => _precio = value; }
-        public Int64 Stock { get => _stock; set => _stock = value; }
+        public int Precio { get => _precio; set => _precio = value; }
+        public int Stock { get => _stock; set => _stock = value; }
         public DateTime FechaAlta { get => _fechaAlta; set => _fechaAlta = value; }
         public DateTime? FechaBaja { get => _fechaBaja; set => _fechaBaja = value; }
 
