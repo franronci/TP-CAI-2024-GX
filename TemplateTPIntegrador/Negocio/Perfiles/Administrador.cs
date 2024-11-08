@@ -76,12 +76,17 @@ namespace Negocio
         {
 
             DBHelper usuarioActivo = new DBHelper("ContadorIntentos");
-
+            UsuariosWS usuarios = new UsuariosWS();
+            DBHelper usuarioInactivo = new DBHelper("UsuariosInactivos");
+            string id_activar = usuarioInactivo.Buscar(username);
             string resultado =  usuarioActivo.Buscar(username);
 
             if (resultado != null)
             {
+
                 usuarioActivo.Modificar(username, "0");
+                usuarioInactivo.Borrar(username);
+                usuarios.reactivarUsuario(id_activar, SesionUsuario.IdUsuario);
                 return "El usuario fue activado con exito!";
 
             }
