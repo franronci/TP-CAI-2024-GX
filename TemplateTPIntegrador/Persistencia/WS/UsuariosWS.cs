@@ -100,10 +100,10 @@ namespace Persistencia
         {
             try
             {
-                // Construir la URL completa
+                
                 string url = "https://cai-tp.azurewebsites.net/api/Usuario/BajaUsuario";
 
-                // Crear el cuerpo JSON requerido por la API
+                
                 Dictionary<string, string> datos = new Dictionary<string, string>
                 {
                     { "id", idUsuario },
@@ -111,7 +111,7 @@ namespace Persistencia
                 };
                 var jsonData = JsonConvert.SerializeObject(datos);
 
-                // Crear el mensaje de solicitud DELETE con el cuerpo JSON
+                
                 var request = new HttpRequestMessage
                 {
                     Method = HttpMethod.Delete,
@@ -119,10 +119,8 @@ namespace Persistencia
                     Content = new StringContent(jsonData, Encoding.UTF8, "application/json")
                 };
 
-                // Enviar la solicitud y obtener la respuesta
                 HttpResponseMessage response = WebHelper.httpClient.SendAsync(request).Result;
 
-                // Manejar la respuesta
                 if (response.IsSuccessStatusCode)
                 {
                     return "Usuario dado de baja exitosamente.";
@@ -139,26 +137,32 @@ namespace Persistencia
         }
 
 
-        public void reactivarUsuario(String idUsuario)
+        public string reactivarUsuario(string id, string idUsuario)
         {
-            Dictionary<String, String> datos = new Dictionary<String, String>
+        
+            var datos = new
             {
-                { "idUsuario", idUsuario }
+                id = id,
+                idUsuario = idUsuario
             };
 
+            
             var jsonData = JsonConvert.SerializeObject(datos);
+
+                       
             HttpResponseMessage response = WebHelper.Patch("Usuario/ReactivarUsuario", jsonData);
 
+           
             if (response.IsSuccessStatusCode)
             {
-                Console.WriteLine("Usuario reactivado exitosamente.");
+                return "Usuario reactivado exitosamente.";
             }
             else
             {
-                Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
                 throw new Exception("Error al reactivar al usuario.");
             }
         }
+
 
         public void cambiarContraseña(String nombreUsuario,String  viejaContraseña ,String nuevaContraseña)
         {

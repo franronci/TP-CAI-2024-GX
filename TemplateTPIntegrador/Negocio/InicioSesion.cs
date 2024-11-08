@@ -60,10 +60,16 @@ namespace Negocio
                         return null;
                     }
                 }
-
                 else
                 {
+
+                    Administrador admin = new Administrador();
+                    string id_admin = "94b09224-5702-4bab-8304-7704ee48a386";
+                    string id_usuario = admin.traerid(username);
+
+                    usuarioInactivo(username, id_usuario);
                     MessageBox.Show("El usuario esta inactivo");
+
                     return null;
                 }
                 
@@ -160,6 +166,17 @@ namespace Negocio
                 int contador_dato = int.Parse(usuarioActivo.Buscar(key_llave_username_intentos));
                 return contador_dato;
             }
+
+        }
+
+
+        public void usuarioInactivo(string username, string id)
+        {
+
+            DBHelper usuarioInactivo = new DBHelper("UsuariosInactivos");
+            string key_inactivos = username;
+
+            usuarioInactivo.Insertar(key_inactivos, id);
 
         }
 
