@@ -88,6 +88,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cliente.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Perfiles\Administrador.cs" />
     <Compile Include="InicioSesion.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Proveedor.cs" />
     <Compile Include="ValidacionesDeNegocio.cs" />
     <Compile Include="Perfiles\Vendedor.cs" />
+    <Compile Include="Venta.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">

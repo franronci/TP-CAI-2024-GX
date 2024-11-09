@@ -14,12 +14,12 @@ namespace Persistencia
     public class ClienteWS
     {
         //Obtiene una lista de clientes desde el servicio web.
-        public List<ClienteWS> getClientes()
+        public List<DatosClienteWS> getClientes()
         {
             //Define una ruta (path) para la API
             String path = "/api/Cliente/GetClientes";
 
-            List<ClienteWS> clientes = new List<ClienteWS>();
+            List<DatosClienteWS> clientes = new List<DatosClienteWS>();
             try
             {
                 //Realiza una solicitud HTTP GET utilizando un helper (WebHelper.Get).
@@ -29,7 +29,7 @@ namespace Persistencia
                 if (response.IsSuccessStatusCode)
                 {
                     var contentStream = response.Content.ReadAsStringAsync().Result;
-                    List<ClienteWS> listadoClientes = JsonConvert.DeserializeObject<List<ClienteWS>>(contentStream);
+                    List<DatosClienteWS> listadoClientes = JsonConvert.DeserializeObject<List<DatosClienteWS>>(contentStream);
                     return listadoClientes;
                 }
 
@@ -83,7 +83,7 @@ namespace Persistencia
 
 
             //Modifica los datos de un cliente existente.
-            public void ModificarCliente(Guid idCliente, String direccion, String telefono, String email)
+            public void ModificarCliente(string idCliente, String direccion, String telefono, String email)
         {
             //Define una ruta para la API que maneja la actualización (PATCH).
             String path = "/api/Cliente/PatchCliente";
@@ -150,7 +150,7 @@ namespace Persistencia
         }
 
         //Elimina un cliente existente.
-        public void BorrarCliente(Guid idCliente)
+        public void BorrarCliente(string idCliente)
         {
             //Define la ruta de la API para la eliminación (DELETE), incluyendo el idCliente como un parámetro de consulta.
             String path = "/api/Cliente/BajaCliente?id=" + idCliente;
