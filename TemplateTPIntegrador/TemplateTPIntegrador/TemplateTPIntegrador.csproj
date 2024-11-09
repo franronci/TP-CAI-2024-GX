@@ -161,5 +161,14 @@
   <ItemGroup>
     <None Include="Resources\AE y Mapa de Procesos Valyria Home.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
