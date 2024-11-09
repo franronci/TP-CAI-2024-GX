@@ -16,5 +16,10 @@ namespace TemplateTPIntegrador
         {
             InitializeComponent();
         }
+
+        private void vtnventa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
