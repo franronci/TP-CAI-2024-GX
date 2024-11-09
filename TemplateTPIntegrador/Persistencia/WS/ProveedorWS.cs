@@ -42,19 +42,19 @@ namespace Persistencia
                 Console.WriteLine($"Exception: {ex.Message}");
             }
         }
-        public void ModificarProveedor(Guid id, Guid idUsuario, String direccion, String telefono, String email, String cuit)
+        public void ModificarProveedor(string idProveedor, string idUsuario, string Nombre, string Apellido, string email, string CUIT)
         {
             //Define una ruta para la API que maneja la actualización (PATCH).
             String path = "/api/Proveedor/ModificarProveedor";
 
             //Crea un diccionario con los datos del proveedor que se quieren modificar.
             Dictionary<string, string> map = new Dictionary<string, string>();
-            map.Add("id", id.ToString());
-            map.Add("idUsuario", idUsuario.ToString());
-            map.Add("direccion", direccion);
-            map.Add("telefono", telefono);
+            map.Add("id", idProveedor.ToString());
+            map.Add("idUsuario", "70b37dc1-8fde-4840-be47-9ababd0ee7e5");
+            map.Add("nombre", Nombre);
+            map.Add("apellido", Apellido);
             map.Add("email", email);
-            map.Add("cuit", cuit);
+            map.Add("cuit", CUIT);
 
             //Serializa este diccionario a JSON
             var jsonRequest = JsonConvert.SerializeObject(map);
@@ -80,28 +80,40 @@ namespace Persistencia
 
         }
         
-        public void bajaProveedor(String idAdmin, String idUsuario)
+        public void bajaProveedor(string idProveedor)
         {
-            string url = $"Proveedor/BajaProveedor?idAdmin={idAdmin}&idUsuario={idUsuario}";
+            Dictionary<string, string> map = new Dictionary<string, string>();
+            map.Add("id", idProveedor.ToString());
+            map.Add("idUsuario", "70b37dc1-8fde-4840-be47-9ababd0ee7e5");
 
-            HttpResponseMessage response = WebHelper.Delete(url);
+            var jsonRequest = JsonConvert.SerializeObject(map);
 
-            if (response.IsSuccessStatusCode)
+            String path = "/api/Proveedor/BajaProveedor";
+
+            try
             {
-                Console.WriteLine("Proveedor dado de baja exitosamente.");
+                HttpResponseMessage response = WebHelper.DeleteWithBody(path, jsonRequest);
+                if (response.IsSuccessStatusCode)
+                {
+                    var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
+                    string respuesta = reader.ReadToEnd();
+                }
+                else
+                {
+                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
-                throw new Exception("Error al dar de baja al proveedor.");
+                Console.WriteLine($"Exception: {ex.Message}");
             }
         }
-        public List<ProveedorWS> TraerProveedores()
+        public List<DatosProveedorWS> TraerProveedores()
         {
             //Define una ruta (path) para la API
             String path = "/api/Proveedor/TraerProveedores";
 
-            List<ProveedorWS> proveedores = new List<ProveedorWS>();
+            List<DatosProveedorWS> proveedores = new List<DatosProveedorWS>();
             try
             {
                 //Realiza una solicitud HTTP GET utilizando un helper (WebHelper.Get).
@@ -111,7 +123,7 @@ namespace Persistencia
                 if (response.IsSuccessStatusCode)
                 {
                     var contentStream = response.Content.ReadAsStringAsync().Result;
-                    List<ClienteWS> listadoClientes = JsonConvert.DeserializeObject<List<ClienteWS>>(contentStream);
+                    List<DatosProveedorWS> listadoClientes = JsonConvert.DeserializeObject<List<DatosProveedorWS>>(contentStream);
                     return proveedores;
                 }
 
