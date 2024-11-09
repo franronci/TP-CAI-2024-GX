@@ -98,6 +98,7 @@
     <Compile Include="Proveedor.cs" />
     <Compile Include="ValidacionesDeNegocio.cs" />
     <Compile Include="Perfiles\Vendedor.cs" />
+    <Compile Include="Venta.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">

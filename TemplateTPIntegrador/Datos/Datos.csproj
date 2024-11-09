@@ -44,12 +44,15 @@
     <Compile Include="AltaCliente.cs" />
     <Compile Include="AltaProducto.cs" />
     <Compile Include="AltaProveedor.cs" />
+    <Compile Include="AltaVenta.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DatosClienteWS.cs" />
     <Compile Include="DatosProductoWS.cs" />
+    <Compile Include="DatosVentaWS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DatosProveedorWS.cs" />
     <Compile Include="UsuarioWSDatos.cs" />
+    <Compile Include="VentaPorCliente.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
