@@ -29,5 +29,13 @@ namespace TemplateTPIntegrador
             formeliminarUsuario.ShowDialog();
 
         }
+
+        private void btnActivarusuario_Click(object sender, EventArgs e)
+        {
+            ActivarUsuario formactivarUsuario = new ActivarUsuario();
+
+            formactivarUsuario.ShowDialog();
+
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace Negocio
 {
     public abstract class ProductoNegocio
     {
-        private ProductoWS producto = new ProductoWS();
+        public ProductoWS producto = new ProductoWS();
         public string idUsuario = "70b37dc1-8fde-4840-be47-9ababd0ee7e5";
 
         public List<DatosProductoWS> listarProductos()
