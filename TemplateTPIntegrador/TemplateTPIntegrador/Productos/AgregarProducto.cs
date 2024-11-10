@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Persistencia;
+using Datos;
+using Negocio;
 
 namespace TemplateTPIntegrador.Productos
 {
@@ -20,6 +23,10 @@ namespace TemplateTPIntegrador.Productos
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnagregarProducto_Click(object sender, EventArgs e)
+        {
         }
     }
 }
