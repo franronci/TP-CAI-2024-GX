@@ -43,6 +43,10 @@
             this.MayudaMail = new System.Windows.Forms.Button();
             this.MayudaApellido = new System.Windows.Forms.Button();
             this.MayudaCUIT = new System.Windows.Forms.Button();
+            this.Nombre_Error = new System.Windows.Forms.TextBox();
+            this.Apellido_Error = new System.Windows.Forms.TextBox();
+            this.Mail_Error = new System.Windows.Forms.TextBox();
+            this.CUIT_Error = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -175,11 +179,52 @@
             this.MayudaCUIT.Text = "?";
             this.MayudaCUIT.UseVisualStyleBackColor = true;
             // 
+            // Nombre_Error
+            // 
+            this.Nombre_Error.BackColor = System.Drawing.SystemColors.Window;
+            this.Nombre_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Nombre_Error.ForeColor = System.Drawing.Color.Red;
+            this.Nombre_Error.Location = new System.Drawing.Point(51, 174);
+            this.Nombre_Error.Name = "Nombre_Error";
+            this.Nombre_Error.Size = new System.Drawing.Size(130, 13);
+            this.Nombre_Error.TabIndex = 15;
+            // 
+            // Apellido_Error
+            // 
+            this.Apellido_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Apellido_Error.ForeColor = System.Drawing.Color.Red;
+            this.Apellido_Error.Location = new System.Drawing.Point(292, 171);
+            this.Apellido_Error.Name = "Apellido_Error";
+            this.Apellido_Error.Size = new System.Drawing.Size(130, 13);
+            this.Apellido_Error.TabIndex = 16;
+            // 
+            // Mail_Error
+            // 
+            this.Mail_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Mail_Error.ForeColor = System.Drawing.Color.Red;
+            this.Mail_Error.Location = new System.Drawing.Point(51, 307);
+            this.Mail_Error.Name = "Mail_Error";
+            this.Mail_Error.Size = new System.Drawing.Size(130, 13);
+            this.Mail_Error.TabIndex = 17;
+            // 
+            // CUIT_Error
+            // 
+            this.CUIT_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CUIT_Error.ForeColor = System.Drawing.Color.Red;
+            this.CUIT_Error.Location = new System.Drawing.Point(292, 307);
+            this.CUIT_Error.Name = "CUIT_Error";
+            this.CUIT_Error.Size = new System.Drawing.Size(130, 13);
+            this.CUIT_Error.TabIndex = 18;
+            // 
             // AltaProveedorf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 450);
+            this.Controls.Add(this.CUIT_Error);
+            this.Controls.Add(this.Mail_Error);
+            this.Controls.Add(this.Apellido_Error);
+            this.Controls.Add(this.Nombre_Error);
             this.Controls.Add(this.MayudaCUIT);
             this.Controls.Add(this.MayudaApellido);
             this.Controls.Add(this.MayudaMail);
@@ -219,5 +264,9 @@
         private System.Windows.Forms.Button MayudaMail;
         private System.Windows.Forms.Button MayudaApellido;
         private System.Windows.Forms.Button MayudaCUIT;
+        private System.Windows.Forms.TextBox Nombre_Error;
+        private System.Windows.Forms.TextBox Apellido_Error;
+        private System.Windows.Forms.TextBox Mail_Error;
+        private System.Windows.Forms.TextBox CUIT_Error;
     }
 }
