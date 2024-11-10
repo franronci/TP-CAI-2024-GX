@@ -74,26 +74,24 @@ namespace Persistencia
             return productos;
 
         }
-
-        //No se si va a andar esto, creo que sigue la misma logica que traerUsuariosActivos
-        public List<ProductoWS> getProductosByCategoria(String idCategoria)
+        public List<DatosProductoWS> getProductosByCategoria(int idCategoria)
         {
-            List<ProductoWS> productos = new List<ProductoWS>();
+            List<DatosProductoWS> productos = new List<DatosProductoWS>();
 
-            HttpResponseMessage response = WebHelper.Get("Producto/TraerProductosPorCategooria?id=" + idCategoria);
+            // Cambiar 'id' por 'catnum' en el parámetro de la URL
+            HttpResponseMessage response = WebHelper.Get("Producto/TraerProductosPorCategoria?catnum=" + idCategoria);
 
             if (response.IsSuccessStatusCode)
             {
                 var contentStream = response.Content.ReadAsStringAsync().Result;
-                List<ProductoWS> productosCategoria = JsonConvert.DeserializeObject<List<ProductoWS>>(contentStream);
+                List<DatosProductoWS> productosCategoria = JsonConvert.DeserializeObject<List<DatosProductoWS>>(contentStream);
                 return productosCategoria;
             }
             else
             {
                 Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
-                throw new Exception("Error al momento de buscar los productos por categoria");
+                throw new Exception("Error al momento de buscar los productos por categoría");
             }
-
         }
 
         public void ModificarProducto(string idProducto, string idUsuario, int Precio, int Stock)

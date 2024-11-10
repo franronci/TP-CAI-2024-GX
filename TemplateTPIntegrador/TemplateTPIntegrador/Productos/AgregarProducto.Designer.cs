@@ -51,6 +51,7 @@
             this.btnagregarProducto.TabIndex = 0;
             this.btnagregarProducto.Text = "Agregar";
             this.btnagregarProducto.UseVisualStyleBackColor = true;
+            this.btnagregarProducto.Click += new System.EventHandler(this.btnagregarProducto_Click);
             // 
             // label1
             // 
