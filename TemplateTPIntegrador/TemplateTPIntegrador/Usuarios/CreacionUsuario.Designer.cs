@@ -1,6 +1,6 @@
 ﻿namespace TemplateTPIntegrador
 {
-    partial class CreacionUsuario
+    partial class CreacionCliente
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -277,7 +277,7 @@
             this.Controls.Add(this.NombreUsuario);
             this.Controls.Add(this.BtnCrearUsuario);
             this.Name = "CreacionUsuario";
-            this.Text = "Form1";
+            this.Text = "Crear Usuario";
             this.Load += new System.EventHandler(this.CreacionUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

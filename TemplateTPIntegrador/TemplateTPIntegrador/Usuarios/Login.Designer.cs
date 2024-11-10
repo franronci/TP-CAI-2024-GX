@@ -103,6 +103,7 @@ namespace TemplateTPIntegrador
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogin);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();

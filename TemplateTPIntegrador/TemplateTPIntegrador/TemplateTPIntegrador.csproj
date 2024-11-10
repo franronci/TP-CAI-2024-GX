@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>home_house_icon-icons.com_49851.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,29 +49,65 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActivarUsuario.cs">
+    <Compile Include="Clientes\AgregarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ActivarUsuario.Designer.cs">
+    <Compile Include="Clientes\AgregarCliente.Designer.cs">
+      <DependentUpon>AgregarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\BajaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\BajaCliente.Designer.cs">
+      <DependentUpon>BajaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\ModificarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\ModificarCliente.Designer.cs">
+      <DependentUpon>ModificarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proveedor\AltaProveedorf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedor\AltaProveedorf.Designer.cs">
+      <DependentUpon>AltaProveedorf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proveedor\BajaProveedorf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedor\BajaProveedorf.Designer.cs">
+      <DependentUpon>BajaProveedorf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proveedor\ModificarProveedorf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedor\ModificarProveedorf.Designer.cs">
+      <DependentUpon>ModificarProveedorf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\ActivarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\ActivarUsuario.Designer.cs">
       <DependentUpon>ActivarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
-    <Compile Include="EliminarUsuario.cs">
+    <Compile Include="Usuarios\EliminarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EliminarUsuario.Designer.cs">
+    <Compile Include="Usuarios\EliminarUsuario.Designer.cs">
       <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModificarContraseña.cs">
+    <Compile Include="Usuarios\ModificarContraseña.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModificarContraseña.Designer.cs">
+    <Compile Include="Usuarios\ModificarContraseña.Designer.cs">
       <DependentUpon>ModificarContraseña.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Usuarios\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Usuarios\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Principales\pantallaPrinicpalAdmin.cs">
@@ -90,27 +129,45 @@
       <DependentUpon>pantallaPrinicpalVendedor.cs</DependentUpon>
     </Compile>
     <Compile Include="ValidacionesIntegridad.cs" />
-    <Compile Include="CreacionUsuario.cs">
+    <Compile Include="Usuarios\CreacionUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreacionUsuario.Designer.cs">
+    <Compile Include="Usuarios\CreacionUsuario.Designer.cs">
       <DependentUpon>CreacionUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ActivarUsuario.resx">
+    <EmbeddedResource Include="Clientes\AgregarCliente.resx">
+      <DependentUpon>AgregarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\BajaCliente.resx">
+      <DependentUpon>BajaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\ModificarCliente.resx">
+      <DependentUpon>ModificarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedor\AltaProveedorf.resx">
+      <DependentUpon>AltaProveedorf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedor\BajaProveedorf.resx">
+      <DependentUpon>BajaProveedorf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedor\ModificarProveedorf.resx">
+      <DependentUpon>ModificarProveedorf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\ActivarUsuario.resx">
       <DependentUpon>ActivarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreacionUsuario.resx">
+    <EmbeddedResource Include="Usuarios\CreacionUsuario.resx">
       <DependentUpon>CreacionUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EliminarUsuario.resx">
+    <EmbeddedResource Include="Usuarios\EliminarUsuario.resx">
       <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModificarContraseña.resx">
+    <EmbeddedResource Include="Usuarios\ModificarContraseña.resx">
       <DependentUpon>ModificarContraseña.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Usuarios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principales\pantallaPrinicpalAdmin.resx">
@@ -157,6 +214,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\" />
+    <Folder Include="Productos\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AE y Mapa de Procesos Valyria Home.png" />
@@ -169,6 +227,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="home_house_icon-icons.com_49851.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
