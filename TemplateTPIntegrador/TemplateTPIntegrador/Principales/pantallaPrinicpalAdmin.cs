@@ -21,7 +21,7 @@ namespace TemplateTPIntegrador
 
         private void btnAltaUsuario_Click(object sender, EventArgs e)
         {
-            CreacionCliente formCreacionUsuario = new CreacionUsuario();
+            CreacionUsuario formCreacionUsuario = new CreacionUsuario();
             formCreacionUsuario.ShowDialog();
         }
 
