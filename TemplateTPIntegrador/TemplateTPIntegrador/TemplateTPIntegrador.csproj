@@ -73,6 +73,18 @@
     <Compile Include="Productos\AgregarProducto.Designer.cs">
       <DependentUpon>AgregarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos\BajaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\BajaProductos.Designer.cs">
+      <DependentUpon>BajaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\ModificarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\ModificarProductos.Designer.cs">
+      <DependentUpon>ModificarProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedor\AltaProveedorf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +171,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\AgregarProducto.resx">
       <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\BajaProductos.resx">
+      <DependentUpon>BajaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\ModificarProductos.resx">
+      <DependentUpon>ModificarProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedor\AltaProveedorf.resx">
       <DependentUpon>AltaProveedorf.cs</DependentUpon>
