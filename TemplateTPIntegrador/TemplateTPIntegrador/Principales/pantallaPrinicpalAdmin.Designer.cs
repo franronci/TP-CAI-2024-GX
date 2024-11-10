@@ -155,6 +155,7 @@
             this.btnaltaProducto.TabIndex = 10;
             this.btnaltaProducto.Text = "Alta producto";
             this.btnaltaProducto.UseVisualStyleBackColor = true;
+            this.btnaltaProducto.Click += new System.EventHandler(this.btnaltaProducto_Click);
             // 
             // btnstockCritico
             // 
@@ -191,6 +192,7 @@
             this.btnmodificarProducto.TabIndex = 14;
             this.btnmodificarProducto.Text = "Modificar producto";
             this.btnmodificarProducto.UseVisualStyleBackColor = true;
+            this.btnmodificarProducto.Click += new System.EventHandler(this.btnmodificarProducto_Click);
             // 
             // btnbajaProducto
             // 
@@ -200,6 +202,7 @@
             this.btnbajaProducto.TabIndex = 15;
             this.btnbajaProducto.Text = "Baja producto";
             this.btnbajaProducto.UseVisualStyleBackColor = true;
+            this.btnbajaProducto.Click += new System.EventHandler(this.btnbajaProducto_Click);
             // 
             // btnmodificarproveedor
             // 

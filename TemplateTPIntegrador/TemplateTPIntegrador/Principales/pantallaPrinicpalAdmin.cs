@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TemplateTPIntegrador.Productos;
 using TemplateTPIntegrador.Proveedor;
 
 namespace TemplateTPIntegrador
@@ -59,6 +60,27 @@ namespace TemplateTPIntegrador
             ModificarProveedorf formamodificarProveedor = new ModificarProveedorf();
 
             formamodificarProveedor.ShowDialog();
+        }
+
+        private void btnaltaProducto_Click(object sender, EventArgs e)
+        {
+            AgregarProducto formagregarProducto = new AgregarProducto();
+
+            formagregarProducto.ShowDialog();
+        }
+
+        private void btnbajaProducto_Click(object sender, EventArgs e)
+        {
+            BajaProductos formbajaProductos = new BajaProductos();
+
+            formbajaProductos.ShowDialog();
+        }
+
+        private void btnmodificarProducto_Click(object sender, EventArgs e)
+        {
+            ModificarProductos formmodificarProductos = new ModificarProductos();
+
+            formmodificarProductos.ShowDialog();
         }
     }
 }
