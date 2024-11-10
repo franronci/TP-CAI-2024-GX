@@ -31,5 +31,6 @@ namespace Negocio
             return ventaServicio.GetVentasCliente(idCliente);
         }
 
+
     }
 }
