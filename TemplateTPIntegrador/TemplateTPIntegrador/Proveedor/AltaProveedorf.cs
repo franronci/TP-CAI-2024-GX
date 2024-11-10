@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
+using Datos;
 
 namespace TemplateTPIntegrador.Proveedor
 {
@@ -15,6 +17,8 @@ namespace TemplateTPIntegrador.Proveedor
         public AltaProveedorf()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
+            KeyPreview = true;
         }
 
         private void label2_Click(object sender, EventArgs e)
