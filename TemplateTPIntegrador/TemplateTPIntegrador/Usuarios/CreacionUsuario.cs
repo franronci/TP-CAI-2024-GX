@@ -7,11 +7,11 @@ using System.Windows.Forms;
 
 namespace TemplateTPIntegrador
 {
-    public partial class CreacionCliente : Form
+    public partial class CreacionUsuario : Form
     {
         private bool erroresMostrados = false; 
 
-        public CreacionCliente()
+        public CreacionUsuario()
         {
             InitializeComponent();
 

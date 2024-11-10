@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>home_house_icon-icons.com_49851.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\home_house_icon-icons.com_49851.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -67,6 +67,12 @@
     <Compile Include="Clientes\ModificarCliente.Designer.cs">
       <DependentUpon>ModificarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos\AgregarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\AgregarProducto.Designer.cs">
+      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedor\AltaProveedorf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,11 @@
       <DependentUpon>ActivarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="Usuarios\CreacionUsuario1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreacionUsuario.resx</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios\EliminarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +157,9 @@
     <EmbeddedResource Include="Clientes\ModificarCliente.resx">
       <DependentUpon>ModificarCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Productos\AgregarProducto.resx">
+      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Proveedor\AltaProveedorf.resx">
       <DependentUpon>AltaProveedorf.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +174,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\CreacionUsuario.resx">
       <DependentUpon>CreacionUsuario.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CreacionUsuario1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\EliminarUsuario.resx">
       <DependentUpon>EliminarUsuario.cs</DependentUpon>
@@ -214,7 +230,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\" />
-    <Folder Include="Productos\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AE y Mapa de Procesos Valyria Home.png" />
@@ -230,6 +245,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="home_house_icon-icons.com_49851.ico" />
+    <None Include="Resources\home_house_icon-icons.com_49851.ico" />
+    <None Include="Resources\Icon1.ico" />
+    <None Include="Resources\icon.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
