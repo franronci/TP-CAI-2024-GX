@@ -19,13 +19,13 @@ namespace Negocio
             return producto.getProductos();
         }
 
-        public void AgregarProductos(int idCategoria, string idUsuario, string idProveedor, string Nombre, int Precio, int Stock)
+        public void AgregarProductos(int idCategoria, string idUsuario, string idProveedor, string Nombre, double Precio, int Stock)
         {
             AltaProducto altaProducto = new AltaProducto(idCategoria, idUsuario, idProveedor, Nombre, Precio, Stock);
             producto.AgregarProducto(altaProducto);
         }
 
-        public void ModificarProducto(string idProducto, string idUsuario, int Precio, int Stock)
+        public void ModificarProducto(string idProducto, string idUsuario, double Precio, int Stock)
         {
             producto.ModificarProducto(idProducto, idUsuario, Precio, Stock);
 

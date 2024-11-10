@@ -94,7 +94,7 @@ namespace Persistencia
             }
         }
 
-        public void ModificarProducto(string idProducto, string idUsuario, int Precio, int Stock)
+        public void ModificarProducto(string idProducto, string idUsuario, double Precio, int Stock)
         {
             //Define una ruta para la API que maneja la actualización (PATCH).
             String path = "/api/Producto/ModificarProducto";
