@@ -36,11 +36,11 @@
             // lblusuarioeliminar
             // 
             this.lblusuarioeliminar.AutoSize = true;
-            this.lblusuarioeliminar.Location = new System.Drawing.Point(133, 144);
+            this.lblusuarioeliminar.Location = new System.Drawing.Point(149, 146);
             this.lblusuarioeliminar.Name = "lblusuarioeliminar";
-            this.lblusuarioeliminar.Size = new System.Drawing.Size(90, 13);
+            this.lblusuarioeliminar.Size = new System.Drawing.Size(55, 13);
             this.lblusuarioeliminar.TabIndex = 0;
-            this.lblusuarioeliminar.Text = "Usuario a eliminar";
+            this.lblusuarioeliminar.Text = "Username";
             // 
             // btnusuarioeliminar
             // 
@@ -48,7 +48,7 @@
             this.btnusuarioeliminar.Name = "btnusuarioeliminar";
             this.btnusuarioeliminar.Size = new System.Drawing.Size(100, 23);
             this.btnusuarioeliminar.TabIndex = 1;
-            this.btnusuarioeliminar.Text = "Eliminar usuario";
+            this.btnusuarioeliminar.Text = "Eliminar";
             this.btnusuarioeliminar.UseVisualStyleBackColor = true;
             this.btnusuarioeliminar.Click += new System.EventHandler(this.btnusuarioeliminar_Click);
             // 
@@ -68,7 +68,7 @@
             this.Controls.Add(this.btnusuarioeliminar);
             this.Controls.Add(this.lblusuarioeliminar);
             this.Name = "EliminarUsuario";
-            this.Text = "EliminarUsuario";
+            this.Text = "Eliminar Usuario";
             this.ResumeLayout(false);
             this.PerformLayout();
 

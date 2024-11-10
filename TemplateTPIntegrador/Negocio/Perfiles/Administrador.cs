@@ -44,8 +44,7 @@ namespace Negocio
             string id_eliminar = traerid(username);
 
             UsuariosWS usuariosWS = new UsuariosWS();
-            Console.WriteLine(id_eliminar);
-             MessageBox.Show(SesionUsuario.IdUsuario);
+
             string mensaje = usuariosWS.bajaUsuario(SesionUsuario.IdUsuario, id_eliminar);
             
             MessageBox.Show(mensaje);   

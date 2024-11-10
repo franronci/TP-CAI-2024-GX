@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TemplateTPIntegrador
+namespace TemplateTPIntegrador.Clientes
 {
-    public partial class pantallaPrinicpalVendedor : Form
+    public partial class AgregarCliente : Form
     {
-        public pantallaPrinicpalVendedor()
+        public AgregarCliente()
         {
             InitializeComponent();
         }
 
-        private void vtnventa_Click(object sender, EventArgs e)
+        private void AgregarCliente_Load(object sender, EventArgs e)
         {
 
         }

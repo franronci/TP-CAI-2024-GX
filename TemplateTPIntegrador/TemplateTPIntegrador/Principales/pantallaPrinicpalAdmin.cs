@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TemplateTPIntegrador.Proveedor;
 
 namespace TemplateTPIntegrador
 {
@@ -36,6 +38,27 @@ namespace TemplateTPIntegrador
 
             formactivarUsuario.ShowDialog();
 
+        }
+
+        private void btnaltaProveedor_Click(object sender, EventArgs e)
+        {
+            AltaProveedorf fromaaltaProveedor = new AltaProveedorf();
+
+            fromaaltaProveedor.ShowDialog();
+        }
+
+        private void btnbajaProveedor_Click(object sender, EventArgs e)
+        {
+            BajaProveedorf formabajaProveedor = new BajaProveedorf();
+
+            formabajaProveedor.ShowDialog();
+        }
+
+        private void btnmodificarproveedor_Click(object sender, EventArgs e)
+        {
+            ModificarProveedorf formamodificarProveedor = new ModificarProveedorf();
+
+            formamodificarProveedor.ShowDialog();
         }
     }
 }

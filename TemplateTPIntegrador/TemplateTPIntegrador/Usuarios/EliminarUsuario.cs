@@ -27,6 +27,7 @@ namespace TemplateTPIntegrador
 
             administrador.eliminarUsuario(username_eliminar);
 
+            this.Close();
         }
     }
 }

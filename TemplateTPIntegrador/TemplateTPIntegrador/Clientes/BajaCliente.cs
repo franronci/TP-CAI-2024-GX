@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TemplateTPIntegrador
+namespace TemplateTPIntegrador.Clientes
 {
-    public partial class pantallaPrinicpalVendedor : Form
+    public partial class BajaCliente : Form
     {
-        public pantallaPrinicpalVendedor()
+        public BajaCliente()
         {
             InitializeComponent();
-        }
-
-        private void vtnventa_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

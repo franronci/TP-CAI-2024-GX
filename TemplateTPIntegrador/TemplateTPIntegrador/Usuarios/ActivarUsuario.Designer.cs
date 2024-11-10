@@ -69,7 +69,7 @@
             this.Controls.Add(this.btnactivarUsuario);
             this.Controls.Add(this.lblusuarioActivar);
             this.Name = "ActivarUsuario";
-            this.Text = "ActivarUsuario";
+            this.Text = "Activar Usuario";
             this.ResumeLayout(false);
             this.PerformLayout();
 
