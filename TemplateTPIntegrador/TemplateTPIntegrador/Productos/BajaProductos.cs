@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace TemplateTPIntegrador.Productos
 {
-    public partial class AgregarProducto : Form
+    public partial class BajaProductos : Form
     {
-        public AgregarProducto()
+        public BajaProductos()
         {
             InitializeComponent();
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
