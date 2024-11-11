@@ -8,7 +8,7 @@ namespace Datos
 {
     public class DatosClienteWS
     {
-        string _id;
+        Guid _id;
         String _nombre;
         String _apellido;
         int _dni;
@@ -24,7 +24,7 @@ namespace Datos
         {
         }
 
-        public DatosClienteWS(string id, string nombre, string apellido, int dni, string direccion, string telefono, string email, DateTime fechaNacimiento, DateTime fechaAlta, DateTime fechaBaja, string Host)
+        public DatosClienteWS(Guid id, string nombre, string apellido, int dni, string direccion, string telefono, string email, DateTime fechaNacimiento, DateTime fechaAlta, DateTime fechaBaja, string Host)
         {
             _id = id;
             _nombre = nombre;
@@ -39,7 +39,7 @@ namespace Datos
             _host = Host;
         }
 
-        public string Id { get => _id; set => _id = value; }
+        public Guid Id { get => _id; set => _id = value; }
         public string Nombre { get => _nombre; set => _nombre = value; }
         public string Apellido { get => _apellido; set => _apellido = value; }
         public int DNI { get => _dni; set => _dni = value; }

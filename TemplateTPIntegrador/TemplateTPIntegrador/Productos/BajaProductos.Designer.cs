@@ -68,6 +68,7 @@
             this.btnbajaProducto.TabIndex = 3;
             this.btnbajaProducto.Text = "Aceptar";
             this.btnbajaProducto.UseVisualStyleBackColor = true;
+            this.btnbajaProducto.Click += new System.EventHandler(this.btnbajaProducto_Click);
             // 
             // BajaProductos
             // 

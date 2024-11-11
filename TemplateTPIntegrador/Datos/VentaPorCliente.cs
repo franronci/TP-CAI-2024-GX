@@ -8,7 +8,7 @@ namespace Datos
 {
     public class VentaPorCliente
     {
-            string _id;
+            Guid _id;
             int _cantidad;
             DateTime _fechaAlta;
             int _estado;
@@ -17,14 +17,14 @@ namespace Datos
             {
             }
 
-            public VentaPorCliente(string idVenta, int cantidad, DateTime fechaAlta, int estado)
+            public VentaPorCliente(Guid idVenta, int cantidad, DateTime fechaAlta, int estado)
             {
                 _id = idVenta;
                 _cantidad = cantidad;
                 _fechaAlta = fechaAlta;
                 _estado = estado;
             }
-            public string Id { get => _id; set => _id = value; }
+            public Guid Id { get => _id; set => _id = value; }
             public int Cantidad { get => _cantidad; set => _cantidad = value; }
             public DateTime FechaAlta { get => _fechaAlta; set => _fechaAlta = value; }
             public int Estado { get => _estado; set => _estado = value;}

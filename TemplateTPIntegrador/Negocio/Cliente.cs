@@ -19,7 +19,7 @@ namespace Negocio
             clienteServicio.AgregarCliente(altaCliente);
         }
 
-        public void modificarCliente(string id, string direccion, string telefono, string email)
+        public void modificarCliente(Guid id, string direccion, string telefono, string email)
         {
             clienteServicio.ModificarCliente(id, direccion, telefono, email);
         }
@@ -29,7 +29,7 @@ namespace Negocio
             return clienteServicio.getClientes();
         }
 
-        public void BorrarCliente(string idCliente)
+        public void BorrarCliente(Guid idCliente)
         {
             clienteServicio.BorrarCliente(idCliente);
         }
