@@ -44,6 +44,26 @@ namespace Negocio
 
         }
 
+        public int traerStockProducto(string producto, int categoria)
+        {
+
+            ProductoWS productoWS = new ProductoWS();
+
+            List<DatosProductoWS> datosProductoWs = productoWS.getProductosByCategoria(categoria);
+
+            foreach (var producto_lista in datosProductoWs)
+            {
+
+                if (producto_lista.Nombre == producto)
+                {
+                    return producto_lista.Stock;
+                }
+            }
+
+            return -1;
+
+        }
+
 
         public List<string> traerNombreProductos(int categoria)
         {
@@ -83,7 +103,7 @@ namespace Negocio
 
         public bool hayVentaCliente(int dni)
         {
-            // Obtener el ID del cliente usando la función traerID
+            
             Guid id_cliente = traerIDcliente(dni);
 
             VentaWS venta = new VentaWS();
@@ -97,15 +117,15 @@ namespace Negocio
         {
             ClienteWS clienteWS = new ClienteWS();
 
-            // Obtiene la lista de clientes
+            
             List<DatosClienteWS> lista_clientes = clienteWS.getClientes();
 
-            // Recorre la lista y busca el cliente por DNI
+            
             foreach (var cliente in lista_clientes)
             {
-                if (cliente.DNI == dni) // Compara el DNI del cliente
+                if (cliente.DNI == dni) 
                 {
-                    return cliente.Id; // Retorna el ID si coincide
+                    return cliente.Id; 
                 }
             }
 
@@ -117,7 +137,7 @@ namespace Negocio
         {
             ClienteWS clienteWS = new ClienteWS();
 
-            // Obtiene la lista de clientes
+           
             List<DatosClienteWS> lista_clientes = clienteWS.getClientes();
 
            
@@ -129,7 +149,7 @@ namespace Negocio
                 }
             }
 
-            return ""; // Retorna una cadena vacía si no se encuentra el cliente
+            return ""; 
         }
 
         
@@ -149,30 +169,28 @@ namespace Negocio
                 }
             }
 
-            return ""; // Retorna una cadena vacía si no se encuentra el cliente
+            return "";
         }
 
-        // Función para obtener el email del cliente dado un DNI
+        
         public string traerEmailCliente(int dni)
         {
             ClienteWS clienteWS = new ClienteWS();
 
-            // Obtiene la lista de clientes
+            
             List<DatosClienteWS> lista_clientes = clienteWS.getClientes();
 
-            // Recorre la lista y busca el cliente por DNI
+            
             foreach (var cliente in lista_clientes)
             {
-                if (cliente.DNI == dni) // Compara el DNI del cliente
+                if (cliente.DNI == dni) 
                 {
-                    return cliente.Email; // Retorna el Email si coincide
+                    return cliente.Email; 
                 }
             }
 
-            return ""; // Retorna una cadena vacía si no se encuentra el cliente
+            return ""; 
         }
-
-
 
 
     }
