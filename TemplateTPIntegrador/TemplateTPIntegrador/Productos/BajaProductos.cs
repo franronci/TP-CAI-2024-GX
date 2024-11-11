@@ -20,9 +20,6 @@ namespace TemplateTPIntegrador.Productos
 
         private void btnbajaProducto_Click(object sender, EventArgs e)
         {
-            Carrito carrito = new Carrito();
-
-            Console.WriteLine(carrito.obtenerTodosLosClientes());
         }
     }
 }

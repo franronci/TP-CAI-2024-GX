@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TemplateTPIntegrador.Venta;
 
 namespace TemplateTPIntegrador
 {
@@ -19,7 +20,9 @@ namespace TemplateTPIntegrador
 
         private void vtnventa_Click(object sender, EventArgs e)
         {
+            VentaCarrito venta = new VentaCarrito();
 
+            venta.ShowDialog();
         }
     }
 }

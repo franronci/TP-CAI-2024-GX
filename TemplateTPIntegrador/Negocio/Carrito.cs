@@ -61,6 +61,7 @@ namespace Negocio
             return nombresProductos;
         }
 
+
         public Guid traerIDproducto(string nombre)
         {
             ProductoWS productoWS = new ProductoWS();
