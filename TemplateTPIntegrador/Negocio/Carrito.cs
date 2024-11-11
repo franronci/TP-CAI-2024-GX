@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Negocio
 {
@@ -17,7 +18,6 @@ namespace Negocio
             double total = precioProducto(producto, categoria) * cantidad;
 
             return total;
-
 
         }
 
@@ -61,7 +61,7 @@ namespace Negocio
             return nombresProductos;
         }
 
-        public Guid traerID(string nombre)
+        public Guid traerIDproducto(string nombre)
         {
             ProductoWS productoWS = new ProductoWS();
 
@@ -73,7 +73,39 @@ namespace Negocio
                 {
                     return producto.Id;
                 }
+            }
 
+            
+            return Guid.Empty;
+        }
+
+
+        public bool hayVentaCliente(int dni)
+        {
+            // Obtener el ID del cliente usando la función traerID
+            Guid id_cliente = traerIDcliente(dni);
+
+            VentaWS venta = new VentaWS();
+
+            List<VentaPorCliente> lista_venta_cliente = venta.GetVentasCliente(id_cliente);
+
+            return lista_venta_cliente.Count == 0;
+        }
+
+        public Guid traerIDcliente(int dni)
+        {
+            ClienteWS clienteWS = new ClienteWS();
+
+            // Obtiene la lista de clientes
+            List<DatosClienteWS> lista_clientes = clienteWS.getClientes();
+
+            // Recorre la lista y busca el cliente por DNI
+            foreach (var cliente in lista_clientes)
+            {
+                if (cliente.DNI == dni) // Compara el DNI del cliente
+                {
+                    return cliente.Id; // Retorna el ID si coincide
+                }
             }
 
             return Guid.Empty;

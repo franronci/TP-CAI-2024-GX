@@ -14,19 +14,19 @@ namespace Negocio
         {
             return ventaServicio.GetVenta();
         }
-        public void agregarVenta(string idCliente, string idUsuario, string idProducto, int cantidad)
+        public void agregarVenta(Guid idCliente, Guid idUsuario, string idProducto, int cantidad)
         {
             AltaVenta altaVenta = new AltaVenta(idCliente, idUsuario, idProducto, cantidad);
             ventaServicio.AgregarVenta(altaVenta);
 
         }
 
-        public void devolverVenta(string idVenta, string idUsuario)
+        public void devolverVenta(Guid idVenta, Guid idUsuario)
         {
             ventaServicio.DevolverVenta(idVenta, idUsuario);
         }
 
-        public List<VentaPorCliente> GetVentaPorClientes(string idCliente)
+        public List<VentaPorCliente> GetVentaPorClientes(Guid idCliente)
         {
             return ventaServicio.GetVentasCliente(idCliente);
         }
