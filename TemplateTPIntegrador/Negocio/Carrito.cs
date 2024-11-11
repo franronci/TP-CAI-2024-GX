@@ -112,6 +112,67 @@ namespace Negocio
             return Guid.Empty;
         }
 
+        
+        public string traerNombreCliente(int dni)
+        {
+            ClienteWS clienteWS = new ClienteWS();
+
+            // Obtiene la lista de clientes
+            List<DatosClienteWS> lista_clientes = clienteWS.getClientes();
+
+           
+            foreach (var cliente in lista_clientes)
+            {
+                if (cliente.DNI == dni) 
+                {
+                    return cliente.Nombre; 
+                }
+            }
+
+            return ""; // Retorna una cadena vacía si no se encuentra el cliente
+        }
+
+        
+        public string traerApellidoCliente(int dni)
+        {
+            ClienteWS clienteWS = new ClienteWS();
+
+            
+            List<DatosClienteWS> lista_clientes = clienteWS.getClientes();
+
+            
+            foreach (var cliente in lista_clientes)
+            {
+                if (cliente.DNI == dni) 
+                {
+                    return cliente.Apellido; 
+                }
+            }
+
+            return ""; // Retorna una cadena vacía si no se encuentra el cliente
+        }
+
+        // Función para obtener el email del cliente dado un DNI
+        public string traerEmailCliente(int dni)
+        {
+            ClienteWS clienteWS = new ClienteWS();
+
+            // Obtiene la lista de clientes
+            List<DatosClienteWS> lista_clientes = clienteWS.getClientes();
+
+            // Recorre la lista y busca el cliente por DNI
+            foreach (var cliente in lista_clientes)
+            {
+                if (cliente.DNI == dni) // Compara el DNI del cliente
+                {
+                    return cliente.Email; // Retorna el Email si coincide
+                }
+            }
+
+            return ""; // Retorna una cadena vacía si no se encuentra el cliente
+        }
+
+
 
 
     }

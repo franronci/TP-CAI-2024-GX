@@ -54,6 +54,9 @@
             this.txtapellidoCliente = new System.Windows.Forms.TextBox();
             this.txtnombreCliente = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtmailcliente = new System.Windows.Forms.TextBox();
+            this.btnagregarDNI = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -107,7 +110,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(38, 192);
+            this.label5.Location = new System.Drawing.Point(38, 207);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 20);
             this.label5.TabIndex = 7;
@@ -208,6 +211,7 @@
             this.btnagregarProductocarrito.TabIndex = 18;
             this.btnagregarProductocarrito.Text = "Agregar";
             this.btnagregarProductocarrito.UseVisualStyleBackColor = true;
+            this.btnagregarProductocarrito.Click += new System.EventHandler(this.btnagregarProductocarrito_Click);
             // 
             // label11
             // 
@@ -270,6 +274,7 @@
             this.txtapellidoCliente.Name = "txtapellidoCliente";
             this.txtapellidoCliente.Size = new System.Drawing.Size(100, 20);
             this.txtapellidoCliente.TabIndex = 22;
+            this.txtapellidoCliente.ReadOnly = true;
             // 
             // txtnombreCliente
             // 
@@ -277,6 +282,8 @@
             this.txtnombreCliente.Name = "txtnombreCliente";
             this.txtnombreCliente.Size = new System.Drawing.Size(100, 20);
             this.txtnombreCliente.TabIndex = 23;
+            this.txtnombreCliente.ReadOnly = true;
+
             // 
             // label12
             // 
@@ -287,11 +294,41 @@
             this.label12.TabIndex = 24;
             this.label12.Text = "Apellido";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(565, 108);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(26, 13);
+            this.label13.TabIndex = 25;
+            this.label13.Text = "Mail";
+            // 
+            // txtmailcliente
+            // 
+            this.txtmailcliente.Location = new System.Drawing.Point(568, 135);
+            this.txtmailcliente.Name = "txtmailcliente";
+            this.txtmailcliente.Size = new System.Drawing.Size(100, 20);
+            this.txtmailcliente.TabIndex = 26;
+            this.txtmailcliente.ReadOnly = true;
+            // 
+            // btnagregarDNI
+            // 
+            this.btnagregarDNI.Location = new System.Drawing.Point(55, 161);
+            this.btnagregarDNI.Name = "btnagregarDNI";
+            this.btnagregarDNI.Size = new System.Drawing.Size(64, 23);
+            this.btnagregarDNI.TabIndex = 27;
+            this.btnagregarDNI.Text = "Agregar";
+            this.btnagregarDNI.UseVisualStyleBackColor = true;
+            this.btnagregarDNI.Click += new System.EventHandler(this.btnagregarDNI_Click);
+            // 
             // VentaCarrito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 615);
+            this.Controls.Add(this.btnagregarDNI);
+            this.Controls.Add(this.txtmailcliente);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtnombreCliente);
             this.Controls.Add(this.txtapellidoCliente);
@@ -351,5 +388,8 @@
         private System.Windows.Forms.TextBox txtapellidoCliente;
         private System.Windows.Forms.TextBox txtnombreCliente;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtmailcliente;
+        private System.Windows.Forms.Button btnagregarDNI;
     }
 }
