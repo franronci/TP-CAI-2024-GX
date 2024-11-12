@@ -97,6 +97,12 @@
     <Compile Include="Proveedor\BajaProveedorf.Designer.cs">
       <DependentUpon>BajaProveedorf.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proveedor\ListaProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedor\ListaProveedores.Designer.cs">
+      <DependentUpon>ListaProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedor\ModificarProveedorf.cs">
       <SubType>Form</SubType>
     </Compile>
