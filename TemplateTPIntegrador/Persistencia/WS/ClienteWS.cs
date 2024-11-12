@@ -21,8 +21,6 @@ namespace Persistencia
 
             try
             {
-                // Imprime la URL completa para verificar
-                Console.WriteLine($"URL completa: https://cai-tp.azurewebsites.net/api/{ path}");
 
                 HttpResponseMessage response = WebHelper.Get(path);
 

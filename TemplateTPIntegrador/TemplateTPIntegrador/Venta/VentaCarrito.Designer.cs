@@ -315,6 +315,7 @@
             this.btnfinalizarCompra.TabIndex = 28;
             this.btnfinalizarCompra.Text = "Finalizar Compra";
             this.btnfinalizarCompra.UseVisualStyleBackColor = true;
+            this.btnfinalizarCompra.Click += new System.EventHandler(this.btnfinalizarCompra_Click);
             // 
             // Categoria
             // 
@@ -343,6 +344,7 @@
             // 
             this.Total.HeaderText = "Total";
             this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
             // 
             // VentaCarrito
             // 
