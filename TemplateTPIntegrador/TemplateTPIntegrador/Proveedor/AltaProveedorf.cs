@@ -117,6 +117,41 @@ namespace TemplateTPIntegrador.Proveedor
             CUIT_Box.Text = "";
         }
 
+        private void CrearProveedor()
+        {
+            Negocio.Proveedor AltaProveedor = new Negocio.Proveedor();
+            AltaProveedor.AgregarProveedor("70b37dc1-8fde-4840-be47-9ababd0ee7e5", Nombre_Box.Text, Apellido_Box.Text, Email_Box.Text, CUIT_Box.Text);
+        }
+        private void Boton_Confirmar_Click(object sender, EventArgs e)
+        {
+            int contadorErrores = ControlarCampos();
+
+            if (contadorErrores == 0)
+            {
+                CrearProveedor();
+
+                DialogResult resultadoConfirmacion = MessageBox.Show("¿Desea realizar la operación de alta para el Proveedor?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultadoConfirmacion == DialogResult.Yes)
+                {
+                    MessageBox.Show("Se ha realizado la operación de alta para el Proveedor", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    DialogResult resultadoContinuar = MessageBox.Show("¿Desea continuar dando de alta proveedores?", "Confirmar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (resultadoContinuar == DialogResult.No)
+                    {
+                        Close();
+                        ListaProveedores InterfazListaProveedores = new ListaProveedores();
+                        InterfazListaProveedores.Show();
+                    }
+                    else
+                    {
+                        Limpiar();
+                    }
+                }
+            }
+        } // Confirma todos los campos, si está todo correcto, genera un ID de proveedor.
+
         private void label2_Click(object sender, EventArgs e)
         {
 
