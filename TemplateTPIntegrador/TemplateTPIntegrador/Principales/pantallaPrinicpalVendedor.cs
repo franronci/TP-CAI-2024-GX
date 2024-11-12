@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,13 @@ namespace TemplateTPIntegrador
             VentaCarrito venta = new VentaCarrito();
 
             venta.ShowDialog();
+        }
+
+        private void btnventasporvendedor_Click(object sender, EventArgs e)
+        {
+            Carrito carrito = new Carrito();
+
+            Console.WriteLine(carrito.traerIDproducto("samsung502", 5));
         }
     }
 }
