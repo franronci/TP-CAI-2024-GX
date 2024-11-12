@@ -82,11 +82,11 @@ namespace Negocio
         }
 
 
-        public Guid traerIDproducto(string nombre)
+        public Guid traerIDproducto(string nombre, int categoria)
         {
             ProductoWS productoWS = new ProductoWS();
 
-            List<DatosProductoWS> lista_productos = productoWS.getProductos();
+            List<DatosProductoWS> lista_productos = productoWS.getProductosByCategoria(categoria);
 
             foreach (var producto in lista_productos)
             {

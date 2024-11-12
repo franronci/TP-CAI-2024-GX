@@ -46,6 +46,11 @@
             this.btnagregarProductocarrito = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.datagridcarritocompra = new System.Windows.Forms.DataGridView();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.boxProductosCategoria = new System.Windows.Forms.ComboBox();
             this.txtapellidoCliente = new System.Windows.Forms.TextBox();
             this.txtnombreCliente = new System.Windows.Forms.TextBox();
@@ -54,11 +59,8 @@
             this.txtmailcliente = new System.Windows.Forms.TextBox();
             this.btnagregarDNI = new System.Windows.Forms.Button();
             this.btnfinalizarCompra = new System.Windows.Forms.Button();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtTotalConDescuento = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridcarritocompra)).BeginInit();
             this.SuspendLayout();
@@ -245,6 +247,35 @@
             this.datagridcarritocompra.TabIndex = 20;
             this.datagridcarritocompra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Precio_unitario
+            // 
+            this.Precio_unitario.HeaderText = "Precio unitario";
+            this.Precio_unitario.Name = "Precio_unitario";
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
             // boxProductosCategoria
             // 
             this.boxProductosCategoria.FormattingEnabled = true;
@@ -296,6 +327,7 @@
             this.txtmailcliente.ReadOnly = true;
             this.txtmailcliente.Size = new System.Drawing.Size(100, 20);
             this.txtmailcliente.TabIndex = 26;
+            this.txtmailcliente.TextChanged += new System.EventHandler(this.txtmailcliente_TextChanged);
             // 
             // btnagregarDNI
             // 
@@ -317,40 +349,32 @@
             this.btnfinalizarCompra.UseVisualStyleBackColor = true;
             this.btnfinalizarCompra.Click += new System.EventHandler(this.btnfinalizarCompra_Click);
             // 
-            // Categoria
+            // label14
             // 
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            this.Categoria.ReadOnly = true;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(37, 636);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(238, 25);
+            this.label14.TabIndex = 29;
+            this.label14.Text = "Total con descuentos";
             // 
-            // Producto
+            // txtTotalConDescuento
             // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            this.Producto.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // Precio_unitario
-            // 
-            this.Precio_unitario.HeaderText = "Precio unitario";
-            this.Precio_unitario.Name = "Precio_unitario";
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
+            this.txtTotalConDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalConDescuento.Location = new System.Drawing.Point(328, 634);
+            this.txtTotalConDescuento.Name = "txtTotalConDescuento";
+            this.txtTotalConDescuento.ReadOnly = true;
+            this.txtTotalConDescuento.Size = new System.Drawing.Size(100, 29);
+            this.txtTotalConDescuento.TabIndex = 30;
             // 
             // VentaCarrito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 740);
+            this.Controls.Add(this.txtTotalConDescuento);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.btnfinalizarCompra);
             this.Controls.Add(this.btnagregarDNI);
             this.Controls.Add(this.txtmailcliente);
@@ -419,5 +443,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio_unitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtTotalConDescuento;
     }
 }

@@ -83,6 +83,7 @@
             this.btnventasporvendedor.TabIndex = 4;
             this.btnventasporvendedor.Text = "Ventas por vendedor";
             this.btnventasporvendedor.UseVisualStyleBackColor = true;
+            this.btnventasporvendedor.Click += new System.EventHandler(this.btnventasporvendedor_Click);
             // 
             // pantallaPrinicpalVendedor
             // 
