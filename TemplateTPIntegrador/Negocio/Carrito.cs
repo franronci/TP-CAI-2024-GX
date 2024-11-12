@@ -96,7 +96,6 @@ namespace Negocio
                 }
             }
 
-            
             return Guid.Empty;
         }
 
@@ -190,6 +189,12 @@ namespace Negocio
             }
 
             return ""; 
+        }
+
+        public void AgregarVentaNegocio(AltaVenta agregarVenta)
+        {
+            VentaWS ventasWS = new VentaWS();
+            ventasWS.AgregarVenta(agregarVenta);
         }
 
 

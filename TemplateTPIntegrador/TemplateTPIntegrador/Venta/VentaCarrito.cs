@@ -1,4 +1,5 @@
-﻿using Negocio;
+﻿using Datos;
+using Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,9 +7,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TemplateTPIntegrador.Venta
 {
@@ -27,29 +30,29 @@ namespace TemplateTPIntegrador.Venta
 
         private void boxCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             if (boxCategoria.SelectedIndex == -1)
             {
-               
+
                 boxProductosCategoria.DataSource = null;
                 boxProductosCategoria.Text = "Seleccione una categoría primero";
             }
             else
             {
-                
+
                 Carrito carrito = new Carrito();
 
-                
+
                 int categoria_int = int.Parse(boxCategoria.Text);
 
-                
+
                 List<string> productos = carrito.traerNombreProductos(categoria_int);
 
 
                 if (productos.Count > 0)
                 {
                     boxProductosCategoria.DataSource = productos;
-                    boxProductosCategoria.SelectedIndex = -1; 
+                    boxProductosCategoria.SelectedIndex = -1;
                     boxProductosCategoria.Text = "Seleccione un producto";
                 }
                 else
@@ -69,11 +72,11 @@ namespace TemplateTPIntegrador.Venta
                 string productoSeleccionado = boxProductosCategoria.SelectedItem.ToString();
                 int categoria = int.Parse(boxCategoria.Text);
 
-                
+
                 double precioUnitario = carrito.precioProducto(productoSeleccionado, categoria);
                 txtPreciounitario.Text = precioUnitario.ToString();
 
-                
+
                 if (int.TryParse(numericCantidad.Text, out int cantidad))
                 {
                     double total = precioUnitario * cantidad;
@@ -96,14 +99,14 @@ namespace TemplateTPIntegrador.Venta
             if (int.TryParse(txtdniclientes.Text, out int dni))
             {
                 Carrito ventacarrito = new Carrito();
-                
+
                 txtnombreCliente.Text = ventacarrito.traerNombreCliente(dni);
                 txtapellidoCliente.Text = ventacarrito.traerApellidoCliente(dni);
                 txtmailcliente.Text = ventacarrito.traerEmailCliente(dni);
             }
             else
             {
-                
+
                 txtnombreCliente.Text = "";
                 txtapellidoCliente.Text = "";
                 txtmailcliente.Text = "";
@@ -141,17 +144,17 @@ namespace TemplateTPIntegrador.Venta
         }
 
 
-        
+
         private void btnagregarProductocarrito_Click(object sender, EventArgs e)
         {
-            
+
             if (boxCategoria.SelectedItem != null && boxProductosCategoria.SelectedItem != null && numericCantidad.Value > 0 && int.TryParse(txtPreciounitario.Text, out int precioUnitario))
             {
                 Carrito carrito = new Carrito();
                 string productoSeleccionado = boxProductosCategoria.SelectedItem.ToString();
                 int categoria = int.Parse(boxCategoria.Text);
 
-                
+
                 int stockDisponible = carrito.traerStockProducto(productoSeleccionado, categoria);
                 int cantidad = (int)numericCantidad.Value;
 
@@ -160,10 +163,10 @@ namespace TemplateTPIntegrador.Venta
                     string categoriaNombre = boxCategoria.SelectedItem.ToString();
                     int total = precioUnitario * cantidad;
 
-                    
+
                     datagridcarritocompra.Rows.Add(categoriaNombre, productoSeleccionado, cantidad, precioUnitario, total);
 
-                    
+
                     boxProductosCategoria.SelectedIndex = -1;
                     boxProductosCategoria.Text = "Seleccione un producto";
                     numericCantidad.Value = 0;
@@ -181,8 +184,37 @@ namespace TemplateTPIntegrador.Venta
             }
         }
 
+  
 
+        private void btnfinalizarCompra_Click(object sender, EventArgs e)
+        {
+            if (datagridcarritocompra.Rows.Count > 0)
+            {
+                Carrito carrito = new Carrito();
+                Guid idCliente = carrito.traerIDcliente(int.Parse(txtdniclientes.Text));
+                string idUsuario = SesionUsuario.IdUsuario;
 
+                foreach (DataGridViewRow row in datagridcarritocompra.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        string producto = row.Cells[1].Value.ToString();
+                        int cantidad = Convert.ToInt32(row.Cells[2].Value);
+                        Guid idProducto = carrito.traerIDproducto(producto);
 
+                        AltaVenta altaVenta = new AltaVenta(idCliente, Guid.Parse(idUsuario), idProducto, cantidad);
+                        Console.WriteLine($"cantidad: {altaVenta.Cantidad}, producto: {altaVenta.IdProducto}, id_cliente: {altaVenta.IdCliente}, id_usuario: {Guid.Parse(idUsuario)}");
+                        carrito.AgregarVentaNegocio(altaVenta);
+                    }
+                }
+                
+                MessageBox.Show("Ventas registradas con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No hay productos en el carrito para enviar.", "Carrito vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
     }
 }

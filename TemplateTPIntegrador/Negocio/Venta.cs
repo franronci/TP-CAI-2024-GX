@@ -5,6 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Persistencia;
 using Datos;
+using Newtonsoft.Json;
+using Persistencia.Utils;
+using System.Net.Http;
+using System.Windows.Forms;
+
 namespace Negocio
 {
     public class Venta
@@ -14,7 +19,7 @@ namespace Negocio
         {
             return ventaServicio.GetVenta();
         }
-        public void agregarVenta(Guid idCliente, Guid idUsuario, string idProducto, int cantidad)
+        public void agregarVenta(Guid idCliente, Guid idUsuario, Guid idProducto, int cantidad)
         {
             AltaVenta altaVenta = new AltaVenta(idCliente, idUsuario, idProducto, cantidad);
             ventaServicio.AgregarVenta(altaVenta);
@@ -31,6 +36,6 @@ namespace Negocio
             return ventaServicio.GetVentasCliente(idCliente);
         }
 
-
+     
     }
 }

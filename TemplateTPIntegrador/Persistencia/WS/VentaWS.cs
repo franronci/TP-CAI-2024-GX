@@ -67,7 +67,7 @@ namespace Persistencia
         }
         public void AgregarVenta(AltaVenta agregarVenta)
         {
-            String path = "/api/Venta/AgregarVenta";
+            String path = "/Venta/AgregarVenta";
 
             var jsonRequest = JsonConvert.SerializeObject(agregarVenta);
 
@@ -92,6 +92,7 @@ namespace Persistencia
             }
 
         }
+
         public List<VentaPorCliente> GetVentasCliente(Guid idCliente)
         {
             String path = "/api/Venta/GetVentaByCliente?id=" + idCliente;
