@@ -30,7 +30,7 @@ namespace TemplateTPIntegrador
         {
             Carrito carrito = new Carrito();
 
-            Console.WriteLine(carrito.traerIDproducto("samsung502", 5));
+            Console.WriteLine(carrito.hayVentaCliente(42689649));
         }
     }
 }
