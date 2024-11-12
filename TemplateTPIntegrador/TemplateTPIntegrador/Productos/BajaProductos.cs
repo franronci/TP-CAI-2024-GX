@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,10 @@ namespace TemplateTPIntegrador.Productos
         public BajaProductos()
         {
             InitializeComponent();
+        }
+
+        private void btnbajaProducto_Click(object sender, EventArgs e)
+        {
         }
     }
 }

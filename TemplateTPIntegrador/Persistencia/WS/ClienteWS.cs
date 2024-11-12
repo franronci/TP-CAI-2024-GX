@@ -13,42 +13,44 @@ namespace Persistencia
 {
     public class ClienteWS
     {
-        //Obtiene una lista de clientes desde el servicio web.
+
         public List<DatosClienteWS> getClientes()
         {
-            //Define una ruta (path) para la API
-            String path = "/api/Cliente/GetClientes";
-
+            string path = "/Cliente/GetClientes";
             List<DatosClienteWS> clientes = new List<DatosClienteWS>();
+
             try
             {
-                //Realiza una solicitud HTTP GET utilizando un helper (WebHelper.Get).
+                // Imprime la URL completa para verificar
+                Console.WriteLine($"URL completa: https://cai-tp.azurewebsites.net/api/{ path}");
+
                 HttpResponseMessage response = WebHelper.Get(path);
 
-                //Si la respuesta es exitosa (IsSuccessStatusCode), lee el contenido de la respuesta y deserializa el JSON en una lista de objetos Cliente.
                 if (response.IsSuccessStatusCode)
                 {
-                    var contentStream = response.Content.ReadAsStringAsync().Result;
-                    List<DatosClienteWS> listadoClientes = JsonConvert.DeserializeObject<List<DatosClienteWS>>(contentStream);
-                    return listadoClientes;
+                    var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
+                    clientes = JsonConvert.DeserializeObject<List<DatosClienteWS>>(reader.ReadToEnd());
                 }
-
-                //Si hay un error en la respuesta o una excepción, se imprime un mensaje en la consola.
                 else
                 {
-                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                    Console.WriteLine($"Error en la solicitud: {response.StatusCode} - {response.ReasonPhrase}");
+                    Console.WriteLine("Detalles de la respuesta: " + response.Content.ReadAsStringAsync().Result);
+                    throw new Exception("Error al obtener la lista de clientes");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Exception: {ex.Message}");
+                Console.WriteLine($"Excepción: {ex.Message}");
             }
-            return clientes;
 
+            return clientes;
         }
 
+
+
+
         // Obtiene un cliente específico desde el servicio web por su ID.
-        public ClienteWS getClienteById(string idCliente)
+        public ClienteWS getClienteById(Guid idCliente)
         {
             // Define la ruta para la API con el ID del cliente.
             String path = $"/api/Cliente/GetCliente/{idCliente}";
@@ -83,7 +85,7 @@ namespace Persistencia
 
 
             //Modifica los datos de un cliente existente.
-            public void ModificarCliente(string idCliente, String direccion, String telefono, String email)
+            public void ModificarCliente(Guid idCliente, String direccion, String telefono, String email)
         {
             //Define una ruta para la API que maneja la actualización (PATCH).
             String path = "/api/Cliente/PatchCliente";
@@ -150,7 +152,7 @@ namespace Persistencia
         }
 
         //Elimina un cliente existente.
-        public void BorrarCliente(string idCliente)
+        public void BorrarCliente(Guid idCliente)
         {
             //Define la ruta de la API para la eliminación (DELETE), incluyendo el idCliente como un parámetro de consulta.
             String path = "/api/Cliente/BajaCliente?id=" + idCliente;

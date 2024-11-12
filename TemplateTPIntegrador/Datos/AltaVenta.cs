@@ -8,13 +8,13 @@ namespace Datos
 {
     public class AltaVenta
     {
-        string _idCliente;
-        string _idUsuario;
+        Guid _idCliente;
+        Guid _idUsuario;
         string _idProducto;
         int _cantidad;
 
 
-        public AltaVenta(string idCliente, string idUsuario, string idProducto, int cantidad)
+        public AltaVenta(Guid idCliente, Guid idUsuario, string idProducto, int cantidad)
         {
             _idCliente = idCliente;
             _idUsuario = idUsuario;
@@ -22,8 +22,8 @@ namespace Datos
             _cantidad = cantidad;
         }
 
-        public string IdUsuario { get => _idUsuario; set => _idUsuario = value; }
-        public string IdCliente { get => _idCliente; set => _idCliente = value; }
+        public Guid IdUsuario { get => _idUsuario; set => _idUsuario = value; }
+        public Guid IdCliente { get => _idCliente; set => _idCliente = value; }
         public string IdProducto { get => _idProducto; set => _idProducto = value; }
         public int Cantidad { get => _cantidad; set => _cantidad = value; }
     }

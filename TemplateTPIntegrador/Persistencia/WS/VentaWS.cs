@@ -38,10 +38,10 @@ namespace Persistencia
 
             return venta;
         }
-        public void DevolverVenta(string idVenta, string idUsuario)
+        public void DevolverVenta(Guid idVenta, Guid idUsuario)
         {
             String path = "/api/Venta/DevolverVenta";
-            Dictionary<string, string> map = new Dictionary<string, string>();
+            Dictionary<string, Guid> map = new Dictionary<string, Guid>();
             map.Add("id", idVenta);
             map.Add("idUsuario", idUsuario);
 
@@ -92,7 +92,7 @@ namespace Persistencia
             }
 
         }
-        public List<VentaPorCliente> GetVentasCliente(string idCliente)
+        public List<VentaPorCliente> GetVentasCliente(Guid idCliente)
         {
             String path = "/api/Venta/GetVentaByCliente?id=" + idCliente;
             List<VentaPorCliente> VentasCliente = new List<VentaPorCliente>();
