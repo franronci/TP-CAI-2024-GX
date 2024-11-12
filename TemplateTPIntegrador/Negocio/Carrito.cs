@@ -102,14 +102,13 @@ namespace Negocio
 
         public bool hayVentaCliente(int dni)
         {
-            
             Guid id_cliente = traerIDcliente(dni);
 
             VentaWS venta = new VentaWS();
 
             List<VentaPorCliente> lista_venta_cliente = venta.GetVentasCliente(id_cliente);
 
-            return lista_venta_cliente.Count == 0;
+            return lista_venta_cliente.Count > 0;
         }
 
         public Guid traerIDcliente(int dni)

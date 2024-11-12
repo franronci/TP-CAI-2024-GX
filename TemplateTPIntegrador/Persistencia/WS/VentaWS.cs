@@ -95,7 +95,7 @@ namespace Persistencia
 
         public List<VentaPorCliente> GetVentasCliente(Guid idCliente)
         {
-            String path = "/api/Venta/GetVentaByCliente?id=" + idCliente;
+            String path = "/Venta/GetVentaByCliente?id=" + idCliente;
             List<VentaPorCliente> VentasCliente = new List<VentaPorCliente>();
 
             try

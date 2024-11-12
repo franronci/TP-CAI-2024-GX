@@ -183,8 +183,10 @@ namespace TemplateTPIntegrador.Venta
 
             totalConDescuento = totalCategoria3 + totalOtrasCategorias;
 
+            bool esPrimeraCompra = !carrito.hayVentaCliente(int.Parse(txtdniclientes.Text)); // true si es primera compra
 
-            if (carrito.hayVentaCliente(int.Parse(txtdniclientes.Text)))
+            // Aplica un 5% de descuento adicional si es la primera compra
+            if (esPrimeraCompra)
             {
                 totalConDescuento -= totalConDescuento * 0.05m;
             }
