@@ -184,9 +184,7 @@ namespace TemplateTPIntegrador.Venta
             totalConDescuento = totalCategoria3 + totalOtrasCategorias;
 
 
-            bool esPrimeraCompra = !carrito.hayVentaCliente(int.Parse(txtdniclientes.Text));
-
-            if (esPrimeraCompra)
+            if (carrito.hayVentaCliente(int.Parse(txtdniclientes.Text)))
             {
                 totalConDescuento -= totalConDescuento * 0.05m;
             }
