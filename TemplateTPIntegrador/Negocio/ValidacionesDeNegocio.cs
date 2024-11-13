@@ -183,7 +183,7 @@ namespace Negocio
             // Verificar si el correo está vacío
             if (string.IsNullOrEmpty(texto))
             {
-                return "El campo de correo electrónico no puede estar vacío.";
+                return "El campo de correo no puede estar vacío.";
             }
 
             // Patrón de expresión regular para validar un correo electrónico con dominio @G3.com
@@ -193,16 +193,16 @@ namespace Negocio
             // Verificar si el correo cumple con el patrón
             if (!Regex.IsMatch(texto, patronCorreo))
             {
-                return "El correo electrónico es inválido.";
+                return "El correo es inválido.";
             }
 
             if (texto.Contains(" "))
             {
-                return "El correo electrónico no puede contener espacios en blanco.";
+                return "El correo no puede contener espacios en blanco.";
             }
             if (!Regex.IsMatch(texto, patronDominio))
             {
-                return "El correo electrónico debe ser del dominio @G3.com";
+                return "El correo debe ser del dominio @G3.com";
             }
 
             return null;
@@ -357,12 +357,12 @@ namespace Negocio
             }
 
             // Patrón de expresión regular para validar un correo electrónico con dominio @G1.com
-            string patronCorreo = @"^[a-zA-Z0-9._%+-]+@G1\.com$";
+            string patronCorreo = @"^[a-zA-Z0-9._%+-]+@G3\.com$";
 
             // Verificar si el correo cumple con el patrón
             if (!Regex.IsMatch(texto, patronCorreo))
             {
-                return "El correo electrónico debe tener el dominio @G1.com.";
+                return "El correo electrónico debe tener el dominio @G3.com.";
             }
 
             if (texto.Contains(" "))
