@@ -67,12 +67,11 @@
             this.Nombre_Label.Size = new System.Drawing.Size(44, 13);
             this.Nombre_Label.TabIndex = 1;
             this.Nombre_Label.Text = "Nombre";
-            this.Nombre_Label.Click += new System.EventHandler(this.label2_Click);
             // 
             // Label_Apellido
             // 
             this.Label_Apellido.AutoSize = true;
-            this.Label_Apellido.Location = new System.Drawing.Point(289, 121);
+            this.Label_Apellido.Location = new System.Drawing.Point(299, 121);
             this.Label_Apellido.Name = "Label_Apellido";
             this.Label_Apellido.Size = new System.Drawing.Size(44, 13);
             this.Label_Apellido.TabIndex = 2;
@@ -90,11 +89,11 @@
             // Label_CUIT
             // 
             this.Label_CUIT.AutoSize = true;
-            this.Label_CUIT.Location = new System.Drawing.Point(289, 251);
+            this.Label_CUIT.Location = new System.Drawing.Point(299, 251);
             this.Label_CUIT.Name = "Label_CUIT";
-            this.Label_CUIT.Size = new System.Drawing.Size(25, 13);
+            this.Label_CUIT.Size = new System.Drawing.Size(32, 13);
             this.Label_CUIT.TabIndex = 4;
-            this.Label_CUIT.Text = "Cuit";
+            this.Label_CUIT.Text = "CUIT";
             // 
             // Nombre_Box
             // 
@@ -105,7 +104,7 @@
             // 
             // Apellido_Box
             // 
-            this.Apellido_Box.Location = new System.Drawing.Point(292, 148);
+            this.Apellido_Box.Location = new System.Drawing.Point(302, 148);
             this.Apellido_Box.Name = "Apellido_Box";
             this.Apellido_Box.Size = new System.Drawing.Size(100, 20);
             this.Apellido_Box.TabIndex = 6;
@@ -119,7 +118,7 @@
             // 
             // CUIT_Box
             // 
-            this.CUIT_Box.Location = new System.Drawing.Point(292, 280);
+            this.CUIT_Box.Location = new System.Drawing.Point(302, 280);
             this.CUIT_Box.Name = "CUIT_Box";
             this.CUIT_Box.Size = new System.Drawing.Size(100, 20);
             this.CUIT_Box.TabIndex = 8;
@@ -130,8 +129,9 @@
             this.Boton_Confimar.Name = "Boton_Confimar";
             this.Boton_Confimar.Size = new System.Drawing.Size(75, 23);
             this.Boton_Confimar.TabIndex = 9;
-            this.Boton_Confimar.Text = "Aceptar";
+            this.Boton_Confimar.Text = "Confirmar";
             this.Boton_Confimar.UseVisualStyleBackColor = true;
+            this.Boton_Confimar.Click += new System.EventHandler(this.Boton_Confimar_Click);
             // 
             // Boton_Cancelar
             // 
@@ -141,6 +141,7 @@
             this.Boton_Cancelar.TabIndex = 10;
             this.Boton_Cancelar.Text = "Cancelar";
             this.Boton_Cancelar.UseVisualStyleBackColor = true;
+            this.Boton_Cancelar.Click += new System.EventHandler(this.Boton_Cancelar_Click_1);
             // 
             // MayudaNombre
             // 
@@ -150,6 +151,7 @@
             this.MayudaNombre.TabIndex = 11;
             this.MayudaNombre.Text = "?";
             this.MayudaNombre.UseVisualStyleBackColor = true;
+            this.MayudaNombre.Click += new System.EventHandler(this.MayudaNombre_Click);
             // 
             // MayudaMail
             // 
@@ -159,29 +161,31 @@
             this.MayudaMail.TabIndex = 12;
             this.MayudaMail.Text = "?";
             this.MayudaMail.UseVisualStyleBackColor = true;
-            this.MayudaMail.Click += new System.EventHandler(this.button1_Click);
+            this.MayudaMail.Click += new System.EventHandler(this.MayudaMail_Click);
             // 
             // MayudaApellido
             // 
-            this.MayudaApellido.Location = new System.Drawing.Point(398, 146);
+            this.MayudaApellido.Location = new System.Drawing.Point(408, 146);
             this.MayudaApellido.Name = "MayudaApellido";
             this.MayudaApellido.Size = new System.Drawing.Size(24, 23);
             this.MayudaApellido.TabIndex = 13;
             this.MayudaApellido.Text = "?";
             this.MayudaApellido.UseVisualStyleBackColor = true;
+            this.MayudaApellido.Click += new System.EventHandler(this.MayudaApellido_Click);
             // 
             // MayudaCUIT
             // 
-            this.MayudaCUIT.Location = new System.Drawing.Point(398, 278);
+            this.MayudaCUIT.Location = new System.Drawing.Point(408, 278);
             this.MayudaCUIT.Name = "MayudaCUIT";
             this.MayudaCUIT.Size = new System.Drawing.Size(24, 23);
             this.MayudaCUIT.TabIndex = 14;
             this.MayudaCUIT.Text = "?";
             this.MayudaCUIT.UseVisualStyleBackColor = true;
+            this.MayudaCUIT.Click += new System.EventHandler(this.MayudaCUIT_Click);
             // 
             // Nombre_Error
             // 
-            this.Nombre_Error.BackColor = System.Drawing.SystemColors.Window;
+            this.Nombre_Error.BackColor = System.Drawing.SystemColors.Control;
             this.Nombre_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Nombre_Error.ForeColor = System.Drawing.Color.Red;
             this.Nombre_Error.Location = new System.Drawing.Point(51, 174);
@@ -191,6 +195,7 @@
             // 
             // Apellido_Error
             // 
+            this.Apellido_Error.BackColor = System.Drawing.SystemColors.Control;
             this.Apellido_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Apellido_Error.ForeColor = System.Drawing.Color.Red;
             this.Apellido_Error.Location = new System.Drawing.Point(292, 171);
@@ -200,27 +205,29 @@
             // 
             // Mail_Error
             // 
+            this.Mail_Error.BackColor = System.Drawing.SystemColors.Control;
             this.Mail_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Mail_Error.ForeColor = System.Drawing.Color.Red;
             this.Mail_Error.Location = new System.Drawing.Point(51, 307);
             this.Mail_Error.Name = "Mail_Error";
-            this.Mail_Error.Size = new System.Drawing.Size(130, 13);
+            this.Mail_Error.Size = new System.Drawing.Size(253, 13);
             this.Mail_Error.TabIndex = 17;
             // 
             // CUIT_Error
             // 
+            this.CUIT_Error.BackColor = System.Drawing.SystemColors.Control;
             this.CUIT_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CUIT_Error.ForeColor = System.Drawing.Color.Red;
             this.CUIT_Error.Location = new System.Drawing.Point(292, 307);
             this.CUIT_Error.Name = "CUIT_Error";
-            this.CUIT_Error.Size = new System.Drawing.Size(130, 13);
+            this.CUIT_Error.Size = new System.Drawing.Size(188, 13);
             this.CUIT_Error.TabIndex = 18;
             // 
             // AltaProveedorf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 450);
+            this.ClientSize = new System.Drawing.Size(595, 447);
             this.Controls.Add(this.CUIT_Error);
             this.Controls.Add(this.Mail_Error);
             this.Controls.Add(this.Apellido_Error);
