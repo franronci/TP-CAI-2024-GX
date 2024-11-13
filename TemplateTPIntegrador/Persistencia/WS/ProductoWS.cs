@@ -16,7 +16,7 @@ namespace Persistencia
         public void AgregarProducto(AltaProducto altaProducto)
         {
             //Define la ruta para la API que agrega un producto (POST).
-            String path = "/api/Producto/AgregarProducto";
+            String path = "/Producto/AgregarProducto";
 
             //Serializa el objeto altaProveedor en formato JSON y lo envía a la API.
             var jsonRequest = JsonConvert.SerializeObject(altaProducto);
@@ -45,7 +45,7 @@ namespace Persistencia
         public List<DatosProductoWS> getProductos()
         {
             //Define una ruta (path) para la API
-            String path = "/api/Producto/TraerProductos";
+            String path = "/Producto/TraerProductos";
 
             List<DatosProductoWS> productos = new List<DatosProductoWS>();
             try
@@ -97,7 +97,7 @@ namespace Persistencia
         public void ModificarProducto(string idProducto, string idUsuario, double Precio, int Stock)
         {
             //Define una ruta para la API que maneja la actualización (PATCH).
-            String path = "/api/Producto/ModificarProducto";
+            String path = "/Producto/ModificarProducto";
 
             //Crea un diccionario con los datos del producto que se quieren modificar.
             Dictionary<string, string> map = new Dictionary<string, string>();
@@ -138,7 +138,7 @@ namespace Persistencia
 
             var jsonRequest = JsonConvert.SerializeObject(map);
 
-            String path = "/api/Producto/BajaProducto";
+            String path = "/Producto/BajaProducto";
 
             try
             {

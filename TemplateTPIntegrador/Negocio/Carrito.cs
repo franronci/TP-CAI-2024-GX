@@ -82,11 +82,11 @@ namespace Negocio
         }
 
 
-        public Guid traerIDproducto(string nombre)
+        public Guid traerIDproducto(string nombre, int categoria)
         {
             ProductoWS productoWS = new ProductoWS();
 
-            List<DatosProductoWS> lista_productos = productoWS.getProductos();
+            List<DatosProductoWS> lista_productos = productoWS.getProductosByCategoria(categoria);
 
             foreach (var producto in lista_productos)
             {
@@ -96,21 +96,19 @@ namespace Negocio
                 }
             }
 
-            
             return Guid.Empty;
         }
 
 
         public bool hayVentaCliente(int dni)
         {
-            
             Guid id_cliente = traerIDcliente(dni);
 
             VentaWS venta = new VentaWS();
 
             List<VentaPorCliente> lista_venta_cliente = venta.GetVentasCliente(id_cliente);
 
-            return lista_venta_cliente.Count == 0;
+            return lista_venta_cliente.Count > 0;
         }
 
         public Guid traerIDcliente(int dni)
@@ -190,6 +188,12 @@ namespace Negocio
             }
 
             return ""; 
+        }
+
+        public void AgregarVentaNegocio(AltaVenta agregarVenta)
+        {
+            VentaWS ventasWS = new VentaWS();
+            ventasWS.AgregarVenta(agregarVenta);
         }
 
 
