@@ -124,6 +124,46 @@ namespace TemplateTPIntegrador.Proveedor
         }
         private void Boton_Confirmar_Click(object sender, EventArgs e)
         {
+
+        } // Confirma todos los campos, si está todo correcto, genera un ID de proveedor.
+        private void Boton_Cancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Está seguro de que desea cancelar el alta del proveedor?\n\nLos cambios no se guardarán.", "Cancelar Alta de Proveedor", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (resultado == DialogResult.Yes)
+            {
+                ListaProveedores listaProveedores = new ListaProveedores();
+                listaProveedores.Show();
+                Close();
+            }
+        }
+        private void Ventana_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                DialogResult resultado = MessageBox.Show("¿Desea salir del programa?\n\nSe cerrará la ventana y no se guardarán los datos.", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    Close();
+                }
+            }
+        }
+
+        private void Boton_Cancelar_Click_1(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Está seguro de que desea cancelar el alta del proveedor?\n\nLos cambios no se guardarán.", "Cancelar Alta de Proveedor", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (resultado == DialogResult.Yes)
+            {
+                ListaProveedores listaProveedores = new ListaProveedores();
+                listaProveedores.Show();
+                Close();
+            }
+        }
+
+        private void Boton_Confimar_Click(object sender, EventArgs e)
+        {
             int contadorErrores = ControlarCampos();
 
             if (contadorErrores == 0)
@@ -150,14 +190,53 @@ namespace TemplateTPIntegrador.Proveedor
                     }
                 }
             }
-        } // Confirma todos los campos, si está todo correcto, genera un ID de proveedor.
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void MayudaNombre_Click(object sender, EventArgs e)
+        {
+            string mensaje = "Tener en cuenta para completar el nombre:\n" +
+                         "1. No se permite dejar el campo vacio.\n" +
+                         "2. Deben ser por lo menos 3 caracteres.\n" +
+                         "3. No deben ser numeros.\n" +
+                         "4. No se permiten caracteres especiales.";
+
+            MessageBox.Show(mensaje);
+        }
+
+        private void MayudaApellido_Click(object sender, EventArgs e)
+        {
+            string mensaje = "Tener en cuenta para completar el apellido:\n" +
+                         "1. No se permite dejar el campo vacio.\n" +
+                         "2. Deben ser por lo menos 3 caracteres.\n" +
+                         "3. No deben ser numeros.\n" +
+                         "4. No se permiten caracteres especiales.";
+
+            MessageBox.Show(mensaje);
+        }
+
+        private void MayudaMail_Click(object sender, EventArgs e)
+        {
+            string mensaje = "Tener en cuenta para completar el correo:\n" +
+                         "1. No se permite dejar el campo vacio.\n" +
+                         "2. El correo debe tener el dominio @G3.com.\n" +
+                         "3. El correo no puede contener espacios en blanco.\n"
+                         ;
+
+            MessageBox.Show(mensaje);
+        }
+
+        private void MayudaCUIT_Click(object sender, EventArgs e)
+        {
+            string mensaje = "Tener en cuenta para completar el CUIT:\n" +
+                          "1. No se permite dejar el campo vacio.\n" +
+                          "2. El campo CUIT debe tener exactamente 11 dígitos.\n" +
+                          "3. El campo CUIT debe contener solo dígitos numéricos.\n" +
+                          "4. El primer dígito del CUIT debe ser 2 o 3.";
+
+            MessageBox.Show(mensaje);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

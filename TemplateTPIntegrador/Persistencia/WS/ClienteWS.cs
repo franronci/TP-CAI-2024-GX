@@ -51,7 +51,7 @@ namespace Persistencia
         public ClienteWS getClienteById(Guid idCliente)
         {
             // Define la ruta para la API con el ID del cliente.
-            String path = $"/api/Cliente/GetCliente/{idCliente}";
+            String path = $"/Cliente/GetCliente/{idCliente}";
 
             ClienteWS cliente = null;
             try
@@ -86,7 +86,7 @@ namespace Persistencia
             public void ModificarCliente(Guid idCliente, String direccion, String telefono, String email)
         {
             //Define una ruta para la API que maneja la actualización (PATCH).
-            String path = "/api/Cliente/PatchCliente";
+            String path = "/Cliente/PatchCliente";
 
             //Crea un diccionario con los datos del cliente que se quieren modificar.
             Dictionary<string, string> map = new Dictionary<string, string>();
@@ -122,7 +122,7 @@ namespace Persistencia
         public void AgregarCliente(AltaCliente altaCliente)
         {
             //Define la ruta para la API que agrega un cliente (POST).
-            String path = "/api/Cliente/AgregarCliente";
+            String path = "/Cliente/AgregarCliente";
 
             //Serializa el objeto altaCliente en formato JSON y lo envía a la API.
             var jsonRequest = JsonConvert.SerializeObject(altaCliente);
@@ -153,7 +153,7 @@ namespace Persistencia
         public void BorrarCliente(Guid idCliente)
         {
             //Define la ruta de la API para la eliminación (DELETE), incluyendo el idCliente como un parámetro de consulta.
-            String path = "/api/Cliente/BajaCliente?id=" + idCliente;
+            String path = "/Cliente/BajaCliente?id=" + idCliente;
 
             //Envía la solicitud DELETE y maneja la respuesta de manera similar a los métodos anteriores.
             try

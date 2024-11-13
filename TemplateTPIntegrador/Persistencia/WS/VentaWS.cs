@@ -15,7 +15,7 @@ namespace Persistencia
     {
         public DatosVentaWS GetVenta()
         {
-            String path = "/api/Venta/GetVenta";
+            String path = "/Venta/GetVenta";
             DatosVentaWS venta = null;
 
             try
@@ -40,7 +40,7 @@ namespace Persistencia
         }
         public void DevolverVenta(Guid idVenta, Guid idUsuario)
         {
-            String path = "/api/Venta/DevolverVenta";
+            String path = "/Venta/DevolverVenta";
             Dictionary<string, Guid> map = new Dictionary<string, Guid>();
             map.Add("id", idVenta);
             map.Add("idUsuario", idUsuario);

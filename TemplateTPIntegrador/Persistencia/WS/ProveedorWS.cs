@@ -16,7 +16,7 @@ namespace Persistencia
         public void AgregarProveedor(AltaProveedor altaProveedor)
         {
             //Define la ruta para la API que agrega un proveedor (POST).
-            String path = "/api/Proveedor/AgregarProveedor";
+            String path = "/Proveedor/AgregarProveedor";
 
             //Serializa el objeto altaProveedor en formato JSON y lo envía a la API.
             var jsonRequest = JsonConvert.SerializeObject(altaProveedor);
@@ -45,7 +45,7 @@ namespace Persistencia
         public void ModificarProveedor(string idProveedor, string idUsuario, string Nombre, string Apellido, string email, string CUIT)
         {
             //Define una ruta para la API que maneja la actualización (PATCH).
-            String path = "/api/Proveedor/ModificarProveedor";
+            String path = "/Proveedor/ModificarProveedor";
 
             //Crea un diccionario con los datos del proveedor que se quieren modificar.
             Dictionary<string, string> map = new Dictionary<string, string>();
@@ -88,7 +88,7 @@ namespace Persistencia
 
             var jsonRequest = JsonConvert.SerializeObject(map);
 
-            String path = "/api/Proveedor/BajaProveedor";
+            String path = "/Proveedor/BajaProveedor";
 
             try
             {
@@ -111,7 +111,7 @@ namespace Persistencia
         public List<DatosProveedorWS> TraerProveedores()
         {
             //Define una ruta (path) para la API
-            String path = "/api/Proveedor/TraerProveedores";
+            String path = "/Proveedor/TraerProveedores";
 
             List<DatosProveedorWS> proveedores = new List<DatosProveedorWS>();
             try
