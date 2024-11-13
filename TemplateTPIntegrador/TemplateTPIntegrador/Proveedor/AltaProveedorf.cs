@@ -235,5 +235,10 @@ namespace TemplateTPIntegrador.Proveedor
 
             MessageBox.Show(mensaje);
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

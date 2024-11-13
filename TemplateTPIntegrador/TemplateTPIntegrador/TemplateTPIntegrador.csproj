@@ -196,6 +196,9 @@
     <EmbeddedResource Include="Proveedor\BajaProveedorf.resx">
       <DependentUpon>BajaProveedorf.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Proveedor\ListaProveedores.resx">
+      <DependentUpon>ListaProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Proveedor\ModificarProveedorf.resx">
       <DependentUpon>ModificarProveedorf.cs</DependentUpon>
     </EmbeddedResource>
@@ -278,6 +281,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="home_house_icon-icons.com_49851.ico" />
+    <None Include="Resources\64673.png" />
     <None Include="Resources\home_house_icon-icons.com_49851.ico" />
     <None Include="Resources\Icon1.ico" />
     <None Include="Resources\icon.bmp" />
