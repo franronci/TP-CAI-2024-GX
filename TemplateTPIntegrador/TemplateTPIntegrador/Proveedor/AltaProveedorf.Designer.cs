@@ -71,7 +71,7 @@
             // Label_Apellido
             // 
             this.Label_Apellido.AutoSize = true;
-            this.Label_Apellido.Location = new System.Drawing.Point(299, 121);
+            this.Label_Apellido.Location = new System.Drawing.Point(361, 121);
             this.Label_Apellido.Name = "Label_Apellido";
             this.Label_Apellido.Size = new System.Drawing.Size(44, 13);
             this.Label_Apellido.TabIndex = 2;
@@ -89,7 +89,7 @@
             // Label_CUIT
             // 
             this.Label_CUIT.AutoSize = true;
-            this.Label_CUIT.Location = new System.Drawing.Point(299, 251);
+            this.Label_CUIT.Location = new System.Drawing.Point(361, 251);
             this.Label_CUIT.Name = "Label_CUIT";
             this.Label_CUIT.Size = new System.Drawing.Size(32, 13);
             this.Label_CUIT.TabIndex = 4;
@@ -104,7 +104,7 @@
             // 
             // Apellido_Box
             // 
-            this.Apellido_Box.Location = new System.Drawing.Point(302, 148);
+            this.Apellido_Box.Location = new System.Drawing.Point(364, 145);
             this.Apellido_Box.Name = "Apellido_Box";
             this.Apellido_Box.Size = new System.Drawing.Size(100, 20);
             this.Apellido_Box.TabIndex = 6;
@@ -118,7 +118,7 @@
             // 
             // CUIT_Box
             // 
-            this.CUIT_Box.Location = new System.Drawing.Point(302, 280);
+            this.CUIT_Box.Location = new System.Drawing.Point(364, 280);
             this.CUIT_Box.Name = "CUIT_Box";
             this.CUIT_Box.Size = new System.Drawing.Size(100, 20);
             this.CUIT_Box.TabIndex = 8;
@@ -165,7 +165,7 @@
             // 
             // MayudaApellido
             // 
-            this.MayudaApellido.Location = new System.Drawing.Point(408, 146);
+            this.MayudaApellido.Location = new System.Drawing.Point(482, 145);
             this.MayudaApellido.Name = "MayudaApellido";
             this.MayudaApellido.Size = new System.Drawing.Size(24, 23);
             this.MayudaApellido.TabIndex = 13;
@@ -175,7 +175,7 @@
             // 
             // MayudaCUIT
             // 
-            this.MayudaCUIT.Location = new System.Drawing.Point(408, 278);
+            this.MayudaCUIT.Location = new System.Drawing.Point(482, 277);
             this.MayudaCUIT.Name = "MayudaCUIT";
             this.MayudaCUIT.Size = new System.Drawing.Size(24, 23);
             this.MayudaCUIT.TabIndex = 14;
@@ -198,7 +198,7 @@
             this.Apellido_Error.BackColor = System.Drawing.SystemColors.Control;
             this.Apellido_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Apellido_Error.ForeColor = System.Drawing.Color.Red;
-            this.Apellido_Error.Location = new System.Drawing.Point(292, 171);
+            this.Apellido_Error.Location = new System.Drawing.Point(364, 171);
             this.Apellido_Error.Name = "Apellido_Error";
             this.Apellido_Error.Size = new System.Drawing.Size(130, 13);
             this.Apellido_Error.TabIndex = 16;
@@ -218,7 +218,7 @@
             this.CUIT_Error.BackColor = System.Drawing.SystemColors.Control;
             this.CUIT_Error.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CUIT_Error.ForeColor = System.Drawing.Color.Red;
-            this.CUIT_Error.Location = new System.Drawing.Point(292, 307);
+            this.CUIT_Error.Location = new System.Drawing.Point(364, 306);
             this.CUIT_Error.Name = "CUIT_Error";
             this.CUIT_Error.Size = new System.Drawing.Size(188, 13);
             this.CUIT_Error.TabIndex = 18;
