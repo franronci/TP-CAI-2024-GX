@@ -258,5 +258,32 @@ namespace TemplateTPIntegrador.Proveedor
                 ventanaMenu.Show();
             }
         }
+
+        private void Boton_Modificar_Click_1(object sender, EventArgs e)
+        {
+            // Verificar si se ha seleccionado una fila en el DataGridView
+            if (Proveedores.SelectedRows.Count > 0)
+            {
+                // Obtener los datos de la fila seleccionada
+                DataGridViewRow filaSeleccionada = Proveedores.SelectedRows[0];
+
+                // Obtener los valores de las celdas de la fila seleccionada
+                string idProveedor = filaSeleccionada.Cells["id"].Value.ToString(); // Lo voy a reutilizar para el patch y el delete
+                string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                string apellido = filaSeleccionada.Cells["Apellido"].Value.ToString();
+                string email = filaSeleccionada.Cells["Email"].Value.ToString();
+                string CUIT = filaSeleccionada.Cells["CUIT"].Value.ToString();
+
+                ModificarProveedorf ModificarProveedores = new ModificarProveedorf(idProveedor);
+                ModificarProveedores.ActualizarTextBox(nombre, apellido, email, CUIT); // Levanto los datos de la lista y me los llevo a otra ventana.
+
+                Hide();
+                ModificarProveedores.Show();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione una fila antes de hacer clic en Modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }
