@@ -15,6 +15,7 @@ namespace TemplateTPIntegrador.Productos
 {
     public partial class AgregarProducto : Form
     {
+        private Negocio.Proveedor ProveedorNegocio = new Negocio.Proveedor();
         public AgregarProducto()
         {
             InitializeComponent();
