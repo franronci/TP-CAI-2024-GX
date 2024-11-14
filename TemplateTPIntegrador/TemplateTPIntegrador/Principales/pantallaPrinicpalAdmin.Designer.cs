@@ -174,6 +174,7 @@
             this.btnventasXVendedor.TabIndex = 12;
             this.btnventasXVendedor.Text = "Ventas por vendedor";
             this.btnventasXVendedor.UseVisualStyleBackColor = true;
+            this.btnventasXVendedor.Click += new System.EventHandler(this.btnventasXVendedor_Click);
             // 
             // btnproductoXCategoria
             // 

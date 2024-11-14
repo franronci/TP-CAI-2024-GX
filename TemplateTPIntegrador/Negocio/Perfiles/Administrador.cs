@@ -69,6 +69,22 @@ namespace Negocio
             return "este usuario no existe";
         }
 
+        public string traeridcondni(int dni)
+        {
+            UsuariosWS usuarios = new UsuariosWS();
+            string id_admin = "94b09224-5702-4bab-8304-7704ee48a386";
+
+            List<Datos.UsuarioWSDatos> lista_usuarios = usuarios.buscarDatosUsuario(id_admin);
+
+            foreach (var usuario in lista_usuarios)
+            {
+                if (usuario.Dni == dni)
+                {
+                    return usuario.Id;
+                }
+            }
+            return "este usuario no existe";
+        }
 
 
         public string activarUsuario(string username)

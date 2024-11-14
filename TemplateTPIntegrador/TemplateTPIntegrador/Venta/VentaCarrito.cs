@@ -103,17 +103,24 @@ namespace TemplateTPIntegrador.Venta
                 txtnombreCliente.Text = ventacarrito.traerNombreCliente(dni);
                 txtapellidoCliente.Text = ventacarrito.traerApellidoCliente(dni);
                 txtmailcliente.Text = ventacarrito.traerEmailCliente(dni);
+
+                datagridcarritocompra.Rows.Clear();
+                txtTotalConDescuento.Text = "";
+                txtTotal.Text = "";
+                txtPreciounitario.Text = "";
+                numericCantidad.Value = 0;
+                boxCategoria.SelectedIndex = -1;
+                boxProductosCategoria.DataSource = null;
+                boxProductosCategoria.Text = "Seleccione un producto";
             }
             else
             {
-
                 txtnombreCliente.Text = "";
                 txtapellidoCliente.Text = "";
                 txtmailcliente.Text = "";
                 MessageBox.Show("Por favor, ingrese un DNI válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void txtPrecioUnitario_TextChanged(object sender, EventArgs e)
         {
@@ -145,7 +152,7 @@ namespace TemplateTPIntegrador.Venta
 
 
 
-        private void CalcularTotalConDescuentos()
+        private decimal CalcularTotalConDescuentos()
         {
             decimal totalCategoria3 = 0;
             decimal totalOtrasCategorias = 0;
@@ -177,22 +184,30 @@ namespace TemplateTPIntegrador.Venta
 
             if (totalCategoria3 > 100000)
             {
-                totalCategoria3 -= totalCategoria3 * 0.05m; 
+                decimal descuento_electro = totalCategoria3 * 0.05m;
+                totalCategoria3 = totalCategoria3 - descuento_electro;
+                txtdescuentoElectro.Text = descuento_electro.ToString("C");
+
             }
 
 
             totalConDescuento = totalCategoria3 + totalOtrasCategorias;
 
-            bool esPrimeraCompra = !carrito.hayVentaCliente(int.Parse(txtdniclientes.Text)); // true si es primera compra
+            bool esPrimeraCompra = !carrito.hayVentaCliente(int.Parse(txtdniclientes.Text));
 
-            // Aplica un 5% de descuento adicional si es la primera compra
+
             if (esPrimeraCompra)
             {
-                totalConDescuento -= totalConDescuento * 0.05m;
+                decimal primera_compra = totalConDescuento * 0.05m;
+                totalConDescuento = totalConDescuento - primera_compra;
+                txtdescuentonuevo.Text = primera_compra.ToString("C");
+
             }
 
 
             txtTotalConDescuento.Text = totalConDescuento.ToString("C");
+            return totalConDescuento;
+
         }
 
         private void btnagregarProductocarrito_Click(object sender, EventArgs e)
@@ -301,7 +316,7 @@ namespace TemplateTPIntegrador.Venta
                                 }
 
                                 AltaVenta altaVenta = new AltaVenta(idCliente, Guid.Parse(idUsuario), idProducto, cantidad);
-                                carrito.AgregarVentaNegocio(altaVenta);
+                                carrito.AgregarVentaNegocio(altaVenta, CalcularTotalConDescuentos());
                             }
                             catch (Exception ex)
                             {
@@ -332,8 +347,11 @@ namespace TemplateTPIntegrador.Venta
             txtmailcliente.Width = width + 10; 
         }
 
-       
+        private void VentaCarrito_Load(object sender, EventArgs e)
+        {
+            lblfechahoracompra.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+        }
 
-
+        
     }
 }

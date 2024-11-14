@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TemplateTPIntegrador.Productos;
 using TemplateTPIntegrador.Proveedor;
+using TemplateTPIntegrador.Reportes;
 
 namespace TemplateTPIntegrador
 {
