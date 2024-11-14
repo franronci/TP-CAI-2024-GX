@@ -79,6 +79,12 @@
     <Compile Include="Productos\BajaProductos.Designer.cs">
       <DependentUpon>BajaProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos\ListarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\ListarProductos.Designer.cs">
+      <DependentUpon>ListarProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Productos\ModificarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\BajaProductos.resx">
       <DependentUpon>BajaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\ListarProductos.resx">
+      <DependentUpon>ListarProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\ModificarProductos.resx">
       <DependentUpon>ModificarProductos.cs</DependentUpon>

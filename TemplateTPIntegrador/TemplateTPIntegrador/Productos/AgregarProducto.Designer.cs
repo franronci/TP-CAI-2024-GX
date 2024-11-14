@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarProducto));
-            this.Boton_Confirmar = new System.Windows.Forms.Button();
+            this.Boton_Agregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,16 +54,16 @@
             this.Box_Stock = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // Boton_Confirmar
+            // Boton_Agregar
             // 
-            this.Boton_Confirmar.BackColor = System.Drawing.Color.Khaki;
-            this.Boton_Confirmar.Location = new System.Drawing.Point(23, 410);
-            this.Boton_Confirmar.Name = "Boton_Confirmar";
-            this.Boton_Confirmar.Size = new System.Drawing.Size(100, 23);
-            this.Boton_Confirmar.TabIndex = 0;
-            this.Boton_Confirmar.Text = "Agregar";
-            this.Boton_Confirmar.UseVisualStyleBackColor = false;
-            this.Boton_Confirmar.Click += new System.EventHandler(this.btnagregarProducto_Click);
+            this.Boton_Agregar.BackColor = System.Drawing.Color.Khaki;
+            this.Boton_Agregar.Location = new System.Drawing.Point(23, 410);
+            this.Boton_Agregar.Name = "Boton_Agregar";
+            this.Boton_Agregar.Size = new System.Drawing.Size(100, 23);
+            this.Boton_Agregar.TabIndex = 0;
+            this.Boton_Agregar.Text = "Agregar";
+            this.Boton_Agregar.UseVisualStyleBackColor = false;
+            this.Boton_Agregar.Click += new System.EventHandler(this.btnagregarProducto_Click);
             // 
             // label1
             // 
@@ -142,6 +142,7 @@
             this.Boton_Limpiar.TabIndex = 14;
             this.Boton_Limpiar.Text = "Limpiar";
             this.Boton_Limpiar.UseVisualStyleBackColor = false;
+            this.Boton_Limpiar.Click += new System.EventHandler(this.Boton_Limpiar_Click);
             // 
             // Boton_Cancelar
             // 
@@ -152,6 +153,7 @@
             this.Boton_Cancelar.TabIndex = 15;
             this.Boton_Cancelar.Text = "Cancelar";
             this.Boton_Cancelar.UseVisualStyleBackColor = false;
+            this.Boton_Cancelar.Click += new System.EventHandler(this.Boton_Cancelar_Click);
             // 
             // ComboBox_Proveedor
             // 
@@ -299,7 +301,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Boton_Confirmar);
+            this.Controls.Add(this.Boton_Agregar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AgregarProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -311,7 +313,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button Boton_Confirmar;
+        private System.Windows.Forms.Button Boton_Agregar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

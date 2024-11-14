@@ -9,7 +9,7 @@ using Persistencia.Utils;
 
 namespace Negocio
 {
-    public abstract class ProductoNegocio
+    public class Producto
     {
         public ProductoWS producto = new ProductoWS();
         public string idUsuario = "70b37dc1-8fde-4840-be47-9ababd0ee7e5";
