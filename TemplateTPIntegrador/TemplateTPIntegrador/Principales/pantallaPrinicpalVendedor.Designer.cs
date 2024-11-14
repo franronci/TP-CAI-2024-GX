@@ -33,6 +33,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnventasporvendedor = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnagregarcliente = new System.Windows.Forms.Button();
+            this.btnmodificarcliente = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -85,11 +88,43 @@
             this.btnventasporvendedor.UseVisualStyleBackColor = true;
             this.btnventasporvendedor.Click += new System.EventHandler(this.btnventasporvendedor_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(557, 114);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 25);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Clientes";
+            // 
+            // btnagregarcliente
+            // 
+            this.btnagregarcliente.Location = new System.Drawing.Point(547, 181);
+            this.btnagregarcliente.Name = "btnagregarcliente";
+            this.btnagregarcliente.Size = new System.Drawing.Size(114, 39);
+            this.btnagregarcliente.TabIndex = 6;
+            this.btnagregarcliente.Text = "Agregar";
+            this.btnagregarcliente.UseVisualStyleBackColor = true;
+            this.btnagregarcliente.Click += new System.EventHandler(this.btnagregarcliente_Click);
+            // 
+            // btnmodificarcliente
+            // 
+            this.btnmodificarcliente.Location = new System.Drawing.Point(547, 270);
+            this.btnmodificarcliente.Name = "btnmodificarcliente";
+            this.btnmodificarcliente.Size = new System.Drawing.Size(114, 39);
+            this.btnmodificarcliente.TabIndex = 7;
+            this.btnmodificarcliente.Text = "Modificar";
+            this.btnmodificarcliente.UseVisualStyleBackColor = true;
+            // 
             // pantallaPrinicpalVendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnmodificarcliente);
+            this.Controls.Add(this.btnagregarcliente);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnventasporvendedor);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -109,5 +144,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnventasporvendedor;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnagregarcliente;
+        private System.Windows.Forms.Button btnmodificarcliente;
     }
 }
