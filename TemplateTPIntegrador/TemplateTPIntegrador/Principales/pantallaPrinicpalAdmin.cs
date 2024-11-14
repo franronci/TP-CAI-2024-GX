@@ -80,5 +80,12 @@ namespace TemplateTPIntegrador
 
             formmodificarProductos.ShowDialog();
         }
+
+        private void Buton_Baja_Click(object sender, EventArgs e)
+        {
+            BajaProveedorf formabajaProveedor = new BajaProveedorf();
+
+            formabajaProveedor.ShowDialog();
+        }
     }
 }

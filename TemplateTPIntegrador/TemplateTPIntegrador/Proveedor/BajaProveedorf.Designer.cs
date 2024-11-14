@@ -61,6 +61,7 @@
             this.btnproveedorBaja.TabIndex = 2;
             this.btnproveedorBaja.Text = "Aceptar";
             this.btnproveedorBaja.UseVisualStyleBackColor = true;
+            this.btnproveedorBaja.Click += new System.EventHandler(this.btnproveedorBaja_Click);
             // 
             // txtproveedorBaja
             // 
@@ -68,8 +69,9 @@
             this.txtproveedorBaja.Name = "txtproveedorBaja";
             this.txtproveedorBaja.Size = new System.Drawing.Size(100, 20);
             this.txtproveedorBaja.TabIndex = 3;
+            this.txtproveedorBaja.TextChanged += new System.EventHandler(this.txtproveedorBaja_TextChanged);
             // 
-            // BajaProveedor
+            // BajaProveedorf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -78,7 +80,7 @@
             this.Controls.Add(this.btnproveedorBaja);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "BajaProveedor";
+            this.Name = "BajaProveedorf";
             this.Text = "Baja Proveedor";
             this.ResumeLayout(false);
             this.PerformLayout();
