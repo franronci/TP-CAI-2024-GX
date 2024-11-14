@@ -38,9 +38,6 @@ namespace Datos
         public String CUIT { get => _cuit; set => _cuit = value; }
         public string FechaAlta { get => _fechaAlta; set => _fechaAlta = value; }
         public DateTime? FechaBaja { get => _fechaBaja; set => _fechaBaja = value; }
-        public String ToString()
-        {
-            return this.Apellido + ", " + this.Nombre + " (" + this.CUIT + ")";
-        }
+
     }
 }
