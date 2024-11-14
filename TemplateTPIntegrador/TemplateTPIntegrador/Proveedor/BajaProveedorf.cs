@@ -18,11 +18,14 @@ namespace TemplateTPIntegrador.Proveedor
             InitializeComponent();
         }
 
-        private void EliminarProveedor(string idProveedor)
+        private void EliminarProveedor(Guid idProveedor)
         {
  
             Negocio.Proveedor BajaProveedor = new Negocio.Proveedor();
-            BajaProveedor.BorrarProveedor(idProveedor);
+            Guid idUsuario = Guid.Parse(SesionUsuario.IdUsuario);
+
+
+            BajaProveedor.BorrarProveedor(idProveedor, idUsuario);
         }
 
         private void txtproveedorBaja_TextChanged(object sender, EventArgs e)
@@ -33,10 +36,14 @@ namespace TemplateTPIntegrador.Proveedor
         private void btnproveedorBaja_Click(object sender, EventArgs e)
         {
             Negocio.Proveedor administrador = new Negocio.Proveedor();
+            Administrador amind = new Administrador();
+            Guid idUsuario = Guid.Parse(SesionUsuario.IdUsuario);
+            Guid idproveedor = amind.traerproveedorcuit(txtproveedorBaja.Text);   
 
-            string idproveedor = txtproveedorBaja.Text;
+            administrador.BorrarProveedor(idproveedor, idUsuario);
 
-            administrador.BorrarProveedor(idproveedor);
+            Console.WriteLine(idUsuario + " - " + idproveedor);
+
 
             this.Close();
         }

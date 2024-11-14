@@ -86,6 +86,22 @@ namespace Negocio
             return "este usuario no existe";
         }
 
+        public Guid traerproveedorcuit(string cuit)
+        {
+            ProveedorWS proveedor = new ProveedorWS();
+
+            List<Datos.DatosProveedorWS> lista_proveedores = proveedor.TraerProveedores();
+
+            foreach (var proveedor1 in lista_proveedores)
+            {
+                if (proveedor1.CUIT == cuit)
+                {
+                    return proveedor1.Id ;
+                }
+            }
+            return Guid.Empty;
+        }
+
 
         public string activarUsuario(string username)
         {
