@@ -69,6 +69,38 @@ namespace Negocio
             return "este usuario no existe";
         }
 
+        public string traeridcondni(int dni)
+        {
+            UsuariosWS usuarios = new UsuariosWS();
+            string id_admin = "94b09224-5702-4bab-8304-7704ee48a386";
+
+            List<Datos.UsuarioWSDatos> lista_usuarios = usuarios.buscarDatosUsuario(id_admin);
+
+            foreach (var usuario in lista_usuarios)
+            {
+                if (usuario.Dni == dni)
+                {
+                    return usuario.Id;
+                }
+            }
+            return "este usuario no existe";
+        }
+
+        public Guid traerproveedorcuit(string cuit)
+        {
+            ProveedorWS proveedor = new ProveedorWS();
+
+            List<Datos.DatosProveedorWS> lista_proveedores = proveedor.TraerProveedores();
+
+            foreach (var proveedor1 in lista_proveedores)
+            {
+                if (proveedor1.CUIT == cuit)
+                {
+                    return proveedor1.Id ;
+                }
+            }
+            return Guid.Empty;
+        }
 
 
         public string activarUsuario(string username)

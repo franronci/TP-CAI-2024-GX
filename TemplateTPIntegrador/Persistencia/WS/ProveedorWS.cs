@@ -80,11 +80,11 @@ namespace Persistencia
 
         }
         
-        public void bajaProveedor(string idProveedor)
+        public void bajaProveedor(Guid idProveedor, Guid id_sesion)
         {
-            Dictionary<string, string> map = new Dictionary<string, string>();
-            map.Add("id", idProveedor.ToString());
-            map.Add("idUsuario", "70b37dc1-8fde-4840-be47-9ababd0ee7e5");
+            Dictionary<string, Guid> map = new Dictionary<string, Guid>();
+            map.Add("id", idProveedor);
+            map.Add("idUsuario", id_sesion);
 
             var jsonRequest = JsonConvert.SerializeObject(map);
 
@@ -108,6 +108,8 @@ namespace Persistencia
                 Console.WriteLine($"Exception: {ex.Message}");
             }
         }
+
+
         public List<DatosProveedorWS> TraerProveedores()
         {
             //Define una ruta (path) para la API

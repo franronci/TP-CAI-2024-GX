@@ -1,4 +1,6 @@
-﻿namespace TemplateTPIntegrador.Venta
+﻿using System;
+
+namespace TemplateTPIntegrador.Venta
 {
     partial class VentaCarrito
     {
@@ -61,6 +63,11 @@
             this.btnfinalizarCompra = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.txtTotalConDescuento = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtdescuentonuevo = new System.Windows.Forms.TextBox();
+            this.txtdescuentoElectro = new System.Windows.Forms.TextBox();
+            this.lblfechahoracompra = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridcarritocompra)).BeginInit();
             this.SuspendLayout();
@@ -325,7 +332,7 @@
             this.txtmailcliente.Location = new System.Drawing.Point(568, 135);
             this.txtmailcliente.Name = "txtmailcliente";
             this.txtmailcliente.ReadOnly = true;
-            this.txtmailcliente.Size = new System.Drawing.Size(100, 20);
+            this.txtmailcliente.Size = new System.Drawing.Size(185, 20);
             this.txtmailcliente.TabIndex = 26;
             this.txtmailcliente.TextChanged += new System.EventHandler(this.txtmailcliente_TextChanged);
             // 
@@ -353,7 +360,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(37, 636);
+            this.label14.Location = new System.Drawing.Point(37, 694);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(238, 25);
             this.label14.TabIndex = 29;
@@ -362,17 +369,70 @@
             // txtTotalConDescuento
             // 
             this.txtTotalConDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalConDescuento.Location = new System.Drawing.Point(328, 634);
+            this.txtTotalConDescuento.Location = new System.Drawing.Point(328, 694);
             this.txtTotalConDescuento.Name = "txtTotalConDescuento";
             this.txtTotalConDescuento.ReadOnly = true;
-            this.txtTotalConDescuento.Size = new System.Drawing.Size(100, 29);
+            this.txtTotalConDescuento.Size = new System.Drawing.Size(197, 29);
             this.txtTotalConDescuento.TabIndex = 30;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(40, 648);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(279, 25);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "Descuento Nuevo Cliente";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(40, 596);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(268, 25);
+            this.label16.TabIndex = 32;
+            this.label16.Text = "Descuento ElectroHogar";
+            // 
+            // txtdescuentonuevo
+            // 
+            this.txtdescuentonuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdescuentonuevo.Location = new System.Drawing.Point(328, 646);
+            this.txtdescuentonuevo.Name = "txtdescuentonuevo";
+            this.txtdescuentonuevo.ReadOnly = true;
+            this.txtdescuentonuevo.Size = new System.Drawing.Size(197, 29);
+            this.txtdescuentonuevo.TabIndex = 33;
+            // 
+            // txtdescuentoElectro
+            // 
+            this.txtdescuentoElectro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdescuentoElectro.Location = new System.Drawing.Point(328, 594);
+            this.txtdescuentoElectro.Name = "txtdescuentoElectro";
+            this.txtdescuentoElectro.ReadOnly = true;
+            this.txtdescuentoElectro.Size = new System.Drawing.Size(197, 29);
+            this.txtdescuentoElectro.TabIndex = 34;
+            // 
+            // lblfechahoracompra
+            // 
+            this.lblfechahoracompra.AutoSize = true;
+            this.lblfechahoracompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfechahoracompra.Location = new System.Drawing.Point(537, 22);
+            this.lblfechahoracompra.Name = "lblfechahoracompra";
+            this.lblfechahoracompra.Size = new System.Drawing.Size(229, 25);
+            this.lblfechahoracompra.TabIndex = 35;
+            this.lblfechahoracompra.Text = "13/11/2024 21:29:19";
             // 
             // VentaCarrito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 740);
+            this.Controls.Add(this.lblfechahoracompra);
+            this.Controls.Add(this.txtdescuentoElectro);
+            this.Controls.Add(this.txtdescuentonuevo);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.txtTotalConDescuento);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.btnfinalizarCompra);
@@ -403,6 +463,7 @@
             this.Controls.Add(this.label1);
             this.Name = "VentaCarrito";
             this.Text = "VentaCarrito";
+            this.Load += new System.EventHandler(this.VentaCarrito_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridcarritocompra)).EndInit();
             this.ResumeLayout(false);
@@ -445,5 +506,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtTotalConDescuento;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtdescuentonuevo;
+        private System.Windows.Forms.TextBox txtdescuentoElectro;
+        private System.Windows.Forms.Label lblfechahoracompra;
     }
 }

@@ -41,14 +41,14 @@
             this.TelefonoUsuario = new System.Windows.Forms.TextBox();
             this.FechaNacimientoUsuario = new System.Windows.Forms.DateTimePicker();
             this.MailUsuario = new System.Windows.Forms.TextBox();
-            this.RolUsuario = new System.Windows.Forms.ComboBox();
             this.LbTelUsuario = new System.Windows.Forms.Label();
             this.LbFechaNacimiento = new System.Windows.Forms.Label();
             this.LbUsername = new System.Windows.Forms.Label();
             this.LbRolUsuario = new System.Windows.Forms.Label();
+            this.RolUsuario = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.DireccionUsuario = new System.Windows.Forms.TextBox();
             this.lblDireccionUsuario = new System.Windows.Forms.Label();
+            this.DireccionUsuario = new System.Windows.Forms.TextBox();
             LbNombreUsuario = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -165,19 +165,6 @@
             this.MailUsuario.TabIndex = 12;
             this.MailUsuario.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // RolUsuario
-            // 
-            this.RolUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.RolUsuario.FormattingEnabled = true;
-            this.RolUsuario.Items.AddRange(new object[] {
-            "Supervisor",
-            "Vendedor"});
-            this.RolUsuario.Location = new System.Drawing.Point(240, 211);
-            this.RolUsuario.Name = "RolUsuario";
-            this.RolUsuario.Size = new System.Drawing.Size(121, 21);
-            this.RolUsuario.TabIndex = 13;
-            this.RolUsuario.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // LbTelUsuario
             // 
             this.LbTelUsuario.AutoSize = true;
@@ -214,6 +201,19 @@
             this.LbRolUsuario.TabIndex = 17;
             this.LbRolUsuario.Text = "Rol";
             // 
+            // RolUsuario
+            // 
+            this.RolUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RolUsuario.FormattingEnabled = true;
+            this.RolUsuario.Items.AddRange(new object[] {
+            "Supervisor",
+            "Vendedor"});
+            this.RolUsuario.Location = new System.Drawing.Point(240, 211);
+            this.RolUsuario.Name = "RolUsuario";
+            this.RolUsuario.Size = new System.Drawing.Size(121, 21);
+            this.RolUsuario.TabIndex = 13;
+            this.RolUsuario.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(163, 345);
@@ -222,13 +222,7 @@
             this.button1.TabIndex = 18;
             this.button1.Text = "Limpiar";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // DireccionUsuario
-            // 
-            this.DireccionUsuario.Location = new System.Drawing.Point(420, 212);
-            this.DireccionUsuario.Name = "DireccionUsuario";
-            this.DireccionUsuario.Size = new System.Drawing.Size(100, 20);
-            this.DireccionUsuario.TabIndex = 20;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblDireccionUsuario
             // 
@@ -238,6 +232,13 @@
             this.lblDireccionUsuario.Size = new System.Drawing.Size(52, 13);
             this.lblDireccionUsuario.TabIndex = 21;
             this.lblDireccionUsuario.Text = "Direccion";
+            // 
+            // DireccionUsuario
+            // 
+            this.DireccionUsuario.Location = new System.Drawing.Point(420, 212);
+            this.DireccionUsuario.Name = "DireccionUsuario";
+            this.DireccionUsuario.Size = new System.Drawing.Size(100, 20);
+            this.DireccionUsuario.TabIndex = 20;
             // 
             // CreacionUsuario
             // 
@@ -287,14 +288,14 @@
         private System.Windows.Forms.TextBox TelefonoUsuario;
         private System.Windows.Forms.DateTimePicker FechaNacimientoUsuario;
         private System.Windows.Forms.TextBox MailUsuario;
-        private System.Windows.Forms.ComboBox RolUsuario;
         private System.Windows.Forms.Label LbTelUsuario;
         private System.Windows.Forms.Label LbFechaNacimiento;
         private System.Windows.Forms.Label LbUsername;
         private System.Windows.Forms.Label LbRolUsuario;
+        private System.Windows.Forms.ComboBox RolUsuario;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox DireccionUsuario;
         private System.Windows.Forms.Label lblDireccionUsuario;
+        private System.Windows.Forms.TextBox DireccionUsuario;
     }
 }
 

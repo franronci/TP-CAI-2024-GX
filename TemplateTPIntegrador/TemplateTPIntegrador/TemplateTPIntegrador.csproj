@@ -109,6 +109,18 @@
     <Compile Include="Proveedor\ModificarProveedorf.Designer.cs">
       <DependentUpon>ModificarProveedorf.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\VendedorReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\VendedorReporte.Designer.cs">
+      <DependentUpon>VendedorReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\VentasVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\VentasVendedor.Designer.cs">
+      <DependentUpon>VentasVendedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios\ActivarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedor\ModificarProveedorf.resx">
       <DependentUpon>ModificarProveedorf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\VendedorReporte.resx">
+      <DependentUpon>VendedorReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\VentasVendedor.resx">
+      <DependentUpon>VentasVendedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\ActivarUsuario.resx">
       <DependentUpon>ActivarUsuario.cs</DependentUpon>

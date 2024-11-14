@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Datos;
+using Negocio;
 using Persistencia;
 
 namespace TemplateTPIntegrador.Proveedor
@@ -36,7 +37,7 @@ namespace TemplateTPIntegrador.Proveedor
 
                 if (Proveedor != null)
                 {
-                    Proveedor = Proveedor.Where(u => u != null && u.Email != null && u.Email.Contains("@G3")).ToList();
+                    Proveedor = Proveedor.Where(u => u != null && u.Email != null && u.Email.Contains("")).ToList();
                 }
 
                 var bindingList = new BindingList<DatosProveedorWS>(Proveedor);
@@ -82,10 +83,11 @@ namespace TemplateTPIntegrador.Proveedor
         {
 
         }
-        private void EliminarProveedor(string idProveedor)
+        private void EliminarProveedor(Guid idProveedor)
         {
             Negocio.Proveedor BajaProveedor = new Negocio.Proveedor();
-            BajaProveedor.BorrarProveedor(idProveedor);
+            Guid idUsuario = Guid.Parse(SesionUsuario.IdUsuario);
+            BajaProveedor.BorrarProveedor(idProveedor, idUsuario);
             CargarProveedores();
         }
         private void Boton_Eliminar_Click(object sender, EventArgs e)
@@ -226,13 +228,13 @@ namespace TemplateTPIntegrador.Proveedor
 
                 // Obtener los valores de las celdas de la fila seleccionada
                 string idProveedor = filaSeleccionada.Cells["id"].Value.ToString();
-
+                Guid idProveedor_guid = Guid.Parse(idProveedor);
                 // Mostrar un cuadro de diálogo de confirmación al usuario
                 DialogResult resultadoConfirmacion = MessageBox.Show($"¿Está seguro que desea eliminar este proveedor?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (resultadoConfirmacion == DialogResult.Yes)
                 {
-                    EliminarProveedor(idProveedor);
+                    EliminarProveedor(idProveedor_guid);
                     MessageBox.Show("Se ha eliminado el Proveedor", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     CargarProveedores();
                 }
@@ -284,6 +286,11 @@ namespace TemplateTPIntegrador.Proveedor
             {
                 MessageBox.Show("Por favor, seleccione una fila antes de hacer clic en Modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void CUITBuscador_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

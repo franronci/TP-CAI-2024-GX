@@ -79,6 +79,7 @@ namespace TemplateTPIntegrador.Proveedor
             this.CUITBuscador.Name = "CUITBuscador";
             this.CUITBuscador.Size = new System.Drawing.Size(144, 20);
             this.CUITBuscador.TabIndex = 3;
+            this.CUITBuscador.TextChanged += new System.EventHandler(this.CUITBuscador_TextChanged);
             // 
             // ProveedoresLupa
             // 

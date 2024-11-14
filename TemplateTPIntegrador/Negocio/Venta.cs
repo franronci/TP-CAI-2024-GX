@@ -19,10 +19,10 @@ namespace Negocio
         {
             return ventaServicio.GetVenta();
         }
-        public void agregarVenta(Guid idCliente, Guid idUsuario, Guid idProducto, int cantidad)
+        public void agregarVenta(Guid idCliente, Guid idUsuario, Guid idProducto, int cantidad, decimal montotal)
         {
             AltaVenta altaVenta = new AltaVenta(idCliente, idUsuario, idProducto, cantidad);
-            ventaServicio.AgregarVenta(altaVenta);
+            ventaServicio.AgregarVenta(altaVenta, montotal);
 
         }
 

@@ -119,9 +119,9 @@ namespace Persistencia
         }
 
         //Agrega un nuevo cliente.
-        public void AgregarCliente(AltaCliente altaCliente)
+        public string AgregarCliente(AltaCliente altaCliente)
         {
-            //Define la ruta para la API que agrega un cliente (POST).
+            
             String path = "/Cliente/AgregarCliente";
 
             //Serializa el objeto altaCliente en formato JSON y lo envía a la API.
@@ -135,17 +135,19 @@ namespace Persistencia
                 {
                     var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
                     string respuesta = reader.ReadToEnd();
+
+                    return "Cliente creado con exito";
                 }
                 else
                 {
                     var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
                     string respuesta = reader.ReadToEnd();
-                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                    return $"Error: {response.StatusCode} - {response.ReasonPhrase}";
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Exception: {ex.Message}");
+                return $"Exception: {ex.Message}";
             }
         }
 

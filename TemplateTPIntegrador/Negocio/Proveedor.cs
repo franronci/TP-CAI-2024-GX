@@ -30,9 +30,9 @@ namespace Negocio
 
         }
 
-        public void BorrarProveedor(string idProveedor)
+        public void BorrarProveedor(Guid idProveedor, Guid id_sesion)
         {
-            ProveedorServicio.bajaProveedor(idProveedor);
+            ProveedorServicio.bajaProveedor(idProveedor, id_sesion);
         }
     }
 }

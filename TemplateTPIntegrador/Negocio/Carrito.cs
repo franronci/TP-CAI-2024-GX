@@ -1,5 +1,6 @@
 ﻿using Datos;
 using Persistencia;
+using Persistencia.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -190,12 +191,55 @@ namespace Negocio
             return ""; 
         }
 
-        public void AgregarVentaNegocio(AltaVenta agregarVenta)
+        public void AgregarVentaNegocio(AltaVenta agregarVenta, decimal montototal)
         {
             VentaWS ventasWS = new VentaWS();
-            ventasWS.AgregarVenta(agregarVenta);
+            ventasWS.AgregarVenta(agregarVenta, montototal);
         }
 
+        public List<VentaAgrupada> ObtenerVentasPorUsuario(string idUsuario)
+        {
+           
+            return ObtenerVentasAgrupadasPorUsuario(idUsuario);
+        }
 
+        public List<VentaAgrupada> ObtenerVentasAgrupadasPorUsuario(string idUsuario)
+        {
+            List<VentaAgrupada> ventasAgrupadas = new List<VentaAgrupada>();
+            DBHelper dbhelper = new DBHelper("Ventas");
+
+            var ventas = dbhelper.Listar();
+
+            foreach (var venta in ventas)
+            {
+                string[] detalles = venta.Split('|');
+                if (detalles.Length == 6 && detalles[1] == idUsuario)
+                {
+                    string fecha = detalles[5];
+                    string mesAnio = DateTime.Parse(fecha).ToString("yyyy-MM");
+                    decimal montoTotal = decimal.Parse(detalles[4]);
+                    int cantidad = int.Parse(detalles[3]);
+
+                    var ventaExistente = ventasAgrupadas.FirstOrDefault(v => v.MesAnio == mesAnio);
+                    if (ventaExistente != null)
+                    {
+                        ventaExistente.CantidadVentas += cantidad;
+                        ventaExistente.MontoTotal += montoTotal;
+                    }
+                    else
+                    {
+                        ventasAgrupadas.Add(new VentaAgrupada
+                        {
+                            MesAnio = mesAnio,
+                            CantidadVentas = cantidad,
+                            MontoTotal = montoTotal
+                        });
+                    }
+                }
+            }
+
+            return ventasAgrupadas;
+        }
     }
 }
+
