@@ -65,7 +65,7 @@ namespace Persistencia
                 Console.WriteLine($"Exception: {ex.Message}");
             }
         }
-        public void AgregarVenta(AltaVenta agregarVenta)
+        public void AgregarVenta(AltaVenta agregarVenta, decimal montoTotal)
         {
             String path = "/Venta/AgregarVenta";
 
@@ -78,6 +78,11 @@ namespace Persistencia
                 {
                     var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
                     string respuesta = reader.ReadToEnd();
+                    DBHelper dbhelper = new DBHelper("Ventas");
+
+                    // Almacenar la venta en la "base de datos" (archivo de texto)
+                    string registroVenta = $"{agregarVenta.IdCliente}|{agregarVenta.IdUsuario}|{agregarVenta.IdProducto}|{agregarVenta.Cantidad}|{montoTotal}|{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}";
+                    dbhelper.Insertar(Guid.NewGuid().ToString(), registroVenta);
                 }
                 else
                 {
@@ -90,7 +95,6 @@ namespace Persistencia
             {
                 Console.WriteLine($"Exception: {ex.Message}");
             }
-
         }
 
         public List<VentaPorCliente> GetVentasCliente(Guid idCliente)
