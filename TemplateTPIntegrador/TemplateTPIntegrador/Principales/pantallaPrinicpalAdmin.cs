@@ -50,16 +50,14 @@ namespace TemplateTPIntegrador
 
         private void btnbajaProveedor_Click(object sender, EventArgs e)
         {
-            BajaProveedorf formabajaProveedor = new BajaProveedorf();
+            ListaProveedores formabajaProveedor = new ListaProveedores();
 
             formabajaProveedor.ShowDialog();
         }
 
         private void btnmodificarproveedor_Click(object sender, EventArgs e)
         {
-            ModificarProveedorf formamodificarProveedor = new ModificarProveedorf();
 
-            formamodificarProveedor.ShowDialog();
         }
 
         private void btnaltaProducto_Click(object sender, EventArgs e)
@@ -81,6 +79,13 @@ namespace TemplateTPIntegrador
             ModificarProductos formmodificarProductos = new ModificarProductos();
 
             formmodificarProductos.ShowDialog();
+        }
+
+        private void Buton_Baja_Click(object sender, EventArgs e)
+        {
+            BajaProveedorf formabajaProveedor = new BajaProveedorf();
+
+            formabajaProveedor.ShowDialog();
         }
     }
 }

@@ -44,7 +44,7 @@
             this.btnproductoXCategoria = new System.Windows.Forms.Button();
             this.btnmodificarProducto = new System.Windows.Forms.Button();
             this.btnbajaProducto = new System.Windows.Forms.Button();
-            this.btnmodificarproveedor = new System.Windows.Forms.Button();
+            this.Buton_Baja = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -121,9 +121,9 @@
             // 
             this.btnbajaProveedor.Location = new System.Drawing.Point(250, 224);
             this.btnbajaProveedor.Name = "btnbajaProveedor";
-            this.btnbajaProveedor.Size = new System.Drawing.Size(114, 39);
+            this.btnbajaProveedor.Size = new System.Drawing.Size(114, 55);
             this.btnbajaProveedor.TabIndex = 7;
-            this.btnbajaProveedor.Text = "Baja proveedor";
+            this.btnbajaProveedor.Text = "Baja  y modificación de proveedor";
             this.btnbajaProveedor.UseVisualStyleBackColor = true;
             this.btnbajaProveedor.Click += new System.EventHandler(this.btnbajaProveedor_Click);
             // 
@@ -204,22 +204,22 @@
             this.btnbajaProducto.UseVisualStyleBackColor = true;
             this.btnbajaProducto.Click += new System.EventHandler(this.btnbajaProducto_Click);
             // 
-            // btnmodificarproveedor
+            // Buton_Baja
             // 
-            this.btnmodificarproveedor.Location = new System.Drawing.Point(250, 293);
-            this.btnmodificarproveedor.Name = "btnmodificarproveedor";
-            this.btnmodificarproveedor.Size = new System.Drawing.Size(114, 39);
-            this.btnmodificarproveedor.TabIndex = 16;
-            this.btnmodificarproveedor.Text = "Modificar proveedor";
-            this.btnmodificarproveedor.UseVisualStyleBackColor = true;
-            this.btnmodificarproveedor.Click += new System.EventHandler(this.btnmodificarproveedor_Click);
+            this.Buton_Baja.Location = new System.Drawing.Point(250, 285);
+            this.Buton_Baja.Name = "Buton_Baja";
+            this.Buton_Baja.Size = new System.Drawing.Size(114, 55);
+            this.Buton_Baja.TabIndex = 16;
+            this.Buton_Baja.Text = "Baja";
+            this.Buton_Baja.UseVisualStyleBackColor = true;
+            this.Buton_Baja.Click += new System.EventHandler(this.Buton_Baja_Click);
             // 
             // pantallaPrinicpalAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnmodificarproveedor);
+            this.Controls.Add(this.Buton_Baja);
             this.Controls.Add(this.btnbajaProducto);
             this.Controls.Add(this.btnmodificarProducto);
             this.Controls.Add(this.btnproductoXCategoria);
@@ -261,6 +261,6 @@
         private System.Windows.Forms.Button btnproductoXCategoria;
         private System.Windows.Forms.Button btnmodificarProducto;
         private System.Windows.Forms.Button btnbajaProducto;
-        private System.Windows.Forms.Button btnmodificarproveedor;
+        private System.Windows.Forms.Button Buton_Baja;
     }
 }
