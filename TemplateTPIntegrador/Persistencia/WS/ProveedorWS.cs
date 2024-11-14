@@ -123,8 +123,8 @@ namespace Persistencia
                 if (response.IsSuccessStatusCode)
                 {
                     var contentStream = response.Content.ReadAsStringAsync().Result;
-                    List<DatosProveedorWS> listadoClientes = JsonConvert.DeserializeObject<List<DatosProveedorWS>>(contentStream);
-                    return proveedores;
+                    List<DatosProveedorWS> listadoProveedores = JsonConvert.DeserializeObject<List<DatosProveedorWS>>(contentStream);
+                    return listadoProveedores;
                 }
 
                 //Si hay un error en la respuesta o una excepción, se imprime un mensaje en la consola.
