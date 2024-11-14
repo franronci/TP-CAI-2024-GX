@@ -147,6 +147,7 @@ namespace TemplateTPIntegrador.Proveedor
             this.Boton_Modificar.TabIndex = 9;
             this.Boton_Modificar.Text = "Modificar";
             this.Boton_Modificar.UseVisualStyleBackColor = false;
+            this.Boton_Modificar.Click += new System.EventHandler(this.Boton_Modificar_Click_1);
             // 
             // Boton_Eliminar
             // 
