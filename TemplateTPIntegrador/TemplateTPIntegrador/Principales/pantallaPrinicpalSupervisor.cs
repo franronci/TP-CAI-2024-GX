@@ -21,19 +21,5 @@ namespace TemplateTPIntegrador
         {
             InitializeComponent();
         }
-
-        private void btnaltaProductos_Click(object sender, EventArgs e)
-        {
-            AgregarProducto formagregarProducto = new AgregarProducto();
-
-            formagregarProducto.ShowDialog();
-        }
-
-        private void btnmodificarProducto_Click(object sender, EventArgs e)
-        {
-            ListarProductos formmodificarProductos = new ListarProductos();
-
-            formmodificarProductos.ShowDialog();
-        }
     }
 }

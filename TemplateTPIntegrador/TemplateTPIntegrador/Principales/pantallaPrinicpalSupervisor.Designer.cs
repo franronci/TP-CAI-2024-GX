@@ -98,6 +98,7 @@
             this.btndevolucion.TabIndex = 6;
             this.btndevolucion.Text = "Devolucion";
             this.btndevolucion.UseVisualStyleBackColor = true;
+            this.btndevolucion.Click += new System.EventHandler(this.btndevolucion_Click);
             // 
             // label4
             // 
@@ -117,6 +118,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Stock critico";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -126,6 +128,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Ventas por vendedor";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 

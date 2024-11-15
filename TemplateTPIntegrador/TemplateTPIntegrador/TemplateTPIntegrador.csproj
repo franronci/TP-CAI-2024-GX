@@ -124,17 +124,17 @@
     <Compile Include="Proveedor\ModificarProveedorf.Designer.cs">
       <DependentUpon>ModificarProveedorf.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ProductosCriticos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ProductosCriticos.Designer.cs">
+      <DependentUpon>ProductosCriticos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ProductomasvendidoCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\ProductomasvendidoCategoria.Designer.cs">
       <DependentUpon>ProductomasvendidoCategoria.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\VendedorReporte.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\VendedorReporte.Designer.cs">
-      <DependentUpon>VendedorReporte.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\VentasVendedor.cs">
       <SubType>Form</SubType>
@@ -199,6 +199,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Venta\DevolverVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\DevolverVenta.Designer.cs">
+      <DependentUpon>DevolverVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Venta\VentaCarrito.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +286,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Venta\DevolverVenta.resx">
+      <DependentUpon>DevolverVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Venta\VentaCarrito.resx">
       <DependentUpon>VentaCarrito.cs</DependentUpon>
     </EmbeddedResource>
