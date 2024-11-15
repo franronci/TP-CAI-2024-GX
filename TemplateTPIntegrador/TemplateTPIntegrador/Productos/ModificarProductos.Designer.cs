@@ -209,6 +209,7 @@
             this.button2.TabIndex = 30;
             this.button2.Text = "?";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MayudaPrecio
             // 
@@ -218,6 +219,7 @@
             this.MayudaPrecio.TabIndex = 31;
             this.MayudaPrecio.Text = "?";
             this.MayudaPrecio.UseVisualStyleBackColor = true;
+            this.MayudaPrecio.Click += new System.EventHandler(this.MayudaPrecio_Click);
             // 
             // MayudaStock
             // 
@@ -227,6 +229,7 @@
             this.MayudaStock.TabIndex = 32;
             this.MayudaStock.Text = "?";
             this.MayudaStock.UseVisualStyleBackColor = true;
+            this.MayudaStock.Click += new System.EventHandler(this.MayudaStock_Click);
             // 
             // button5
             // 
@@ -236,6 +239,7 @@
             this.button5.TabIndex = 33;
             this.button5.Text = "?";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // ModificarProductosF
             // 

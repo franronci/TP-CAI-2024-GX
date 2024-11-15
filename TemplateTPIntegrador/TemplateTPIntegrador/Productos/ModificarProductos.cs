@@ -151,5 +151,40 @@ namespace TemplateTPIntegrador.Productos
                 }
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string mensaje = "No se puede modificar precio actual directamente, debe indicar un precio nuevo";
+
+            MessageBox.Show(mensaje);
+        }
+
+        private void MayudaStock_Click(object sender, EventArgs e)
+        {
+            string mensaje = "No se puede modificar stock actual directamente, debe indicar un stock nuevo";
+
+            MessageBox.Show(mensaje);
+        }
+
+        private void MayudaPrecio_Click(object sender, EventArgs e)
+        {
+            string mensaje = "Tener en cuenta para completar el precio:\n" +
+             "1. No se permite dejar el campo vacio.\n" +
+             "2. El precio debe ser un numero positivo.\n" +
+             "3. El precio no puede ser superior a 20.000.000.\n";
+
+            MessageBox.Show(mensaje);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string mensaje = "Tener en cuenta para completar el nombre:\n" +
+             "1. No se permite dejar el campo vacio.\n" +
+             "2. El stock debe ser un numero positivo.\n" +
+             "3. El stock no puede ser mayor a 1000.\n" +
+             "4. No se permiten letras ni caracteres especiales.";
+
+            MessageBox.Show(mensaje);
+        }
     }
 }

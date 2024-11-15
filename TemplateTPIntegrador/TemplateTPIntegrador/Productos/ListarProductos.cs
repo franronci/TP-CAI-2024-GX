@@ -47,7 +47,7 @@ namespace TemplateTPIntegrador.Productos
 
                 if (productosCompleta != null)
                 {
-                    productosCompleta = productosCompleta.Where(u => u != null && u.Nombre != null && u.Nombre.Contains("G1")).ToList();
+ 
                 }
 
                 // Mostrar todos los productos al cargar inicialmente

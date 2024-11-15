@@ -237,6 +237,7 @@
             this.MayudaNombre.Size = new System.Drawing.Size(18, 20);
             this.MayudaNombre.TabIndex = 24;
             this.MayudaNombre.Text = "?";
+            this.MayudaNombre.Click += new System.EventHandler(this.MayudaNombre_Click);
             // 
             // MayudaPrecio
             // 
