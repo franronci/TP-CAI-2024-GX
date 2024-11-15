@@ -14,14 +14,6 @@ namespace TemplateTPIntegrador.Venta
 {
     public partial class DevolverVenta : Form
     {
-        public DevolverVenta()
-        {
-            InitializeComponent();
-        }
-
-        private void btnusuarioeliminar_Click(object sender, EventArgs e)
-        {
-            vent
-        }
+      
     }
 }
