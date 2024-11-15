@@ -103,9 +103,7 @@ namespace TemplateTPIntegrador.Productos
 
             if (resultadoConfirmacion == DialogResult.Yes)
             {
-                Close();
-                ListarProductos listaProductos = new ListarProductos();
-                listaProductos.Show();
+                this.Close();
             }
             else
             {
@@ -119,11 +117,9 @@ namespace TemplateTPIntegrador.Productos
 
                 if (result == DialogResult.Yes)
                 {
-                    ListarProductos ListaProductos = new ListarProductos();
-                    ListaProductos.Show();
-                    Hide();
+                    this.Close();
                 }
-                // Si el usuario elige "No", no hacer nada
+                
             }
         }
 

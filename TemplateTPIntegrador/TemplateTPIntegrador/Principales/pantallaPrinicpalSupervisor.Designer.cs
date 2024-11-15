@@ -31,7 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnaltaProductos = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnbajaProducto = new System.Windows.Forms.Button();
             this.btnmodificarProducto = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btndevolucion = new System.Windows.Forms.Button();
@@ -59,6 +58,7 @@
             this.btnaltaProductos.TabIndex = 1;
             this.btnaltaProductos.Text = "Alta productos";
             this.btnaltaProductos.UseVisualStyleBackColor = true;
+            this.btnaltaProductos.Click += new System.EventHandler(this.btnaltaProductos_Click);
             // 
             // label2
             // 
@@ -70,23 +70,15 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Productos";
             // 
-            // btnbajaProducto
-            // 
-            this.btnbajaProducto.Location = new System.Drawing.Point(52, 250);
-            this.btnbajaProducto.Name = "btnbajaProducto";
-            this.btnbajaProducto.Size = new System.Drawing.Size(114, 39);
-            this.btnbajaProducto.TabIndex = 3;
-            this.btnbajaProducto.Text = "Baja productos";
-            this.btnbajaProducto.UseVisualStyleBackColor = true;
-            // 
             // btnmodificarProducto
             // 
-            this.btnmodificarProducto.Location = new System.Drawing.Point(52, 320);
+            this.btnmodificarProducto.Location = new System.Drawing.Point(52, 241);
             this.btnmodificarProducto.Name = "btnmodificarProducto";
             this.btnmodificarProducto.Size = new System.Drawing.Size(114, 39);
             this.btnmodificarProducto.TabIndex = 4;
-            this.btnmodificarProducto.Text = "Modificar productos";
+            this.btnmodificarProducto.Text = "Baja y Modificación de productos";
             this.btnmodificarProducto.UseVisualStyleBackColor = true;
+            this.btnmodificarProducto.Click += new System.EventHandler(this.btnmodificarProducto_Click);
             // 
             // label3
             // 
@@ -156,7 +148,6 @@
             this.Controls.Add(this.btndevolucion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnmodificarProducto);
-            this.Controls.Add(this.btnbajaProducto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnaltaProductos);
             this.Controls.Add(this.label1);
@@ -172,7 +163,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnaltaProductos;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnbajaProducto;
         private System.Windows.Forms.Button btnmodificarProducto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btndevolucion;
