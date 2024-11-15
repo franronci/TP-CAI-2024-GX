@@ -66,7 +66,6 @@ namespace TemplateTPIntegrador.Clientes
                 string rol = HostCliente.Text;
 
                 MessageBox.Show(cliente.agregarCliente(SesionUsuario.IdUsuario, nombre, apellido, documento, direccion, telefono, mail, nacimiento, rol));
-                Console.WriteLine(SesionUsuario.IdUsuario, nombre, apellido, documento, direccion, telefono, mail, nacimiento, rol);
                
             }
 
