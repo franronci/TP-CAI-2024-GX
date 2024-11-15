@@ -30,9 +30,9 @@ namespace Negocio
             return clienteServicio.getClientes();
         }
 
-        public void BorrarCliente(Guid idCliente)
+        public string BorrarCliente(Guid idCliente)
         {
-            clienteServicio.BorrarCliente(idCliente);
+            return clienteServicio.BorrarCliente(idCliente);
         }
     }
 }
