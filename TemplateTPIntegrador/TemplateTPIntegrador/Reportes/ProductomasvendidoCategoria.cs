@@ -32,10 +32,6 @@ namespace TemplateTPIntegrador.Reportes
                 IdsVentas = new List<int>();
             }
         }
-        private void RepoMasVendidos_Load(object sender, EventArgs e)
-        {
-            CargarDatosProductosMasVendidos();
-        }
 
         private void CargarDatosProductosMasVendidos()
         {
@@ -181,6 +177,11 @@ namespace TemplateTPIntegrador.Reportes
             {
                 this.Close();
             }
+        }
+
+        private void ProductomasvendidoCategoria_Load(object sender, EventArgs e)
+        {
+            CargarDatosProductosMasVendidos();
         }
     }
 }
