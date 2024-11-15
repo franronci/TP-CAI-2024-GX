@@ -49,5 +49,11 @@ namespace TemplateTPIntegrador
             ProductomasvendidoCategoria pmvc = new ProductomasvendidoCategoria();
             pmvc.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ProductosCriticos productosCriticos = new ProductosCriticos();
+            productosCriticos.ShowDialog(); 
+        }
     }
 }
