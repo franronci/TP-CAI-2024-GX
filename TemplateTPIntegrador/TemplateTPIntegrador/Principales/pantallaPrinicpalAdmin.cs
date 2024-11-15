@@ -70,16 +70,14 @@ namespace TemplateTPIntegrador
 
         private void btnbajaProducto_Click(object sender, EventArgs e)
         {
-            BajaProductos formbajaProductos = new BajaProductos();
+            ListarProductos formmodificarProductos = new ListarProductos();
 
-            formbajaProductos.ShowDialog();
+            formmodificarProductos.ShowDialog();
         }
 
         private void btnmodificarProducto_Click(object sender, EventArgs e)
         {
-            ModificarProductos formmodificarProductos = new ModificarProductos();
-
-            formmodificarProductos.ShowDialog();
+  
         }
 
         private void Buton_Baja_Click(object sender, EventArgs e)
