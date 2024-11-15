@@ -58,7 +58,7 @@
             this.btnaltaProductos.TabIndex = 1;
             this.btnaltaProductos.Text = "Alta productos";
             this.btnaltaProductos.UseVisualStyleBackColor = true;
-
+            this.btnaltaProductos.Click += new System.EventHandler(this.btnaltaProductos_Click);
             // 
             // label2
             // 
@@ -78,7 +78,7 @@
             this.btnmodificarProducto.TabIndex = 4;
             this.btnmodificarProducto.Text = "Baja y Modificación de productos";
             this.btnmodificarProducto.UseVisualStyleBackColor = true;
-
+            this.btnmodificarProducto.Click += new System.EventHandler(this.btnmodificarProducto_Click);
             // 
             // label3
             // 
@@ -98,7 +98,7 @@
             this.btndevolucion.TabIndex = 6;
             this.btndevolucion.Text = "Devolucion";
             this.btndevolucion.UseVisualStyleBackColor = true;
-
+            this.btndevolucion.Click += new System.EventHandler(this.btndevolucion_Click);
             // 
             // label4
             // 
@@ -118,7 +118,6 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Stock critico";
             this.button1.UseVisualStyleBackColor = true;
-
             // 
             // button2
             // 
@@ -128,7 +127,6 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Ventas por vendedor";
             this.button2.UseVisualStyleBackColor = true;
-
             // 
             // button3
             // 
@@ -138,6 +136,7 @@
             this.button3.TabIndex = 10;
             this.button3.Text = "Productos mas vendidos";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // pantallaPrinicpalSupervisor
             // 
