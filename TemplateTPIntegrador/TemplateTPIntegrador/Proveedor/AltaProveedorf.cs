@@ -125,16 +125,14 @@ namespace TemplateTPIntegrador.Proveedor
         private void Boton_Confirmar_Click(object sender, EventArgs e)
         {
 
-        } // Confirma todos los campos, si está todo correcto, genera un ID de proveedor.
+        }
         private void Boton_Cancelar_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show("¿Está seguro de que desea cancelar el alta del proveedor?\n\nLos cambios no se guardarán.", "Cancelar Alta de Proveedor", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (resultado == DialogResult.Yes)
             {
-                ListaProveedores listaProveedores = new ListaProveedores();
-                listaProveedores.Show();
-                Close();
+                this.Close();
             }
         }
         private void Ventana_KeyDown(object sender, KeyEventArgs e)
@@ -156,9 +154,7 @@ namespace TemplateTPIntegrador.Proveedor
 
             if (resultado == DialogResult.Yes)
             {
-                ListaProveedores listaProveedores = new ListaProveedores();
-                listaProveedores.Show();
-                Close();
+                this.Close();
             }
         }
 
