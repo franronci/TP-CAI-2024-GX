@@ -75,6 +75,7 @@
             this.Controls.Add(this.PmasVendido_label);
             this.Name = "ProductomasvendidoCategoria";
             this.Text = "Reporte: Producto mas vendido por Categoria";
+            this.Load += new System.EventHandler(this.ProductomasvendidoCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MasVendidosPorCategoria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

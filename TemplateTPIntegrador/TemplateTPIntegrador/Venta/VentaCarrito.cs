@@ -267,16 +267,19 @@ namespace TemplateTPIntegrador.Venta
 
 
                     Task.Delay(50).ContinueWith(_ => this.Invoke((MethodInvoker)delegate { CalcularTotalConDescuentos(); }));
-                    RegistroVentas registroVentas = new RegistroVentas();
 
-                    // Guardar la venta en el archivo txt
-                    registroVentas.GuardarVenta(
-                        categoriaNombre,
-                        productoSeleccionado,
-                        cantidad,
-                        precioUnitario,
-                        total
-                        );
+                    DateTime fechaVentaTXT = DateTime.Now;
+                    string MontoFinalTXT = txtTotalConDescuento.Text;
+                    VentasTXT ventaTXT = new VentasTXT
+                    { 
+                        FechaVenta = fechaVentaTXT, // Incluir la fecha de venta
+                        Productos = new List<string> { productoSeleccionado },
+                        Cantidades = new List<int> { cantidad },
+                        Categorias = new List<string> { categoriaNombre },
+                        MontoTotal = MontoFinalTXT
+                    };
+
+                    GuardarVentaEnTxt(ventaTXT);
                 }
                 else
                 {
@@ -289,30 +292,7 @@ namespace TemplateTPIntegrador.Venta
             }
         }
 
-        public class RegistroVentas
-        {
-            private string rutaArchivo = "ventas_realizadas.txt";
 
-            // Método para guardar cada venta en un archivo txt
-            public void GuardarVenta(string categoria, string producto, int cantidad, decimal precioUnitario, decimal total)
-            {
-                try
-                {
-                    // Formato de la línea a guardar
-                    string lineaVenta = $"{DateTime.Now}: Categoría: {categoria}, Producto: {producto}, Cantidad: {cantidad}, Precio Unitario: {precioUnitario:C}, Total: {total:C}";
-
-                    // Escribir la línea en el archivo
-                    using (StreamWriter sw = new StreamWriter(rutaArchivo, true)) // 'true' para agregar al archivo
-                    {
-                        sw.WriteLine(lineaVenta);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Ocurrió un error al guardar la venta: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
 
 
         private void btnfinalizarCompra_Click(object sender, EventArgs e)
