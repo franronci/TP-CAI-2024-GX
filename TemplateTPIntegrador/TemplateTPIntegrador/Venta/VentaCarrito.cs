@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -351,7 +352,52 @@ namespace TemplateTPIntegrador.Venta
         {
             lblfechahoracompra.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
+        private void GuardarVentaEnTxt(VentasTXT venta)
+        {
+            // Construir la ruta del archivo
+            string directoryPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CAI", "Grupo3");
+            Directory.CreateDirectory(directoryPath); // Crea el directorio si no existe
+            string filePath = Path.Combine(directoryPath, "ventas.csv");
 
-        
+            // Obtener el siguiente IdTransaccion
+            int nextFileNumber = 1;
+            if (File.Exists(filePath))
+            {
+                string[] existingLines = File.ReadAllLines(filePath);
+                if (existingLines.Length > 1) // Primera Linea corresponde a los encabezados
+                {
+                    List<int> transactionIds = existingLines.Select(line =>
+                    {
+                        string[] parts = line.Split(',');
+                        return int.TryParse(parts[0].Trim(), out int id) ? id : 0;
+                    }).ToList();
+
+                    nextFileNumber = transactionIds.Max() + 1;
+                }
+            }
+
+            // Verificar si el archivo existe y si no, crear la cabecera
+            bool fileExists = File.Exists(filePath);
+
+            using (StreamWriter writer = new StreamWriter(filePath, true))
+            {
+                if (!fileExists)
+                {
+                    // Escribir la cabecera
+                    writer.WriteLine("Venta Nro.,Fecha,Vendedor,Cliente,Productos,Categoria,Cantidad,Monto,Estado");
+                }
+
+                // Construir las líneas de productos, cantidades y categorías
+                string productos = string.Join(" | ", venta.Productos);
+                string cantidades = string.Join(" | ", venta.Cantidades);
+                string categorias = string.Join(" | ", venta.Categorias);
+
+                // Construir la línea a escribir en el archivo
+                string lineaVenta = $"{nextFileNumber},{venta.FechaVenta},{venta.NombreVendedor},{venta.NombreCliente},{productos},{categorias},{cantidades},{venta.MontoTotal},1";
+                writer.WriteLine(lineaVenta); // Inserto 1 por defecto, ya que es el alta de la venta.
+            }
+        }
+
+
     }
 }

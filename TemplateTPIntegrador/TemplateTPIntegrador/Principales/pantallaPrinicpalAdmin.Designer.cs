@@ -181,6 +181,7 @@
             this.btnproductoXCategoria.TabIndex = 13;
             this.btnproductoXCategoria.Text = "Productos mas vendidos";
             this.btnproductoXCategoria.UseVisualStyleBackColor = true;
+            this.btnproductoXCategoria.Click += new System.EventHandler(this.btnproductoXCategoria_Click);
             // 
             // btnbajaProducto
             // 
