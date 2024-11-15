@@ -38,7 +38,7 @@ namespace TemplateTPIntegrador
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(156, 204);
+            this.btnLogin.Location = new System.Drawing.Point(156, 218);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(100, 23);
             this.btnLogin.TabIndex = 0;

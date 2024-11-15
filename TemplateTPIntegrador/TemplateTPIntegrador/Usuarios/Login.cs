@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -39,12 +40,25 @@ namespace TemplateTPIntegrador
             {
                 InicioSesion inicioSesion = new InicioSesion();
                 string id_usuario = inicioSesion.HacerLogin(txtboxUsernameLogin.Text, txtboxPasswordLogin.Text);
+                Administrador administrador = new Administrador();
                 
                 if(id_usuario != null)
                 {
                     inicioSesion.GuardarDatos(id_usuario, txtboxUsernameLogin.Text);
+                    string nombre = administrador.traernombreid(id_usuario);
+                    string apellido = administrador.traerapellidoid(id_usuario);
+                    int dni = administrador.traedniid(id_usuario);
 
-                    if (inicioSesion.TraerHost(id_usuario) == 1)
+
+                    if (inicioSesion.esPrimeraSesion(txtboxPasswordLogin.Text, nombre,apellido,dni))
+                    {
+
+                        var modifcontrasñaForm = new ModificarContraseña();
+                        modifcontrasñaForm.Show();
+                        this.Hide();
+
+                    }
+                    else if (inicioSesion.TraerHost(id_usuario) == 1)
                     {
                         // Crear una instancia del formulario del vendedor
                         var vendedorForm = new pantallaPrinicpalVendedor();

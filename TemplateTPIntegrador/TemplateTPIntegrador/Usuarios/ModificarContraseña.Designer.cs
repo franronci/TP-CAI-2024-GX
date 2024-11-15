@@ -43,7 +43,7 @@
             // 
             this.lbContraseñaActual.AutoSize = true;
             this.lbContraseñaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.9F);
-            this.lbContraseñaActual.Location = new System.Drawing.Point(27, 115);
+            this.lbContraseñaActual.Location = new System.Drawing.Point(27, 122);
             this.lbContraseñaActual.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbContraseñaActual.Name = "lbContraseñaActual";
             this.lbContraseñaActual.Size = new System.Drawing.Size(93, 13);
@@ -54,7 +54,7 @@
             // 
             this.lbNuevaContraseña.AutoSize = true;
             this.lbNuevaContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.9F);
-            this.lbNuevaContraseña.Location = new System.Drawing.Point(27, 164);
+            this.lbNuevaContraseña.Location = new System.Drawing.Point(27, 171);
             this.lbNuevaContraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNuevaContraseña.Name = "lbNuevaContraseña";
             this.lbNuevaContraseña.Size = new System.Drawing.Size(99, 13);
@@ -76,7 +76,7 @@
             this.lbErroresContraseña.AutoSize = true;
             this.lbErroresContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.lbErroresContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbErroresContraseña.Location = new System.Drawing.Point(27, 228);
+            this.lbErroresContraseña.Location = new System.Drawing.Point(27, 213);
             this.lbErroresContraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbErroresContraseña.Name = "lbErroresContraseña";
             this.lbErroresContraseña.Size = new System.Drawing.Size(40, 13);
@@ -86,7 +86,7 @@
             // btnConfirmarContraseña
             // 
             this.btnConfirmarContraseña.Location = new System.Drawing.Point(144, 407);
-            this.btnConfirmarContraseña.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConfirmarContraseña.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfirmarContraseña.Name = "btnConfirmarContraseña";
             this.btnConfirmarContraseña.Size = new System.Drawing.Size(101, 48);
             this.btnConfirmarContraseña.TabIndex = 6;
@@ -97,7 +97,7 @@
             // btnCancelarContraseña
             // 
             this.btnCancelarContraseña.Location = new System.Drawing.Point(312, 407);
-            this.btnCancelarContraseña.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelarContraseña.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarContraseña.Name = "btnCancelarContraseña";
             this.btnCancelarContraseña.Size = new System.Drawing.Size(105, 48);
             this.btnCancelarContraseña.TabIndex = 7;
@@ -106,16 +106,16 @@
             // 
             // txtContraseñaActual
             // 
-            this.txtContraseñaActual.Location = new System.Drawing.Point(198, 111);
-            this.txtContraseñaActual.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtContraseñaActual.Location = new System.Drawing.Point(198, 118);
+            this.txtContraseñaActual.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraseñaActual.Name = "txtContraseñaActual";
             this.txtContraseñaActual.Size = new System.Drawing.Size(134, 20);
             this.txtContraseñaActual.TabIndex = 8;
             // 
             // txtNuevaContraseña
             // 
-            this.txtNuevaContraseña.Location = new System.Drawing.Point(198, 160);
-            this.txtNuevaContraseña.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNuevaContraseña.Location = new System.Drawing.Point(198, 167);
+            this.txtNuevaContraseña.Margin = new System.Windows.Forms.Padding(2);
             this.txtNuevaContraseña.Name = "txtNuevaContraseña";
             this.txtNuevaContraseña.Size = new System.Drawing.Size(134, 20);
             this.txtNuevaContraseña.TabIndex = 9;
@@ -145,9 +145,10 @@
             this.Controls.Add(this.lbInformaciónContraseña);
             this.Controls.Add(this.lbNuevaContraseña);
             this.Controls.Add(this.lbContraseñaActual);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ModificarContraseña";
             this.Text = "Modificar contraseña";
+            this.Load += new System.EventHandler(this.ModificarContraseña_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
