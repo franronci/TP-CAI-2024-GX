@@ -52,6 +52,24 @@ namespace Negocio
 
 
 
+        public string traerusername()
+        {
+            UsuariosWS usuarios = new UsuariosWS();
+            string id_admin = "94b09224-5702-4bab-8304-7704ee48a386";
+            string id_buscado = SesionUsuario.IdUsuario;
+
+            List<Datos.UsuarioWSDatos> lista_usuarios = usuarios.buscarDatosUsuario(id_admin);
+
+            foreach (var usuario in lista_usuarios)
+            {
+                if (usuario.Id == id_buscado)
+                {
+                    return usuario.NombreUsuario;
+                }
+            }
+            return "username no encontrado";
+        }
+
         public string traerid(string username)
         {
             UsuariosWS usuarios = new UsuariosWS();
@@ -69,6 +87,7 @@ namespace Negocio
             return "este usuario no existe";
         }
 
+
         public string traeridcondni(int dni)
         {
             UsuariosWS usuarios = new UsuariosWS();
@@ -84,6 +103,58 @@ namespace Negocio
                 }
             }
             return "este usuario no existe";
+        }
+
+        public string traernombreid(string id)
+        {
+            UsuariosWS usuarios = new UsuariosWS();
+            string id_admin = "94b09224-5702-4bab-8304-7704ee48a386";
+
+            List<Datos.UsuarioWSDatos> lista_usuarios = usuarios.buscarDatosUsuario(id_admin);
+
+            foreach (var usuario in lista_usuarios)
+            {
+                if (usuario.Id == id)
+                {
+                    return usuario.Nombre;
+                }
+            }
+            return "este usuario no existe";
+        }
+
+        public string traerapellidoid(string id)
+        {
+            UsuariosWS usuarios = new UsuariosWS();
+            string id_admin = "94b09224-5702-4bab-8304-7704ee48a386";
+
+            List<Datos.UsuarioWSDatos> lista_usuarios = usuarios.buscarDatosUsuario(id_admin);
+
+            foreach (var usuario in lista_usuarios)
+            {
+                if (usuario.Id == id)
+                {
+                    return usuario.Apellido;
+                }
+            }
+            return "este usuario no existe";
+        }
+
+
+         public int traedniid(string id)
+        {
+            UsuariosWS usuarios = new UsuariosWS();
+            string id_admin = "94b09224-5702-4bab-8304-7704ee48a386";
+
+            List<Datos.UsuarioWSDatos> lista_usuarios = usuarios.buscarDatosUsuario(id_admin);
+
+            foreach (var usuario in lista_usuarios)
+            {
+                if (usuario.Id == id)
+                {
+                    return usuario.Dni;
+                }
+            }
+            return -1;
         }
 
         public Guid traerproveedorcuit(string cuit)

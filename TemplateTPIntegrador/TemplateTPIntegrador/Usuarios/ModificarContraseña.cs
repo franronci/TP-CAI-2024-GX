@@ -15,13 +15,12 @@ namespace TemplateTPIntegrador
     public partial class ModificarContraseña : Form
     {
 
-        private bool erroresMostrados = false; // Flag para verificar si ya se mostraron errores
+        private bool erroresMostrados = false;
 
         public ModificarContraseña()
         {
             InitializeComponent();
 
-            // Ocultar el Label de errores al iniciar el formulario
             lbErroresContraseña.Visible = false;
             lbErroresContraseña.AutoSize = true;
 
@@ -31,15 +30,35 @@ namespace TemplateTPIntegrador
 
         private void btnConfirmarContraseña_Click(object sender, EventArgs e)
         {
-            erroresMostrados = true; // Activar el flag para mostrar errores después del primer clic
-            ValidarCamposContraseña(null,null); // Llamar a la validación manualmente al hacer confirmación
+            erroresMostrados = true; 
+            ValidarCamposContraseña(null,null); 
+            Administrador administrador = new Administrador();
+            InicioSesion inicioSesion = new InicioSesion(); 
+            string username = administrador.traerusername();
+            string contrasevieja = txtContraseñaActual.Text;
+            string contraseñanueva = txtNuevaContraseña.Text;
 
-            // Si no hay errores, proceder con el cambio de contraseña
             if (!lbErroresContraseña.Visible)
             {
-                // Lógica para cambiar la contraseña
-                // Por ejemplo, llamar a un método que actualice la contraseña en la base de datos
-                MessageBox.Show("Contraseña cambiada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string respuesta = inicioSesion.cambiarContraseña(username, contrasevieja, contraseñanueva);
+                Console.WriteLine($" {contraseñanueva} , {contrasevieja}, {username} ");
+
+
+                if (respuesta == "Contraseña cambiada exitosamente.")
+                {
+                    MessageBox.Show(respuesta);
+                    Login login = new Login();
+
+                    login.Show();
+                    this.Hide();
+
+                }
+
+                else
+                {
+                    MessageBox.Show(respuesta);
+                }
+
             }
         }
 
@@ -75,12 +94,12 @@ namespace TemplateTPIntegrador
 
             if (errores.Count > 0)
             {
-                lbErroresContraseña.Visible = true; // Muestra el Label de errores
-                lbErroresContraseña.Text = string.Join("\n", errores); // Asigna los errores al texto del Label
+                lbErroresContraseña.Visible = true; 
+                lbErroresContraseña.Text = string.Join("\n", errores); 
             }
             else
             {
-                lbErroresContraseña.Visible = false; // Oculta el Label si no hay errores
+                lbErroresContraseña.Visible = false; 
 
             }
 
@@ -88,8 +107,10 @@ namespace TemplateTPIntegrador
 
         }
 
+        private void ModificarContraseña_Load(object sender, EventArgs e)
+        {
 
-
+        }
     }
        
 
