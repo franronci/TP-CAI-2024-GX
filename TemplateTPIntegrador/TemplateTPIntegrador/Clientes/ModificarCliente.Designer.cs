@@ -124,6 +124,7 @@
             this.Errores1.TabIndex = 54;
             this.Errores1.Text = "errorescliente";
             this.Errores1.Visible = false;
+            this.Errores1.Click += new System.EventHandler(this.Errores1_Click);
             // 
             // ModificarCliente
             // 

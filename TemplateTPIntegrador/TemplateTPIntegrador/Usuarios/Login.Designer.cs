@@ -27,6 +27,7 @@ namespace TemplateTPIntegrador
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.btnLogin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtboxUsernameLogin = new System.Windows.Forms.TextBox();
@@ -57,7 +58,8 @@ namespace TemplateTPIntegrador
             // txtboxUsernameLogin
             // 
             this.txtboxUsernameLogin.BackColor = System.Drawing.SystemColors.Window;
-            this.txtboxUsernameLogin.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtboxUsernameLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtboxUsernameLogin.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtboxUsernameLogin.Location = new System.Drawing.Point(153, 58);
             this.txtboxUsernameLogin.Name = "txtboxUsernameLogin";
             this.txtboxUsernameLogin.Size = new System.Drawing.Size(100, 20);
@@ -93,7 +95,7 @@ namespace TemplateTPIntegrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = global::TemplateTPIntegrador.Properties.Resources.login2;
             this.ClientSize = new System.Drawing.Size(434, 298);
             this.Controls.Add(this.Errores_login);
@@ -102,6 +104,7 @@ namespace TemplateTPIntegrador
             this.Controls.Add(this.txtboxUsernameLogin);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogin);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

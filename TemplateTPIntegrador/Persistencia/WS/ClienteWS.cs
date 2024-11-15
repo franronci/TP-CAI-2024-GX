@@ -155,7 +155,7 @@ namespace Persistencia
         }
 
         //Elimina un cliente existente.
-        public void BorrarCliente(Guid idCliente)
+        public string BorrarCliente(Guid idCliente)
         {
             //Define la ruta de la API para la eliminación (DELETE), incluyendo el idCliente como un parámetro de consulta.
             String path = "/Cliente/BajaCliente?id=" + idCliente;
@@ -168,15 +168,16 @@ namespace Persistencia
                 {
                     var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
                     string respuesta = reader.ReadToEnd();
+                    return ("CLiente dado de baja exitosamente");
                 }
                 else
                 {
-                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                    return $"Error: {response.StatusCode} - {response.ReasonPhrase}";
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Exception: {ex.Message}");
+                return $"Exception: {ex.Message}";
             }
         }
     }
