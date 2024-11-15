@@ -36,10 +36,5 @@ namespace Datos
         public int Stock { get => _stock; set => _stock = value; }
         public DateTime FechaAlta { get => _fechaAlta; set => _fechaAlta = value; }
         public DateTime? FechaBaja { get => _fechaBaja; set => _fechaBaja = value; }
-
-        public String ToString()
-        {
-            return this.Nombre + " (" + this.Precio + ")";
-        }
     }
 }
