@@ -194,6 +194,7 @@ namespace TemplateTPIntegrador.Proveedor
             this.Controls.Add(this.BuscarProveedor_Label);
             this.Name = "ListaProveedores";
             this.Text = "ListaProveedores";
+            this.Load += new System.EventHandler(this.ListaProveedores_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresLupa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CUITLupa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Proveedores)).EndInit();

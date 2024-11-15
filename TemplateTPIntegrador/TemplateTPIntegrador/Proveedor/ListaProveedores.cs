@@ -23,11 +23,12 @@ namespace TemplateTPIntegrador.Proveedor
             KeyPreview = true;
             Boton_Modificar.Visible = false;
             Boton_Eliminar.Visible = false;
+            
         }
 
-        private void InterfazListaProveedores_Load(object sender, EventArgs e)
+        private void ListaProveedores_Load(object sender, EventArgs e)
         {
-            CargarProveedores();
+           
         }
         private void CargarProveedores()
         {
@@ -287,6 +288,11 @@ namespace TemplateTPIntegrador.Proveedor
         private void CUITBuscador_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ListaProveedores_Load_1(object sender, EventArgs e)
+        {
+            CargarProveedores();
         }
     }
 }
