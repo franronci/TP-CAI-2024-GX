@@ -25,7 +25,7 @@ namespace Datos
             _stock = stock;
         }
 
-        public int IdProducto { get => _idCategoria; set => _idCategoria = value; }
+        public int IdCategoria { get => _idCategoria; set => _idCategoria = value; }
         public string IdUsuario { get => _idUsuario; set => _idUsuario = value; }
         public string IdProveedor { get => _idProveedor; set => _idProveedor = value; }
         public string Nombre { get => _nombre; set => _nombre = value; }

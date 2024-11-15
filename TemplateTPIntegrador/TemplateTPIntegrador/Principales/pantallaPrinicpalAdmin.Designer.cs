@@ -42,7 +42,6 @@
             this.btnstockCritico = new System.Windows.Forms.Button();
             this.btnventasXVendedor = new System.Windows.Forms.Button();
             this.btnproductoXCategoria = new System.Windows.Forms.Button();
-            this.btnmodificarProducto = new System.Windows.Forms.Button();
             this.btnbajaProducto = new System.Windows.Forms.Button();
             this.Buton_Baja = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -184,23 +183,13 @@
             this.btnproductoXCategoria.Text = "Productos mas vendidos";
             this.btnproductoXCategoria.UseVisualStyleBackColor = true;
             // 
-            // btnmodificarProducto
-            // 
-            this.btnmodificarProducto.Location = new System.Drawing.Point(441, 293);
-            this.btnmodificarProducto.Name = "btnmodificarProducto";
-            this.btnmodificarProducto.Size = new System.Drawing.Size(114, 39);
-            this.btnmodificarProducto.TabIndex = 14;
-            this.btnmodificarProducto.Text = "Modificar producto";
-            this.btnmodificarProducto.UseVisualStyleBackColor = true;
-            this.btnmodificarProducto.Click += new System.EventHandler(this.btnmodificarProducto_Click);
-            // 
             // btnbajaProducto
             // 
             this.btnbajaProducto.Location = new System.Drawing.Point(441, 224);
             this.btnbajaProducto.Name = "btnbajaProducto";
             this.btnbajaProducto.Size = new System.Drawing.Size(114, 39);
             this.btnbajaProducto.TabIndex = 15;
-            this.btnbajaProducto.Text = "Baja producto";
+            this.btnbajaProducto.Text = "Baja y modificación de productos";
             this.btnbajaProducto.UseVisualStyleBackColor = true;
             this.btnbajaProducto.Click += new System.EventHandler(this.btnbajaProducto_Click);
             // 
@@ -221,7 +210,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Buton_Baja);
             this.Controls.Add(this.btnbajaProducto);
-            this.Controls.Add(this.btnmodificarProducto);
             this.Controls.Add(this.btnproductoXCategoria);
             this.Controls.Add(this.btnventasXVendedor);
             this.Controls.Add(this.btnstockCritico);
@@ -259,7 +247,6 @@
         private System.Windows.Forms.Button btnstockCritico;
         private System.Windows.Forms.Button btnventasXVendedor;
         private System.Windows.Forms.Button btnproductoXCategoria;
-        private System.Windows.Forms.Button btnmodificarProducto;
         private System.Windows.Forms.Button btnbajaProducto;
         private System.Windows.Forms.Button Buton_Baja;
     }
