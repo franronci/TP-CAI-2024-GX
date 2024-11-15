@@ -72,8 +72,8 @@ namespace Persistencia
                 Console.WriteLine($"Exception: {ex.Message}");
             }
             return productos;
-
         }
+
         public List<DatosProductoWS> getProductosByCategoria(int idCategoria)
         {
             List<DatosProductoWS> productos = new List<DatosProductoWS>();

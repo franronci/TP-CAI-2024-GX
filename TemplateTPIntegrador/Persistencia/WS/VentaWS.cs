@@ -80,9 +80,9 @@ namespace Persistencia
                     string respuesta = reader.ReadToEnd();
                     DBHelper dbhelper = new DBHelper("Ventas");
 
-                    // Almacenar la venta en la "base de datos" (archivo de texto)
                     string registroVenta = $"{agregarVenta.IdCliente}|{agregarVenta.IdUsuario}|{agregarVenta.IdProducto}|{agregarVenta.Cantidad}|{montoTotal}|{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}";
-                    dbhelper.Insertar(Guid.NewGuid().ToString(), registroVenta);
+                    string IdUsuario = agregarVenta.IdUsuario.ToString();
+                    dbhelper.Insertar(IdUsuario, registroVenta);
                 }
                 else
                 {

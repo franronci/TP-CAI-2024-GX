@@ -25,8 +25,8 @@ namespace Negocio
 
 
         public double precioProducto(string producto, int categoria)
-        
-        
+
+
         {
             ProductoWS productoWS = new ProductoWS();
 
@@ -34,7 +34,7 @@ namespace Negocio
 
             foreach (var producto_lista in datosProductoWs)
             {
-             
+
                 if (producto_lista.Nombre == producto)
                 {
                     return producto_lista.Precio;
@@ -91,7 +91,7 @@ namespace Negocio
 
             foreach (var producto in lista_productos)
             {
-                if(producto.Nombre == nombre)
+                if (producto.Nombre == nombre)
                 {
                     return producto.Id;
                 }
@@ -116,79 +116,79 @@ namespace Negocio
         {
             ClienteWS clienteWS = new ClienteWS();
 
-            
+
             List<DatosClienteWS> lista_clientes = clienteWS.getClientes();
 
-            
+
             foreach (var cliente in lista_clientes)
             {
-                if (cliente.DNI == dni) 
+                if (cliente.DNI == dni)
                 {
-                    return cliente.Id; 
+                    return cliente.Id;
                 }
             }
 
             return Guid.Empty;
         }
 
-        
+
         public string traerNombreCliente(int dni)
         {
             ClienteWS clienteWS = new ClienteWS();
 
-           
+
             List<DatosClienteWS> lista_clientes = clienteWS.getClientes();
 
-           
+
             foreach (var cliente in lista_clientes)
             {
-                if (cliente.DNI == dni) 
+                if (cliente.DNI == dni)
                 {
-                    return cliente.Nombre; 
-                }
-            }
-
-            return ""; 
-        }
-
-        
-        public string traerApellidoCliente(int dni)
-        {
-            ClienteWS clienteWS = new ClienteWS();
-
-            
-            List<DatosClienteWS> lista_clientes = clienteWS.getClientes();
-
-            
-            foreach (var cliente in lista_clientes)
-            {
-                if (cliente.DNI == dni) 
-                {
-                    return cliente.Apellido; 
+                    return cliente.Nombre;
                 }
             }
 
             return "";
         }
 
-        
+
+        public string traerApellidoCliente(int dni)
+        {
+            ClienteWS clienteWS = new ClienteWS();
+
+
+            List<DatosClienteWS> lista_clientes = clienteWS.getClientes();
+
+
+            foreach (var cliente in lista_clientes)
+            {
+                if (cliente.DNI == dni)
+                {
+                    return cliente.Apellido;
+                }
+            }
+
+            return "";
+        }
+
+
         public string traerEmailCliente(int dni)
         {
             ClienteWS clienteWS = new ClienteWS();
 
-            
+
             List<DatosClienteWS> lista_clientes = clienteWS.getClientes();
 
-            
+
             foreach (var cliente in lista_clientes)
             {
-                if (cliente.DNI == dni) 
+                if (cliente.DNI == dni)
                 {
-                    return cliente.Email; 
+                    return cliente.Email;
                 }
             }
 
-            return ""; 
+            return "";
         }
 
         public void AgregarVentaNegocio(AltaVenta agregarVenta, decimal montototal)
@@ -199,47 +199,61 @@ namespace Negocio
 
         public List<VentaAgrupada> ObtenerVentasPorUsuario(string idUsuario)
         {
-           
+
             return ObtenerVentasAgrupadasPorUsuario(idUsuario);
         }
 
+
+        // Método para obtener las ventas agrupadas por usuario y mes
         public List<VentaAgrupada> ObtenerVentasAgrupadasPorUsuario(string idUsuario)
         {
             List<VentaAgrupada> ventasAgrupadas = new List<VentaAgrupada>();
-            DBHelper dbhelper = new DBHelper("Ventas");
+            DBHelper basedatos = new DBHelper("Ventas");
+            var ventas = basedatos.Listar();
 
-            var ventas = dbhelper.Listar();
+
+            var ventasPorDiaCliente = new HashSet<string>();
 
             foreach (var venta in ventas)
             {
                 string[] detalles = venta.Split('|');
-                if (detalles.Length == 6 && detalles[1] == idUsuario)
+                if (detalles.Length == 7 && detalles[2] == idUsuario)
                 {
-                    string fecha = detalles[5];
+                    string fecha = detalles[6];
+
+                    string diaClienteKey = $"{detalles[1]}|{DateTime.Parse(fecha).ToString("yyyy-MM-dd")}";
+
+                    decimal montoTotal = decimal.Parse(detalles[5]);
                     string mesAnio = DateTime.Parse(fecha).ToString("yyyy-MM");
-                    decimal montoTotal = decimal.Parse(detalles[4]);
-                    int cantidad = int.Parse(detalles[3]);
 
                     var ventaExistente = ventasAgrupadas.FirstOrDefault(v => v.MesAnio == mesAnio);
-                    if (ventaExistente != null)
+
+                    if (!ventasPorDiaCliente.Contains(diaClienteKey))
                     {
-                        ventaExistente.CantidadVentas += cantidad;
-                        ventaExistente.MontoTotal += montoTotal;
-                    }
-                    else
-                    {
-                        ventasAgrupadas.Add(new VentaAgrupada
+                        ventasPorDiaCliente.Add(diaClienteKey);
+                        if (ventaExistente != null)
                         {
-                            MesAnio = mesAnio,
-                            CantidadVentas = cantidad,
-                            MontoTotal = montoTotal
-                        });
+                            ventaExistente.CantidadVentas += 1;
+                            ventaExistente.MontoTotal += montoTotal;
+                        }
+                        else
+                        {
+                            ventasAgrupadas.Add(new VentaAgrupada
+                            {
+                                MesAnio = mesAnio,
+                                CantidadVentas = 1,
+                                MontoTotal = montoTotal
+                            });
+                        }
                     }
                 }
             }
 
             return ventasAgrupadas;
         }
+
     }
+
 }
+
 

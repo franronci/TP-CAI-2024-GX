@@ -48,7 +48,7 @@
             this.btnusuarioeliminar.TabIndex = 4;
             this.btnusuarioeliminar.Text = "Devolucion";
             this.btnusuarioeliminar.UseVisualStyleBackColor = true;
-            this.btnusuarioeliminar.Click += new System.EventHandler(this.btnusuarioeliminar_Click);
+
             // 
             // lblusuarioeliminar
             // 

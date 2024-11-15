@@ -35,5 +35,35 @@ namespace Negocio
         {
             producto.bajaProducto(idProducto);
         }
+
+        public Dictionary<int, List<DatosProductoWS>> ObtenerProductosPorCategoriaConStockBajo(int stockLimite)
+        {
+            ProductoWS productoWS = new ProductoWS();
+
+            List<DatosProductoWS> listaProductos = productoWS.getProductos();
+
+
+            Dictionary<int, List<DatosProductoWS>> productosPorCategoria = new Dictionary<int, List<DatosProductoWS>>();
+
+            foreach (var producto in listaProductos)
+            {
+                
+                if (producto.Stock < stockLimite)
+                {
+                    if (!productosPorCategoria.ContainsKey(producto.IdCategoria))
+                    {
+                        productosPorCategoria[producto.IdCategoria] = new List<DatosProductoWS>();
+                        Console.WriteLine(producto.IdCategoria);
+
+                    }
+
+
+                    productosPorCategoria[producto.IdCategoria].Add(producto);
+                }
+            }
+
+            return productosPorCategoria;
+        }
+
     }
 }
