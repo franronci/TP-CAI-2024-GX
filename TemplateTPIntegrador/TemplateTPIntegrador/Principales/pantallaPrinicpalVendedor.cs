@@ -40,5 +40,11 @@ namespace TemplateTPIntegrador
 
             cliente.ShowDialog();
         }
+
+        private void btnmodificarcliente_Click(object sender, EventArgs e)
+        {
+            ModificarCliente cliente = new ModificarCliente();
+            cliente.ShowDialog();
+        }
     }
 }

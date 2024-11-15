@@ -20,9 +20,9 @@ namespace Negocio
             return respuesta;
         }
 
-        public void modificarCliente(Guid id, string direccion, string telefono, string email)
+        public string modificarCliente(Guid id, string direccion, string telefono, string email)
         {
-            clienteServicio.ModificarCliente(id, direccion, telefono, email);
+            return (clienteServicio.ModificarCliente(id, direccion, telefono, email));
         }
 
         public List<DatosClienteWS> listarClientes()
@@ -30,9 +30,9 @@ namespace Negocio
             return clienteServicio.getClientes();
         }
 
-        public void BorrarCliente(Guid idCliente)
+        public string BorrarCliente(Guid idCliente)
         {
-            clienteServicio.BorrarCliente(idCliente);
+            return clienteServicio.BorrarCliente(idCliente);
         }
     }
 }
