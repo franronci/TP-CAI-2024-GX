@@ -281,5 +281,10 @@ namespace TemplateTPIntegrador.Productos
                 
             }
         }
+
+        private void MayudaNombre_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
