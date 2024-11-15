@@ -261,9 +261,7 @@ namespace TemplateTPIntegrador.Productos
 
             if (resultado == DialogResult.Yes)
             {
-                Hide();
-                ListarProductos ListaProductos = new ListarProductos();
-                ListaProductos.Show();
+                this.Close();
             }
         }
         private void Ventana_KeyDown(object sender, KeyEventArgs e)
@@ -274,9 +272,7 @@ namespace TemplateTPIntegrador.Productos
 
                 if (result == DialogResult.Yes)
                 {
-                    ListarProductos ListaProductos = new ListarProductos();
-                    ListaProductos.Show();
-                    Hide();
+                    this.Close();
                 }
                 
             }

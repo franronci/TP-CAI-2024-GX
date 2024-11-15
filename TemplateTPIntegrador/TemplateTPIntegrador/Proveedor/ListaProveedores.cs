@@ -108,9 +108,7 @@ namespace TemplateTPIntegrador.Proveedor
 
                 if (result == DialogResult.Yes)
                 {
-                    pantallaPrinicpalAdmin InterfazMenu = new pantallaPrinicpalAdmin();
-                    InterfazMenu.Show();
-                    Hide();
+                    this.Close();
                 }
                 // Si el usuario elige "No", no hacer nada
             }
@@ -255,9 +253,7 @@ namespace TemplateTPIntegrador.Proveedor
 
             if (resultado == DialogResult.Yes)
             {
-                Hide();
-                pantallaPrinicpalAdmin ventanaMenu = new pantallaPrinicpalAdmin();
-                ventanaMenu.Show();
+                this.Close();
             }
         }
 

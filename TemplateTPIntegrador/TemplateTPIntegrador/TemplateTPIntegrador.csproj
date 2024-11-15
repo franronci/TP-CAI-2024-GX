@@ -112,12 +112,6 @@
     <Compile Include="Proveedor\AltaProveedorf.Designer.cs">
       <DependentUpon>AltaProveedorf.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proveedor\BajaProveedorf.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Proveedor\BajaProveedorf.Designer.cs">
-      <DependentUpon>BajaProveedorf.cs</DependentUpon>
-    </Compile>
     <Compile Include="Proveedor\ListaProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,9 +229,6 @@
     <EmbeddedResource Include="Proveedor\AltaProveedorf.resx">
       <DependentUpon>AltaProveedorf.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Proveedor\BajaProveedorf.resx">
-      <DependentUpon>BajaProveedorf.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Proveedor\ListaProveedores.resx">
       <DependentUpon>ListaProveedores.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ProductomasvendidoCategoria.resx">
       <DependentUpon>ProductomasvendidoCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\VendedorReporte.resx">
+      <DependentUpon>VendedorReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\VentasVendedor.resx">
       <DependentUpon>VentasVendedor.cs</DependentUpon>

@@ -177,9 +177,7 @@ namespace TemplateTPIntegrador.Proveedor
 
             if (result == DialogResult.Yes)
             {
-                ListaProveedores Proveedores = new ListaProveedores();
-                Proveedores.Show();
-                Hide();
+                this.Close();
             }
             // Si el usuario elige "No", no hacer nada
         }
@@ -191,9 +189,7 @@ namespace TemplateTPIntegrador.Proveedor
 
                 if (result == DialogResult.Yes)
                 {
-                    ListaProveedores Proveedores = new ListaProveedores();
-                    Proveedores.Show();
-                    Hide();
+                    this.Close();
                 }
                 // Si el usuario elige "No", no hacer nada
             }

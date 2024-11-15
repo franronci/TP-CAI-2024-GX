@@ -281,9 +281,7 @@ namespace TemplateTPIntegrador.Productos
 
             if (resultado == DialogResult.Yes)
             {
-                Hide();
-                pantallaPrinicpalAdmin ventanaMenu = new pantallaPrinicpalAdmin();
-                ventanaMenu.Show();
+                this.Close();
             }
         }
         private void Ventana_KeyDown(object sender, KeyEventArgs e)
@@ -294,9 +292,7 @@ namespace TemplateTPIntegrador.Productos
 
                 if (result == DialogResult.Yes)
                 {
-                    pantallaPrinicpalAdmin InterfazMenu = new pantallaPrinicpalAdmin();
-                    InterfazMenu.Show();
-                    Hide();
+                    this.Close();
                 }
 
             }

@@ -43,7 +43,6 @@
             this.btnventasXVendedor = new System.Windows.Forms.Button();
             this.btnproductoXCategoria = new System.Windows.Forms.Button();
             this.btnbajaProducto = new System.Windows.Forms.Button();
-            this.Buton_Baja = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -118,7 +117,7 @@
             // 
             // btnbajaProveedor
             // 
-            this.btnbajaProveedor.Location = new System.Drawing.Point(250, 224);
+            this.btnbajaProveedor.Location = new System.Drawing.Point(250, 216);
             this.btnbajaProveedor.Name = "btnbajaProveedor";
             this.btnbajaProveedor.Size = new System.Drawing.Size(114, 55);
             this.btnbajaProveedor.TabIndex = 7;
@@ -182,10 +181,11 @@
             this.btnproductoXCategoria.TabIndex = 13;
             this.btnproductoXCategoria.Text = "Productos mas vendidos";
             this.btnproductoXCategoria.UseVisualStyleBackColor = true;
+            this.btnproductoXCategoria.Click += new System.EventHandler(this.btnproductoXCategoria_Click);
             // 
             // btnbajaProducto
             // 
-            this.btnbajaProducto.Location = new System.Drawing.Point(441, 224);
+            this.btnbajaProducto.Location = new System.Drawing.Point(442, 216);
             this.btnbajaProducto.Name = "btnbajaProducto";
             this.btnbajaProducto.Size = new System.Drawing.Size(114, 39);
             this.btnbajaProducto.TabIndex = 15;
@@ -193,22 +193,11 @@
             this.btnbajaProducto.UseVisualStyleBackColor = true;
             this.btnbajaProducto.Click += new System.EventHandler(this.btnbajaProducto_Click);
             // 
-            // Buton_Baja
-            // 
-            this.Buton_Baja.Location = new System.Drawing.Point(250, 285);
-            this.Buton_Baja.Name = "Buton_Baja";
-            this.Buton_Baja.Size = new System.Drawing.Size(114, 55);
-            this.Buton_Baja.TabIndex = 16;
-            this.Buton_Baja.Text = "Baja";
-            this.Buton_Baja.UseVisualStyleBackColor = true;
-            this.Buton_Baja.Click += new System.EventHandler(this.Buton_Baja_Click);
-            // 
             // pantallaPrinicpalAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Buton_Baja);
             this.Controls.Add(this.btnbajaProducto);
             this.Controls.Add(this.btnproductoXCategoria);
             this.Controls.Add(this.btnventasXVendedor);
@@ -248,6 +237,5 @@
         private System.Windows.Forms.Button btnventasXVendedor;
         private System.Windows.Forms.Button btnproductoXCategoria;
         private System.Windows.Forms.Button btnbajaProducto;
-        private System.Windows.Forms.Button Buton_Baja;
     }
 }
