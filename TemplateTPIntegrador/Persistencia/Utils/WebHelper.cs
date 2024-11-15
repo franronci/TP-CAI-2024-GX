@@ -15,7 +15,7 @@ namespace Persistencia.Utils
         {
             var uri = rutaBase + url;
 
-            HttpResponseMessage response = httpClient.GetAsync(uri).Result;  // Blocking call!
+            HttpResponseMessage response = httpClient.GetAsync(uri).Result;  
 
             return response;
         }

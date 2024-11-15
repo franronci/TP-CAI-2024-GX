@@ -114,7 +114,7 @@ namespace Persistencia
                 
                 var request = new HttpRequestMessage
                 {
-                    Method = HttpMethod.Delete,
+                    Method = HttpMethod.Delete, 
                     RequestUri = new Uri(url),
                     Content = new StringContent(jsonData, Encoding.UTF8, "application/json")
                 };
@@ -164,13 +164,13 @@ namespace Persistencia
         }
 
 
-        public void cambiarContraseña(String nombreUsuario,String  viejaContraseña ,String nuevaContraseña)
+        public string cambiarContraseña(String nombreUsuario,String contraseña, String contraseñaNueva)
         {
             Dictionary<String, String> datos = new Dictionary<String, String>
             {
                 { "nombreUsuario", nombreUsuario },
-                { "viejaContraseña", viejaContraseña },
-                { "nuevaContraseña", nuevaContraseña }
+                { "contraseña", contraseña },
+                { "contraseñaNueva", contraseñaNueva }
             };
 
             var jsonData = JsonConvert.SerializeObject(datos);
@@ -178,12 +178,12 @@ namespace Persistencia
 
             if (response.IsSuccessStatusCode)
             {
-                Console.WriteLine("Contraseña cambiada exitosamente.");
+                return "Contraseña cambiada exitosamente.";
             }
             else
             {
                 Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
-                throw new Exception("Error al cambiar la contraseña del usuario.");
+                return "Error al cambiar la contraseña del usuario.";
             }
         }
 

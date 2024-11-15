@@ -8,6 +8,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -178,6 +179,31 @@ namespace Negocio
 
             usuarioInactivo.Insertar(key_inactivos, id);
 
+        }
+
+        public string cambiarContraseña(String nombreUsuario, String viejaContraseña, String nuevaContraseña)
+        {
+            UsuariosWS usuario = new UsuariosWS();
+
+            return usuario.cambiarContraseña(nombreUsuario, viejaContraseña, nuevaContraseña);
+
+        }
+
+        public bool esPrimeraSesion(string contraseña, string nombre, string apellido, int dni)
+        {
+            Administrador administrador = new Administrador();
+
+      
+
+            if(contraseña == administrador.crearPasswordDef(nombre,apellido, dni))
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
         }
 
     }
