@@ -35,7 +35,7 @@ namespace TemplateTPIntegrador.Productos
 
             if (Proveedor != null)
             {
-                Proveedor = Proveedor.Where(u => u != null && u.Email != null && u.Email.Contains("@G3") && u.FechaBaja == null).ToList();
+                Proveedor = Proveedor.Where(u => u != null && u.Email != null && u.FechaBaja == null).ToList();
             }
 
             ComboBox_Proveedor.DataSource = Proveedor;
@@ -96,7 +96,7 @@ namespace TemplateTPIntegrador.Productos
                                             idCategoria,
                                             "70b37dc1-8fde-4840-be47-9ababd0ee7e5",
                                             IdProveedor1,
-                                            "G3 - " + Box_Nombre.Text,
+                                            Box_Nombre.Text,
                                             int.Parse(Box_Precio.Text),
                                             int.Parse(Box_Stock.Text)
                                          );
