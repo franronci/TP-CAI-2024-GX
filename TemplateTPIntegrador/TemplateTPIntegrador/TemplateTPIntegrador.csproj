@@ -130,6 +130,12 @@
     <Compile Include="Reportes\ProductomasvendidoCategoria.Designer.cs">
       <DependentUpon>ProductomasvendidoCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ProductosCriticos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ProductosCriticos.Designer.cs">
+      <DependentUpon>ProductosCriticos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\VentasVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ProductomasvendidoCategoria.resx">
       <DependentUpon>ProductomasvendidoCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ProductosCriticos.resx">
+      <DependentUpon>ProductosCriticos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\VentasVendedor.resx">
       <DependentUpon>VentasVendedor.cs</DependentUpon>
