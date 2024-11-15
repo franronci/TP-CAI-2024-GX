@@ -38,7 +38,7 @@ namespace Persistencia
 
             return venta;
         }
-        public void DevolverVenta(Guid idVenta, Guid idUsuario)
+        public string DevolverVenta(Guid idVenta, Guid idUsuario)
         {
             String path = "/Venta/DevolverVenta";
             Dictionary<string, Guid> map = new Dictionary<string, Guid>();
@@ -54,15 +54,16 @@ namespace Persistencia
                 {
                     var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
                     string respuesta = reader.ReadToEnd();
+                    return "Devolucion de venta realizada";
                 }
                 else
                 {
-                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                    return $"Error: {response.StatusCode} - {response.ReasonPhrase}";
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Exception: {ex.Message}");
+                return $"Exception: {ex.Message}";
             }
         }
         public void AgregarVenta(AltaVenta agregarVenta, decimal montoTotal)
