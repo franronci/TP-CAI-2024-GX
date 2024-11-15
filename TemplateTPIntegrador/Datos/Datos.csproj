@@ -54,6 +54,7 @@
     <Compile Include="UsuarioWSDatos.cs" />
     <Compile Include="VentaAgrupada.cs" />
     <Compile Include="VentaPorCliente.cs" />
+    <Compile Include="VentasTXT.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -80,11 +80,11 @@ namespace TemplateTPIntegrador
   
         }
 
-        private void Buton_Baja_Click(object sender, EventArgs e)
+        private void btnproductoXCategoria_Click(object sender, EventArgs e)
         {
-            BajaProveedorf formabajaProveedor = new BajaProveedorf();
+            ProductomasvendidoCategoria formmprodumasvendido = new ProductomasvendidoCategoria();
 
-            formabajaProveedor.ShowDialog();
+            formmprodumasvendido.ShowDialog();
         }
     }
 }
