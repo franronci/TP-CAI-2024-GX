@@ -80,6 +80,11 @@ namespace TemplateTPIntegrador
   
         }
 
+        private void btnproductoXCategoria_Click(object sender, EventArgs e)
+        {
+            ProductomasvendidoCategoria formmprodumasvendido = new ProductomasvendidoCategoria();
 
+            formmprodumasvendido.ShowDialog();
+        }
     }
 }

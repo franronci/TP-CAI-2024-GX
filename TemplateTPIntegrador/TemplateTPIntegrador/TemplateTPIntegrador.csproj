@@ -235,6 +235,9 @@
     <EmbeddedResource Include="Proveedor\ModificarProveedorf.resx">
       <DependentUpon>ModificarProveedorf.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ProductomasvendidoCategoria.resx">
+      <DependentUpon>ProductomasvendidoCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\VendedorReporte.resx">
       <DependentUpon>VendedorReporte.cs</DependentUpon>
     </EmbeddedResource>
