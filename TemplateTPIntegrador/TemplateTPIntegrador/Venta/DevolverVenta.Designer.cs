@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.usuarioEliminar = new System.Windows.Forms.TextBox();
-            this.btnusuarioeliminar = new System.Windows.Forms.Button();
+            this.ventadevolver = new System.Windows.Forms.TextBox();
+            this.btndevolver = new System.Windows.Forms.Button();
             this.lblusuarioeliminar = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // usuarioEliminar
+            // ventadevolver
             // 
-            this.usuarioEliminar.Location = new System.Drawing.Point(142, 168);
-            this.usuarioEliminar.Name = "usuarioEliminar";
-            this.usuarioEliminar.Size = new System.Drawing.Size(100, 20);
-            this.usuarioEliminar.TabIndex = 5;
+            this.ventadevolver.Location = new System.Drawing.Point(142, 168);
+            this.ventadevolver.Name = "ventadevolver";
+            this.ventadevolver.Size = new System.Drawing.Size(100, 20);
+            this.ventadevolver.TabIndex = 5;
             // 
-            // btnusuarioeliminar
+            // btndevolver
             // 
-            this.btnusuarioeliminar.Location = new System.Drawing.Point(142, 242);
-            this.btnusuarioeliminar.Name = "btnusuarioeliminar";
-            this.btnusuarioeliminar.Size = new System.Drawing.Size(100, 23);
-            this.btnusuarioeliminar.TabIndex = 4;
-            this.btnusuarioeliminar.Text = "Devolucion";
-            this.btnusuarioeliminar.UseVisualStyleBackColor = true;
-
+            this.btndevolver.Location = new System.Drawing.Point(142, 242);
+            this.btndevolver.Name = "btndevolver";
+            this.btndevolver.Size = new System.Drawing.Size(100, 23);
+            this.btndevolver.TabIndex = 4;
+            this.btndevolver.Text = "Devolucion";
+            this.btndevolver.UseVisualStyleBackColor = true;
+            this.btndevolver.Click += new System.EventHandler(this.btnusuarioeliminar_Click);
             // 
             // lblusuarioeliminar
             // 
@@ -64,8 +64,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(385, 393);
-            this.Controls.Add(this.usuarioEliminar);
-            this.Controls.Add(this.btnusuarioeliminar);
+            this.Controls.Add(this.ventadevolver);
+            this.Controls.Add(this.btndevolver);
             this.Controls.Add(this.lblusuarioeliminar);
             this.Name = "DevolverVenta";
             this.Text = "DevolverVenta";
@@ -76,8 +76,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox usuarioEliminar;
-        private System.Windows.Forms.Button btnusuarioeliminar;
+        private System.Windows.Forms.TextBox ventadevolver;
+        private System.Windows.Forms.Button btndevolver;
         private System.Windows.Forms.Label lblusuarioeliminar;
     }
 }

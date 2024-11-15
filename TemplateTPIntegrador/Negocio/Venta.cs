@@ -26,9 +26,9 @@ namespace Negocio
 
         }
 
-        public void devolverVenta(Guid idVenta, Guid idUsuario)
+        public string devolverVenta(Guid idVenta, Guid idUsuario)
         {
-            ventaServicio.DevolverVenta(idVenta, idUsuario);
+            return (ventaServicio.DevolverVenta(idVenta, idUsuario));
         }
 
         public List<VentaPorCliente> GetVentaPorClientes(Guid idCliente)
