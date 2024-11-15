@@ -82,23 +82,23 @@ namespace Persistencia
 
 
 
-            //Modifica los datos de un cliente existente.
-            public void ModificarCliente(Guid idCliente, String direccion, String telefono, String email)
-        {
-            //Define una ruta para la API que maneja la actualización (PATCH).
-            String path = "/Cliente/PatchCliente";
 
-            //Crea un diccionario con los datos del cliente que se quieren modificar.
-            Dictionary<string, string> map = new Dictionary<string, string>();
-            map.Add("id", idCliente.ToString());
-            map.Add("direccion", direccion);
-            map.Add("telefono", telefono);
-            map.Add("email", email);
+            public string ModificarCliente(Guid idCliente, String direccion, String telefono, String email)
+             {
 
-            //Serializa este diccionario a JSON
-            var jsonRequest = JsonConvert.SerializeObject(map);
+                String path = "/Cliente/PatchCliente";
 
-            //Envía una solicitud PATCH a la API. Maneja la respuesta de manera similar a getClientes, imprimiendo mensajes de error si la respuesta no es exitosa.
+  
+                Dictionary<string, string> map = new Dictionary<string, string>();
+                map.Add("id", idCliente.ToString());
+                map.Add("direccion", direccion);
+                map.Add("telefono", telefono);
+                map.Add("email", email);
+
+
+                var jsonRequest = JsonConvert.SerializeObject(map);
+
+
             try
             {
                 HttpResponseMessage response = WebHelper.Patch(path, jsonRequest);
@@ -106,19 +106,22 @@ namespace Persistencia
                 {
                     var reader = new StreamReader(response.Content.ReadAsStreamAsync().Result);
                     string respuesta = reader.ReadToEnd();
+
+                    return "Modificacion exitosa";
                 }
                 else
                 {
-                    Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                     return $"Error: {response.StatusCode} - {response.ReasonPhrase}";
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Exception: {ex.Message}");
+                return ($"Exception: {ex.Message}");
             }
         }
 
-        //Agrega un nuevo cliente.
+   
+
         public string AgregarCliente(AltaCliente altaCliente)
         {
             
