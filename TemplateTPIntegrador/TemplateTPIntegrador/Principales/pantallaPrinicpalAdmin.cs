@@ -1,4 +1,5 @@
 ﻿using Datos;
+using Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -85,6 +86,14 @@ namespace TemplateTPIntegrador
             ProductomasvendidoCategoria formmprodumasvendido = new ProductomasvendidoCategoria();
 
             formmprodumasvendido.ShowDialog();
+        }
+
+
+        private void btnventasXVendedor_Click(object sender, EventArgs e)
+        {
+            VentasVendedor venta = new VentasVendedor();
+
+            venta.ShowDialog();
         }
     }
 }
