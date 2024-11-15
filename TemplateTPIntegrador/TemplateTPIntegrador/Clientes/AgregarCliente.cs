@@ -34,7 +34,11 @@ namespace TemplateTPIntegrador.Clientes
 
         private void AgregarCliente_Load(object sender, EventArgs e)
         {
+            // Calcula la fecha máxima para que la persona tenga al menos 18 años
+            DateTime fechaMaxima = DateTime.Now.AddYears(-18);
 
+            // Asigna la fecha máxima al DateTimePicker
+            FechaNacimientoCliente.MaxDate = fechaMaxima;
         }
 
         private void DireccionUsuario_TextChanged(object sender, EventArgs e)
