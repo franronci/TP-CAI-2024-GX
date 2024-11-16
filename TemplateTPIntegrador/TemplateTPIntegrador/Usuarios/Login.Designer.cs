@@ -34,6 +34,7 @@ namespace TemplateTPIntegrador
             this.txtboxPasswordLogin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Errores_login = new System.Windows.Forms.Label();
+            this.button_Verpw = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -51,9 +52,9 @@ namespace TemplateTPIntegrador
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(153, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(23, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Usuario";
+            this.label1.Text = "Ver";
             // 
             // txtboxUsernameLogin
             // 
@@ -91,6 +92,16 @@ namespace TemplateTPIntegrador
             this.Errores_login.Text = "errores";
             this.Errores_login.Visible = false;
             // 
+            // button_Verpw
+            // 
+            this.button_Verpw.Location = new System.Drawing.Point(156, 247);
+            this.button_Verpw.Name = "button_Verpw";
+            this.button_Verpw.Size = new System.Drawing.Size(103, 23);
+            this.button_Verpw.TabIndex = 8;
+            this.button_Verpw.Text = "Ver contraseña";
+            this.button_Verpw.UseVisualStyleBackColor = true;
+            this.button_Verpw.Click += new System.EventHandler(this.button_Verpw_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -98,6 +109,7 @@ namespace TemplateTPIntegrador
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = global::TemplateTPIntegrador.Properties.Resources.login2;
             this.ClientSize = new System.Drawing.Size(434, 298);
+            this.Controls.Add(this.button_Verpw);
             this.Controls.Add(this.Errores_login);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtboxPasswordLogin);
@@ -107,7 +119,8 @@ namespace TemplateTPIntegrador
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "Login: ElectroHogar SA";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,5 +134,6 @@ namespace TemplateTPIntegrador
         private System.Windows.Forms.TextBox txtboxPasswordLogin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Errores_login;
+        private System.Windows.Forms.Button button_Verpw;
     }
 }

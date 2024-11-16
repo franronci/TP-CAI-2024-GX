@@ -133,6 +133,28 @@ namespace TemplateTPIntegrador
         {
 
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            txtboxPasswordLogin.UseSystemPasswordChar = true;
+        }
+
+        private void button_Verpw_Click(object sender, EventArgs e)
+        {
+            // Verifica si los caracteres están actualmente ocultos
+            if (txtboxPasswordLogin.UseSystemPasswordChar)
+            {
+                // Muestra los caracteres
+                txtboxPasswordLogin.UseSystemPasswordChar = false;
+                button_Verpw.Text = "Ocultar"; // Cambia el texto del botón
+            }
+            else
+            {
+                // Oculta los caracteres
+                txtboxPasswordLogin.UseSystemPasswordChar = true;
+                button_Verpw.Text = "Mostrar"; // Cambia el texto del botón
+            }
+        }
     }
 }
 

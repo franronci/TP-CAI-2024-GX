@@ -36,6 +36,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnagregarcliente = new System.Windows.Forms.Button();
             this.btnmodificarcliente = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -118,11 +120,23 @@
             this.btnmodificarcliente.UseVisualStyleBackColor = true;
             this.btnmodificarcliente.Click += new System.EventHandler(this.btnmodificarcliente_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.Image = global::TemplateTPIntegrador.Properties.Resources.ELECTROHOGAR_SA_LOGO;
+            this.pictureBox1.Location = new System.Drawing.Point(620, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(179, 89);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
             // pantallaPrinicpalVendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnmodificarcliente);
             this.Controls.Add(this.btnagregarcliente);
             this.Controls.Add(this.label4);
@@ -133,6 +147,7 @@
             this.Controls.Add(this.label1);
             this.Name = "pantallaPrinicpalVendedor";
             this.Text = "pantallaPrinicpalVendedor";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,5 +163,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnagregarcliente;
         private System.Windows.Forms.Button btnmodificarcliente;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

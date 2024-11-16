@@ -43,6 +43,8 @@
             this.btnventasXVendedor = new System.Windows.Forms.Button();
             this.btnproductoXCategoria = new System.Windows.Forms.Button();
             this.btnbajaProducto = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -195,11 +197,23 @@
             this.btnbajaProducto.UseVisualStyleBackColor = true;
             this.btnbajaProducto.Click += new System.EventHandler(this.btnbajaProducto_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.Image = global::TemplateTPIntegrador.Properties.Resources.ELECTROHOGAR_SA_LOGO;
+            this.pictureBox1.Location = new System.Drawing.Point(620, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(179, 89);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // pantallaPrinicpalAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnbajaProducto);
             this.Controls.Add(this.btnproductoXCategoria);
             this.Controls.Add(this.btnventasXVendedor);
@@ -215,8 +229,10 @@
             this.Controls.Add(this.btnbajausuario);
             this.Controls.Add(this.btnAltaUsuario);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "pantallaPrinicpalAdmin";
             this.Text = "pantallaPrinicpalAdmin";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,5 +255,6 @@
         private System.Windows.Forms.Button btnventasXVendedor;
         private System.Windows.Forms.Button btnproductoXCategoria;
         private System.Windows.Forms.Button btnbajaProducto;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

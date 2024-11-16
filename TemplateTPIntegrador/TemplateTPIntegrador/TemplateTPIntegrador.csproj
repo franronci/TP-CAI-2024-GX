@@ -332,6 +332,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="home_house_icon-icons.com_49851.ico" />
+    <None Include="Resources\ELECTROHOGAR SA LOGO.jpg" />
     <None Include="Resources\64673.png" />
     <None Include="Resources\home_house_icon-icons.com_49851.ico" />
     <None Include="Resources\Icon1.ico" />
