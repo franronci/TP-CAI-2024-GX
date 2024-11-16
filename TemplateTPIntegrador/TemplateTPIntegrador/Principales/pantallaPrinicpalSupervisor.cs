@@ -55,5 +55,11 @@ namespace TemplateTPIntegrador
             ProductosCriticos productosCriticos = new ProductosCriticos();
             productosCriticos.ShowDialog(); 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            VentasVendedor vv = new VentasVendedor();
+            vv.ShowDialog();
+        }
     }
 }

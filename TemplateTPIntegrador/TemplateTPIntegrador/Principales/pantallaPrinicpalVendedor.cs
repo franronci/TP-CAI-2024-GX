@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TemplateTPIntegrador.Clientes;
+using TemplateTPIntegrador.Reportes;
 using TemplateTPIntegrador.Venta;
 
 namespace TemplateTPIntegrador
@@ -32,6 +33,8 @@ namespace TemplateTPIntegrador
             Carrito carrito = new Carrito();
 
             Console.WriteLine(carrito.hayVentaCliente(42689649));
+            VentasVendedor vv = new VentasVendedor();
+            vv.ShowDialog();
         }
 
         private void btnagregarcliente_Click(object sender, EventArgs e)
