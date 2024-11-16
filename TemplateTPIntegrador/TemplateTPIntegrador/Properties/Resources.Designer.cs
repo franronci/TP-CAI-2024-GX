@@ -81,6 +81,16 @@ namespace TemplateTPIntegrador.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ELECTROHOGAR_SA_LOGO {
+            get {
+                object obj = ResourceManager.GetObject("ELECTROHOGAR SA LOGO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon home_house_icon_icons_com_49851 {
