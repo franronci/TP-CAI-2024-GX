@@ -40,8 +40,8 @@ namespace TemplateTPIntegrador
 
         private void btndevolucion_Click(object sender, EventArgs e)
         {
-            DevolverVenta dv = new DevolverVenta();
-            dv.ShowDialog();
+            DevolverVenta devolverventa = new DevolverVenta();
+            devolverventa.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
